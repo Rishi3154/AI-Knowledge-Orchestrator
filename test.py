@@ -1,5 +1,15 @@
-from app.vectorstore.vector_store import VectorStore
+from app.retrieval.retriever import Retriever
 
-store = VectorStore()
+retriever = Retriever()
 
-print(store.count())
+results = retriever.search(
+    "What is supervised learning?"
+)
+
+print(len(results))
+
+print(results[0].metadata)
+
+print(results[0].distance)
+
+print(results[0].content[:300])

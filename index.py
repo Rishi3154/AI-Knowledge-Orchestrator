@@ -10,7 +10,7 @@ from app.ingestion.document_loader import PDFLoader
 from app.ingestion.chunker import DocumentChunker
 from app.embeddings.embedder import OllamaEmbedder
 from app.vectorstore.vector_store import VectorStore
-
+from app.core.config import EMBEDDING_MODEL
 
 def main():
 
@@ -35,8 +35,9 @@ def main():
     # ----------------------------------------------------
 
     chunker = DocumentChunker()
-    embedder = OllamaEmbedder()
+    embedder = OllamaEmbedder(EMBEDDING_MODEL)
     vector_store = VectorStore()
+    vector_store.delete_collection()
 
     # Uncomment this if you want a fresh database every run.
     # vector_store.delete_collection()

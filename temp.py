@@ -1,11 +1,5 @@
-from app.embeddings.embedder import OllamaEmbedder
+from app.vectorstore.vector_store import VectorStore
 
-embedder = OllamaEmbedder()
+store = VectorStore()
 
-embedding = embedder.embed("Machine Learning")
-
-print(type(embedding))
-
-print(len(embedding))
-
-print(embedding[:5])
+print("Vectors:", store.count())
