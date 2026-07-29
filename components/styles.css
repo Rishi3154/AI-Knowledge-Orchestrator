@@ -1,0 +1,396 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ==========================================================
+   DESIGN TOKENS
+========================================================== */
+
+:root{
+
+    --bg:#F9EBDE;
+    --card:#F9EBDE;
+
+    --primary:#F9EBDE;
+    --primary-hover:#F9EBDE;
+
+    --text:#1E4174;
+    --muted:#1E4174;
+
+    --border:#E5E7EB;
+
+    --radius:18px;
+
+    --shadow:
+        0 10px 30px rgba(15,23,42,.06);
+
+}
+
+/* ==========================================================
+   APP
+========================================================== */
+
+html,
+body{
+
+    font-family:'Inter',sans-serif;
+
+}
+
+[data-testid="stAppViewContainer"]{
+
+    background:linear-gradient(
+        180deg,
+        #F9EBDE 0%,
+        #F9EBDE 100%
+    );
+
+}
+
+[data-testid="stHeader"]{
+
+    background:transparent;
+
+}
+
+[data-testid="stToolbar"]{
+
+    background:transparent;
+
+}
+
+.main{
+
+    background:transparent;
+
+}
+
+.block-container{
+
+    max-width:1450px;
+
+    padding-top:1.2rem;
+
+    padding-bottom:2rem;
+
+}
+
+/* ==========================================================
+   TYPOGRAPHY
+========================================================== */
+
+.app-title{
+
+    font-size:2.5rem;
+
+    font-weight:800;
+
+    color:var(--text);
+
+    letter-spacing:-0.8px;
+
+    line-height:1.1;
+
+}
+
+.hero-title{
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    color:var(--text);
+
+    margin-bottom:.35rem;
+
+}
+
+h2{
+
+    color:var(--text);
+
+    font-weight:700;
+
+}
+
+h3,h4,h5,h6{
+
+    color:var(--text);
+
+}
+
+p,
+span,
+label{
+
+    color:var(--muted);
+
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.header-divider{
+
+    margin-top:18px;
+
+    margin-bottom:18px;
+
+    border-top:1px solid var(--border);
+
+}
+
+/* ==========================================================
+   SIDEBAR
+========================================================== */
+
+[data-testid="column"]:first-child{
+
+    padding-right:1rem;
+
+}
+
+[data-testid="stVerticalBlockBorderWrapper"]{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    transition:.25s;
+
+}
+
+[data-testid="stVerticalBlockBorderWrapper"]:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.stButton>button{
+
+    height:42px;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+    border:none;
+
+    transition:.2s;
+
+}
+
+.stButton>button:hover{
+
+    transform:translateY(-1px);
+
+}
+
+/* ==========================================================
+   METRICS
+========================================================== */
+
+[data-testid="stMetric"]{
+
+    background:white;
+
+    border-radius:16px;
+
+    border:1px solid var(--border);
+
+    padding:16px;
+
+    box-shadow:
+        0 6px 20px rgba(15,23,42,.05);
+
+}
+
+/* ==========================================================
+   FILE UPLOADER
+========================================================== */
+
+[data-testid="stFileUploader"]{
+
+    border:2px dashed #CBD5E1;
+
+    border-radius:18px;
+
+    padding:18px;
+
+    background:#FAFBFC;
+
+}
+
+/* ==========================================================
+   CHAT INPUT
+========================================================== */
+
+[data-testid="stChatInput"]{
+
+    margin-top:15px;
+
+}
+
+[data-testid="stChatInput"] textarea{
+
+    border-radius:10px !important;
+
+    border:1px solid #D1D5DB !important;
+
+
+}
+
+/* ==========================================================
+   USER MESSAGE
+========================================================== */
+
+.user-message{
+
+    background:#EEF2FF;
+
+    border-left:4px solid var(--primary);
+
+    border-radius:16px;
+
+    padding:18px;
+
+    margin:12px 0;
+
+}
+
+.user-message *{
+
+    color:var(--text)!important;
+
+}
+
+/* ==========================================================
+   SOURCE CARD
+========================================================== */
+
+.source-card{
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:16px;
+
+    margin-top:12px;
+
+    box-shadow:
+        0 4px 14px rgba(15,23,42,.04);
+
+}
+
+/* ==========================================================
+   ALERTS
+========================================================== */
+
+.stAlert{
+
+    border-radius:16px;
+
+}
+
+/* ==========================================================
+   EXPANDERS
+========================================================== */
+
+.streamlit-expanderHeader{
+
+    font-weight:600;
+
+}
+
+/* ==========================================================
+   IMAGES
+========================================================== */
+
+img{
+
+    border-radius:18px;
+
+}
+
+/* ==========================================================
+   DIVIDERS
+========================================================== */
+
+hr{
+
+    border:none;
+
+    border-top:1px solid var(--border);
+
+}
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#F1F5F9;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#CBD5E1;
+
+    border-radius:999px;
+
+}
+
+.hero{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:4rem 2rem;
+}
+
+.hero-icon{
+    width:90px;
+    height:90px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#1E4174;
+    color:white;
+    font-size:42px;
+    margin-bottom:24px;
+}
+
+.hero-heading{
+    font-size:46px;
+    font-weight:800;
+    color:#1E4174;
+    margin-bottom:12px;
+}
+
+.hero-subheading{
+    font-size:18px;
+    color:#64748B;
+    max-width:700px;
+    line-height:1.8;
+}

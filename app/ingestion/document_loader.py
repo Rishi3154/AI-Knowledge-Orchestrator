@@ -54,4 +54,10 @@ class PDFLoader:
 
         pdf.close()
 
+        if not documents:
+
+            print(f"No extractable text found in '{self.pdf_path.name}'. "
+        "This PDF may be scanned or image-based. OCR support will be added in a future version."
+        )
+
         return documents

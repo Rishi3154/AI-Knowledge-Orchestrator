@@ -20,13 +20,17 @@ PROCESSED_DATA_DIR = DATA_DIR / "processed"
 
 CHROMA_DB_DIR = PROJECT_ROOT / "chroma_db"
 
+INDEX_DIR = DATA_DIR / "index"
+
+CHUNK_INDEX_FILE = INDEX_DIR / "chunks.json"
+
 # ==========================================================
 # Models
 # ==========================================================
 
 EMBEDDING_MODEL = "nomic-embed-text"
 
-LLM_MODEL = "llama3.2"
+LLM_MODEL = "llama3.2:latest"
 
 # ==========================================================
 # Chunking
@@ -55,3 +59,10 @@ COLLECTION_NAME = "knowledge_base"
 # ==========================================================
 
 SUPPORTED_EXTENSIONS = [".pdf"]
+
+UPLOAD_DIR = DATA_DIR / "uploads"
+
+UPLOAD_DIR.mkdir(
+    parents=True,
+    exist_ok=True,
+)

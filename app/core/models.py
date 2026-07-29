@@ -4,6 +4,7 @@ Application Data Models
 
 from dataclasses import dataclass
 from typing import Dict, List
+from dataclasses import dataclass
 
 
 @dataclass(slots=True)
@@ -56,3 +57,11 @@ class ChatResponse:
     retrieved_chunks: int
 
     latency: float
+
+
+@dataclass
+class IngestionResponse:
+    indexed: bool
+    pages: int
+    chunks: int
+    document: str

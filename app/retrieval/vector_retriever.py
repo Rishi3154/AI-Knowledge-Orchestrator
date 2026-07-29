@@ -1,29 +1,29 @@
 """
-retriever.py
+vector_retriever.py
 
-Semantic retrieval from ChromaDB.
+Semantic retrieval using ChromaDB.
 """
 
 from typing import List
 
+import chromadb
+
 from app.core.config import (
     CHROMA_DB_DIR,
     COLLECTION_NAME,
-    TOP_K,
     EMBEDDING_MODEL,
+    TOP_K,
 )
 from app.core.models import SearchResult
 from app.embeddings.embedder import OllamaEmbedder
 
-import chromadb
 
-
-class Retriever:
+class VectorRetriever:
     """
-    Retrieves the most relevant chunks for a user query.
+    Retrieves relevant chunks using vector similarity search.
     """
 
-    def __init__(self) -> None:
+    def __init__(self):
 
         self.embedder = OllamaEmbedder(EMBEDDING_MODEL)
 
@@ -31,18 +31,14 @@ class Retriever:
             path=str(CHROMA_DB_DIR)
         )
 
-        self.collection = self.client.get_collection(
-            COLLECTION_NAME
-        )
+        self.collection = self.client.get_or_create_collection(
+        COLLECTION_NAME)
 
     def search(
         self,
         query: str,
         top_k: int = TOP_K,
     ) -> List[SearchResult]:
-        """
-        Retrieve the most relevant chunks.
-        """
 
         embedding = self.embedder.embed(query)
 
@@ -70,7 +66,5 @@ class Retriever:
                     distance=float(distance),
                 )
             )
-
-        retrieved.sort(key=lambda x: x.distance)
 
         return retrieved

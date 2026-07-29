@@ -1,49 +1,56 @@
 """
-Document Chunker
+chunker.py
 
-Splits documents into overlapping chunks.
+Splits documents into overlapping chunks while preserving metadata.
 """
 
 from typing import List
-import uuid
+from uuid import uuid4
+
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from app.core.models import Document, Chunk
-from app.core.config import CHUNK_SIZE, CHUNK_OVERLAP
 
 
 class DocumentChunker:
     """
-    Creates overlapping chunks.
+    Splits Document objects into Chunk objects.
     """
+
+    def __init__(
+        self,
+        chunk_size: int = 500,
+        chunk_overlap: int = 100,
+    ) -> None:
+
+        self.splitter = RecursiveCharacterTextSplitter(
+            chunk_size=chunk_size,
+            chunk_overlap=chunk_overlap,
+            separators=[
+                "\n\n",
+                "\n",
+                ". ",
+                " ",
+                "",
+            ],
+        )
 
     def split(self, documents: List[Document]) -> List[Chunk]:
 
-        chunks = []
-
-        step = CHUNK_SIZE - CHUNK_OVERLAP
+        chunks: List[Chunk] = []
 
         for document in documents:
 
-            text = document.content
+            texts = self.splitter.split_text(document.content)
 
-            start = 0
+            for text in texts:
 
-            while start < len(text):
-
-                end = start + CHUNK_SIZE
-
-                chunk_text = text[start:end]
-
-                if chunk_text.strip():
-
-                    chunks.append(
-                        Chunk(
-                            chunk_id=str(uuid.uuid4()),
-                            content=chunk_text,
-                            metadata=document.metadata.copy(),
-                        )
+                chunks.append(
+                    Chunk(
+                        chunk_id=str(uuid4()),
+                        content=text,
+                        metadata=document.metadata.copy(),
                     )
-
-                start += step
+                )
 
         return chunks

@@ -68,3 +68,14 @@ class VectorStore:
         self.collection = self.client.get_or_create_collection(
             COLLECTION_NAME
         )
+
+    def delete_document(self,document: str,):
+        """
+        Delete all vectors belonging to a document.
+        """
+
+        self.collection.delete(
+            where={
+                "source": document,
+            }
+        )

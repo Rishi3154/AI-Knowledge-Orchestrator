@@ -3,7 +3,8 @@ index.py
 
 Indexes all PDFs inside data/raw into ChromaDB.
 """
-
+from app.indexing.chunk_index import ChunkIndex
+from app.core.config import CHUNK_INDEX_FILE
 from app.core.config import RAW_DATA_DIR
 from app.utils.helpers import discover_documents
 from app.ingestion.document_loader import PDFLoader
@@ -38,6 +39,7 @@ def main():
     embedder = OllamaEmbedder(EMBEDDING_MODEL)
     vector_store = VectorStore()
     vector_store.delete_collection()
+    chunk_index = ChunkIndex(CHUNK_INDEX_FILE)
 
     # Uncomment this if you want a fresh database every run.
     # vector_store.delete_collection()
@@ -48,7 +50,7 @@ def main():
     # ----------------------------------------------------
     # Process PDFs
     # ----------------------------------------------------
-
+    all_chunks = []
     for pdf in pdf_files:
 
         print(f"Processing: {pdf.name}")
@@ -58,6 +60,7 @@ def main():
         documents = loader.load()
 
         chunks = chunker.split(documents)
+        all_chunks.extend(chunks)
 
         embeddings = embedder.embed_many(
             [chunk.content for chunk in chunks]
@@ -74,7 +77,10 @@ def main():
         print(
             f"   ✓ Pages: {len(documents)} | Chunks: {len(chunks)}\n"
         )
-
+        print(f"CHUNK_INDEX_FILE = {CHUNK_INDEX_FILE}")
+        print(f"Absolute path = {CHUNK_INDEX_FILE.resolve()}")
+        print(f"Chunks to save = {len(all_chunks)}")
+        chunk_index.save(all_chunks)
     # ----------------------------------------------------
     # Summary
     # ----------------------------------------------------
@@ -88,6 +94,8 @@ def main():
     print(f"Vectors   : {vector_store.count()}")
 
     print("=" * 60)
+
+    
 
 
 if __name__ == "__main__":
