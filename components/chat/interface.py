@@ -97,24 +97,8 @@ def render_chat():
 
     if rag.retriever is None:
 
-        st.markdown(
-            """
-    <div class="hero">
-
-        <div class="hero-icon">📄</div>
-
-        <div class="hero-heading">
-            No Knowledge Base
-        </div>
-
-        <div class="hero-subheading">
-            Upload a PDF to start chatting.
-        </div>
-
-    </div>
-        """,
-            unsafe_allow_html=True,
-        )
+        st.write("📄 No Knowledge Base")
+        st.write("Upload a PDF to start chatting.")
 
         return
 
@@ -245,6 +229,3 @@ def render_chat():
             "chunks": response.retrieved_chunks,
         }
     )
-
-    # Clear input after sending
-    st.session_state.chat_prompt = ""

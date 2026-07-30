@@ -1,0 +1,770 @@
+[
+  {
+    "chunk_id": "19a31191-acf7-40dc-9123-c56b58b6887b",
+    "content": "10-Week ML/AI Internship Prep: Plan Evaluation & Complete\nRoadmap\nTL;DR\nYour original study guide is a solid 7.5/10 — well-structured and covers the right topics, but it critically\nmisses Data Structures & Algorithms (DSA) and underestimates the time needed for hands-on\nprojects. For an ML/AI internship, DSA isn’t just “nice to have” — it’s the gatekeeper to getting past\ntechnical interviews. With 40 hours/week over 10 weeks, this enhanced plan adds DSA alongside your",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 1
+    }
+  },
+  {
+    "chunk_id": "651a88e5-b4a6-4c1c-92c3-2095e14f7fb5",
+    "content": "technical interviews. With 40 hours/week over 10 weeks, this enhanced plan adds DSA alongside your\noriginal roadmap, integrates the best free resources for each topic, and allocates 20+ hours in the final\nweeks exclusively to portfolio projects. The result: a rigorous, interview-ready preparation that\ntransforms your guide from a learning curriculum into a job-winning system.\n1. Rating Your Original Plan: Strengths & Gaps",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 1
+    }
+  },
+  {
+    "chunk_id": "4361574b-965c-4555-9a10-f5afe4969b1e",
+    "content": "1. Rating Your Original Plan: Strengths & Gaps\nYour original study guide demonstrates excellent strategic thinking about ML/AI skill acquisition. The\nphased approach — moving from Python foundations through data literacy, hands-on AI models, core\nML, LLMs, and finally real-world projects — follows a pedagogically sound progression. As someone\nwith a CE background transitioning to MSCS, you’re in an ideal position to execute this because you",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 1
+    }
+  },
+  {
+    "chunk_id": "7b6076fd-e86b-43e2-a738-06c45ba897c8",
+    "content": "with a CE background transitioning to MSCS, you’re in an ideal position to execute this because you\nalready understand programming fundamentals, computer architecture, and likely have some exposure\nto algorithms. This isn’t starting from zero; it’s redirecting existing engineering instincts toward ML/\nAI-specific tooling and workflows.\nThe plan’s most significant strength is its emphasis on project-based learning. Too many ML learners",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 1
+    }
+  },
+  {
+    "chunk_id": "079bc95f-4d28-4a9c-9a97-a7f26b10dda5",
+    "content": "get stuck in “tutorial hell” — consuming courses without ever building anything original. Your Step 6\n(“Build Lots of Real-World AI Applications”) and the inclusion of mini-project workflows within each\nstep show you understand that portfolios get interviews, not certificates. The coverage of modern\nAI tooling — LangChain, RAG, vector databases, Streamlit — is particularly strong and aligned with\nwhat ML engineering teams actually use in 2025 (wordpress.com) . The recognition that no-code/low-",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 1
+    }
+  },
+  {
+    "chunk_id": "2a4e3260-f819-4514-8468-6c77b3ebfa3c",
+    "content": "what ML engineering teams actually use in 2025 (wordpress.com) . The recognition that no-code/low-\ncode tools (Crew AI, Langflow, n8n) have a place in an engineer’s toolkit also shows practical maturity\n— knowing when to reach for a visual workflow builder versus writing Python from scratch is a genuinely\nvaluable skill.\nHowever, there are three critical gaps that would prevent this plan from reliably landing an ML/AI",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 1
+    }
+  },
+  {
+    "chunk_id": "c9099353-8846-4f29-b499-bf60e4c85b90",
+    "content": "However, there are three critical gaps that would prevent this plan from reliably landing an ML/AI\ninternship. First and most importantly: the complete absence of Data Structures & Algorithms\n(DSA). Technical interviews for ML/AI roles still test coding problem-solving — not at FAANG-hard\nlevels necessarily, but you’ll absolutely face LeetCode-style questions. LogicMojo’s analysis of 200+ suc-\ncessful AI placements found that candidates who practiced DSA alongside ML learning had significantly",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 1
+    }
+  },
+  {
+    "chunk_id": "7e70d6c0-7c64-4435-b5e6-f4d42f58a20e",
+    "content": "higher success rates (logicmojo) . Second, the original plan lacks specific resource recommendations be-\nyond generic library names — “learn pandas” is good direction, but without knowing whether to use\nKaggle Learn, DataCamp, or a YouTube playlist, a beginner wastes hours evaluating options instead of\nlearning. Third, the timeline is too compressed for genuine competency — 10 weeks is achievable, but",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 1
+    }
+  },
+  {
+    "chunk_id": "ba1ac46b-9c88-48b1-b6a6-f5f1d73329a0",
+    "content": "only with extremely focused resource selection and aggressive project milestones. Without these addi-\ntions, the plan risks producing a learner who can discuss ML concepts but struggles to pass a coding\nscreen or demonstrate production-ready skills.\nGenerated by Kimi.ai",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 1
+    }
+  },
+  {
+    "chunk_id": "1deceae5-1e33-4197-a720-b8e5d7ded429",
+    "content": "Aspect\nOriginal Plan\nEnhanced Plan (This Guide)\nDSA Coverage\nNone —critical gap\n8-12 hrs/week dedicated LeetCode practice\nResource\nSpecificity\nGeneric library names only\nCurated courses, books, tutorials with links\nProject\nMilestones\nVague “build projects” step\n4 portfolio projects with weekly deliverables\nInterview\nPrep\nNot addressed\nIntegrated DSA + system design fundamentals\nTime\nAllocation\nUnclear\n40 hrs/week with precise hourly breakdowns\nLLM/AI\nAgents Depth\nGood coverage",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 2
+    }
+  },
+  {
+    "chunk_id": "c502093a-cd74-45af-a388-0a59bca519b9",
+    "content": "Allocation\nUnclear\n40 hrs/week with precise hourly breakdowns\nLLM/AI\nAgents Depth\nGood coverage\nEnhanced with LangChain v0.3 + Ollama local LLMs\nReal-World\nDeployment\nStreamlit mentioned\nFlask APIs, Docker, GitHub Actions added\n2. Why DSA Is Non-Negotiable for ML/AI Internships\nThe ML/AI field has a peculiar dual gatekeeping system. On one side, you need ML competency —\nknowing how to clean data, train models, evaluate performance, and deploy solutions. On the other",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 2
+    }
+  },
+  {
+    "chunk_id": "917b8b47-e18e-4b18-9247-5494e383e18e",
+    "content": "knowing how to clean data, train models, evaluate performance, and deploy solutions. On the other\nside, you need software engineering fundamentals — and DSA is the universal language of technical\ninterviewing. Even ML research internships at top companies include coding assessments. The NeetCode\n150/250 curriculum, built by a former Google SWE, has become the de facto standard for structured\nDSA preparation because it organizes problems by topic with dependency-aware sequencing (PracHub)",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 2
+    }
+  },
+  {
+    "chunk_id": "48ebfe27-96b0-4d30-9a70-3ecef774d138",
+    "content": "DSA preparation because it organizes problems by topic with dependency-aware sequencing (PracHub)\n. Following this alongside your ML learning ensures you don’t become the candidate who can explain\ntransformer architectures but can’t invert a binary tree.\nThe good news is that DSA for ML roles is less intense than for pure SWE roles.\nYou’re\nnot grinding LeetCode Hard graph problems daily. Most ML/AI internship interviews focus on Arrays,",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 2
+    }
+  },
+  {
+    "chunk_id": "953edbe2-0e5c-4eb6-969f-722f5538357e",
+    "content": "not grinding LeetCode Hard graph problems daily. Most ML/AI internship interviews focus on Arrays,\nHashMaps, Two Pointers, Sliding Window, basic Trees, and simple Dynamic Programming — roughly\nthe first half of NeetCode 150 (logicmojo) . The recommended approach in this plan dedicates 8-12\nhours per week consistently to DSA practice, which is suﬀicient to build interview-ready competency\nwithout derailing your ML learning. This parallel-track approach mirrors what successful candidates",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 2
+    }
+  },
+  {
+    "chunk_id": "df71b1dc-4880-42c8-9f45-e798986e0bee",
+    "content": "without derailing your ML learning. This parallel-track approach mirrors what successful candidates\nactually do — LogicMojo’s mentorship data shows that students who ran DSA practice alongside AI\nlearning (rather than sequencing them) had measurably better placement outcomes (logicmojo) .\nDSA practice also has a surprising secondary benefit for ML work: it sharpens the exact type of\nstructured thinking that debugging ML pipelines requires. When you’re tracking down why your",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 2
+    }
+  },
+  {
+    "chunk_id": "da5c1f13-6dc6-4483-945e-b39527c70313",
+    "content": "structured thinking that debugging ML pipelines requires. When you’re tracking down why your\nneural network’s loss isn’t converging, the systematic debugging approach you developed solving LeetCode\nproblems transfers directly. The pattern-matching skills from recognizing that a problem is a “sliding\nwindow” variant mirror the intuition for recognizing that a dataset needs a particular preprocessing",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 2
+    }
+  },
+  {
+    "chunk_id": "53e22778-7d07-4259-80d4-0936d45c49d6",
+    "content": "approach. DSA isn’t interview trivia — it’s deliberate practice for the problem-solving loops you’ll run\nconstantly as an ML engineer.\nGenerated by Kimi.ai",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 2
+    }
+  },
+  {
+    "chunk_id": "17c83aa6-a46a-4300-b8f9-d004136ab8b0",
+    "content": "3. The 10-Week Schedule: Complete Breakdown\nThe schedule below allocates 40 hours per week across six focus areas: Python (CS50P), DSA (Neet-\nCode/LeetCode), SQL & Data Literacy, ML Fundamentals (scikit-learn/PyTorch), AI/LLMs & Agents\n(LangChain/RAG), and Projects & Portfolio. The allocation shifts progressively from foundations (Weeks\n1-3) through ML core (Weeks 4-6) and AI/LLMs (Weeks 7-8) to an intensive project sprint (Weeks 9-10).\nFigure 1: 10-Week Schedule Timeline",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 3
+    }
+  },
+  {
+    "chunk_id": "974f4b23-8020-4c5a-a83d-7d4f257b75eb",
+    "content": "Figure 1: 10-Week Schedule Timeline\n4. Phase 1: Foundations (Weeks 1-3)\nWeek 1: Python Deep Dive + DSA Kickoff\nDay\nFocus Area\nActivity\nHours\nResource\n1-3\nPython\nCS50P Lectures 0-3\n(Functions, Variables,\nConditionals)\n5\nCS50P\n4-5\nPython\nCS50P Problem Sets\n0-3\n4\nCS50P Problem Sets\n6-7\nPython\nCS50P Lectures 4-5\n(Libraries, Unit Tests)\n4\nCS50P\nDaily\nDSA\nNeetCode Arrays &\nHashing (5 problems)\n10\nNeetCode 150\nDaily\nSQL\nSQLBolt Lessons 1-9\n10\nSQLBolt\n5-7\nPython\nPersonal scripting",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 3
+    }
+  },
+  {
+    "chunk_id": "e1a732ce-dceb-47ff-95b9-0e9f05c39aa5",
+    "content": "10\nNeetCode 150\nDaily\nSQL\nSQLBolt Lessons 1-9\n10\nSQLBolt\n5-7\nPython\nPersonal scripting\nproject (web scraper or\nautomation)\n7\nSelf-directed\nTotal: 40 hours | Python: 15h, DSA: 10h, SQL: 10h, ML: 5h\nGenerated by Kimi.ai",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 3
+    }
+  },
+  {
+    "chunk_id": "b35adc80-e460-4da3-a4bb-22bb7bc57d16",
+    "content": "Week 1 front-loads Python because your CE background means you can accelerate through CS50P faster\nthan a complete beginner.\nCS50P is the best Python foundation course available — it’s taught by\nDavid Malan with Harvard-level rigor, covers not just syntax but code style, type hints, docstrings, list\ncomprehensions, and generators that most beginner courses skip (rivenintech.com) . The problem sets",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 4
+    }
+  },
+  {
+    "chunk_id": "bc3d1638-7c49-4f5c-8643-e32bc59f1025",
+    "content": "comprehensions, and generators that most beginner courses skip (rivenintech.com) . The problem sets\nare genuinely engaging and build real skills. Don’t skip the “Et Cetera” lecture — it covers Pythonic\npatterns you’ll use constantly.\nDSA starts immediately with NeetCode’s Arrays & Hashing section because these are the most fre-\nquently asked problem types and they require minimal algorithmic theory to get started. The pattern of",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 4
+    }
+  },
+  {
+    "chunk_id": "ccb54ddb-412c-43f9-875e-473ec5b43fa5",
+    "content": "“use a HashMap for O(1) lookups” is something you’ll internalize quickly and use constantly. Aim for 5\nproblems in the first week — quality over quantity, with full understanding of the optimal solution.\nSQLBolt is the fastest path to SQL fundamentals — it’s entirely browser-based, requires no setup, and\ncovers 90% of the SQL you’ll write in real-world data work (ai2sql.io) . Lessons 1-9 take you from basic",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 4
+    }
+  },
+  {
+    "chunk_id": "c0abfadd-35ad-4391-a4d4-f466b8d460e8",
+    "content": "SELECT queries through JOINs and NULL handling. The interactive exercises give immediate feedback,\nwhich is crucial for early SQL learning where syntax errors are frustratingly opaque.\nWeek 2: Python Mastery + DSA Progression\nDay\nFocus Area\nActivity\nHours\nResource\n1-3\nPython\nCS50P Lectures 6-8\n(File I/O, Regular\nExpressions, OOP)\n5\nCS50P\n4-5\nPython\nCS50P Final Project +\nProblem Sets\n5\nCS50P\n6-7\nPython\nKaggle Python\nmicro-course + Pandas\nintro\n4\nKaggle Learn\nDaily\nDSA\nNeetCode Two Pointers",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 4
+    }
+  },
+  {
+    "chunk_id": "aefa3870-e0de-4c0e-9e13-a862330a5cef",
+    "content": "6-7\nPython\nKaggle Python\nmicro-course + Pandas\nintro\n4\nKaggle Learn\nDaily\nDSA\nNeetCode Two Pointers\n+ Stack (5 problems)\n10\nNeetCode 150\nDaily\nSQL\nSQLBolt Lessons 10-18\n+ Kaggle SQL course\nstart\n10\nSQLBolt + Kaggle\n5-7\nData\nNumPy fundamentals\n(array operations,\nbroadcasting)\n6\nNumPy Fundamentals\n(Datacamp)\nTotal: 40 hours | Python: 12h, DSA: 10h, SQL: 10h, ML: 8h\nWeek 2 completes CS50P and transitions into data-specific Python tooling. The Kaggle Python micro-",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 4
+    }
+  },
+  {
+    "chunk_id": "106d7727-47bc-4a55-bae7-56d58257daec",
+    "content": "Week 2 completes CS50P and transitions into data-specific Python tooling. The Kaggle Python micro-\ncourse is excellent for data science-oriented Python — it’s concise, practical, and browser-based (sub-\nstack.com) . Immediately follow it with Kaggle’s Pandas micro-course since pandas is the primary data\nmanipulation tool you’ll use for all subsequent ML work. The Kaggle ecosystem is particularly valuable\nbecause all exercises run in-browser with real datasets, eliminating setup friction.",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 4
+    }
+  },
+  {
+    "chunk_id": "48463be4-9970-4ff3-ad80-fa71399f7987",
+    "content": "because all exercises run in-browser with real datasets, eliminating setup friction.\nDSA progression moves into Two Pointers and Stack problems.\nThese patterns are less common\nin ML interviews than Arrays/Hashing but build crucial algorithmic intuition. The Two Pointer tech-\nnique (maintaining left/right pointers that converge) appears in problems involving sorted arrays and\npalindromes — the pattern recognition skills transfer to optimizing data processing pipelines.\nGenerated by Kimi.ai",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 4
+    }
+  },
+  {
+    "chunk_id": "37055c8f-508a-43be-a5f6-52fb1acd5bee",
+    "content": "SQL learning expands from SQLBolt’s basics into Kaggle’s SQL micro-course, which introduces window\nfunctions and more complex aggregations that SQLBolt intentionally skips (ai2sql.io) . Window functions\n(ROW_NUMBER, RANK, LAG, LEAD) are essential for time-series analysis and feature engineering in\nML pipelines — they’re the difference between basic SQL fluency and data-engineering-ready skills.\nWeek 3: Data Literacy + DSA Consolidation\nDay\nFocus Area\nActivity\nHours\nResource\n1-3\nData",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 5
+    }
+  },
+  {
+    "chunk_id": "44f6069f-0ed9-4a05-a3ae-0a46cb3555e0",
+    "content": "Week 3: Data Literacy + DSA Consolidation\nDay\nFocus Area\nActivity\nHours\nResource\n1-3\nData\nPandas deep dive:\nmerging, groupby,\ntime-series\n6\nKaggle Learn + Pandas\ndocs\n4-5\nData\nMatplotlib & Seaborn\nvisualization mastery\n6\nSeaborn Tutorials\n(KDnuggets)\n(KDnuggets)\n6-7\nData\nEnd-to-end EDA\nproject on Kaggle\ndataset\n6\nSelf-directed\nDaily\nDSA\nNeetCode Binary\nSearch + Sliding\nWindow (5 problems)\n12\nNeetCode 150\nDaily\nSQL\nSQL practice on\nDataLemur/LeetCode\nSQL (10 problems)\n10\nDataLemur",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 5
+    }
+  },
+  {
+    "chunk_id": "97575709-89a4-4f50-afea-2e80c1b95229",
+    "content": "12\nNeetCode 150\nDaily\nSQL\nSQL practice on\nDataLemur/LeetCode\nSQL (10 problems)\n10\nDataLemur\nTotal: 40 hours | DSA: 12h, SQL: 10h, Data: 12h, ML: 6h\nWeek 3 is the data literacy consolidation week. Pandas merging, multi-indexing, and time-series\nhandling are the operations you’ll perform in virtually every ML project.\nThe Kaggle Learn micro-\ncourses combined with the oﬀicial pandas documentation provide both guided learning and reference",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 5
+    }
+  },
+  {
+    "chunk_id": "addc8fa5-dd93-4db5-a96c-8c1f5e10cd92",
+    "content": "courses combined with the oﬀicial pandas documentation provide both guided learning and reference\nmaterial. For visualization, seaborn’s statistical plotting capabilities (distribution plots, regression plots,\ncategorical plots) produce publication-quality figures with minimal code — understanding when to use\neach plot type is a skill that distinguishes competent data scientists from beginners (KDnuggets) .",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 5
+    }
+  },
+  {
+    "chunk_id": "78313b2b-eedd-4df3-b990-4d291eb7484c",
+    "content": "each plot type is a skill that distinguishes competent data scientists from beginners (KDnuggets) .\nThe EDA (Exploratory Data Analysis) project is your first mini-portfolio piece. Pick a Kaggle dataset\nwith interesting features — the Titanic dataset is classic for beginners, or choose something domain-\nrelevant to your interests. The goal isn’t model building yet; it’s demonstrating that you can load data,",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 5
+    }
+  },
+  {
+    "chunk_id": "525aa095-5249-4970-922e-83edf949d976",
+    "content": "handle missing values, create informative visualizations, and extract actionable insights. This project\ngoes on your GitHub with a clean README.\nDSA progresses to Binary Search and Sliding Window — both are high-frequency interview patterns.\nBinary Search variants (finding boundaries, rotated arrays) appear constantly because they’re easy to\nexplain but have subtle edge cases that trip up unprepared candidates. Sliding Window is essential for",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 5
+    }
+  },
+  {
+    "chunk_id": "ec626706-c6ea-4d0f-ab25-dce311e61a7c",
+    "content": "substring/subarray problems and has direct analogies to batch processing in ML pipelines.\n5. Phase 2: Machine Learning Core (Weeks 4-6)\nWeek 4: ML Fundamentals Begin\nGenerated by Kimi.ai",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 5
+    }
+  },
+  {
+    "chunk_id": "dbca8cf2-d2d0-4be0-8c7f-d59dfafeb132",
+    "content": "Day\nFocus Area\nActivity\nHours\nResource\n1-3\nML\nAndrew Ng ML\nSpecialization Course 1\n(Supervised Learning)\n8\nCoursera: ML\nSpecialization\n(wordpress.com)\n4-5\nML\nHands-On ML Book Ch.\n1-2 (End-to-end ML\nproject)\n8\nHands-On ML (Géron)\n(ML in Production)\n6-7\nML\nscikit-learn: Linear/\nLogistic Regression\nimplementation\n5\nscikit-learn docs\nDaily\nDSA\nNeetCode Tree\nproblems (BFS/DFS)\n12\nNeetCode 150\n5-7\nSQL\nAdvanced SQL: window\nfunctions practice\n7\nLeetCode SQL + Mode\nAnalytics",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 6
+    }
+  },
+  {
+    "chunk_id": "e5ad6e08-6ae1-4070-80b8-5d54daea1d62",
+    "content": "12\nNeetCode 150\n5-7\nSQL\nAdvanced SQL: window\nfunctions practice\n7\nLeetCode SQL + Mode\nAnalytics\nTotal: 40 hours | ML: 13h, DSA: 12h, SQL: 10h, Python: 5h\nWeek 4 introduces the Andrew Ng Machine Learning Specialization — the single most recom-\nmended ML course for beginners, with over 5 million enrolled students (wordpress.com) . The specializa-\ntion’s strength is diagnostic vocabulary: understanding why models underfit, overfit, or fail to generalize.",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 6
+    }
+  },
+  {
+    "chunk_id": "80ef2b5f-d19a-4e4c-8dca-fef1d69ca938",
+    "content": "This conceptual foundation prevents the common beginner mistake of throwing neural networks at every\nproblem without understanding whether the issue is data quality, feature engineering, or model selection.\nThe course uses Python, NumPy, and scikit-learn — tools you’re already familiar with from Weeks 1-3.\nParallel to the course, start reading Aurélien Géron’s “Hands-On Machine Learning with Scikit-\nLearn, Keras & TensorFlow” — widely considered the best practical ML book (FreeCodecamp) .",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 6
+    }
+  },
+  {
+    "chunk_id": "a6d0dd2a-f5f3-40d6-ae3e-50049b1ecc87",
+    "content": "Learn, Keras & TensorFlow” — widely considered the best practical ML book (FreeCodecamp) .\nThe book’s Chapter 2 presents a complete end-to-end ML project (predicting California housing prices)\nthat demonstrates the full workflow: data exploration, preprocessing, model selection, cross-validation,\nhyperparameter tuning, and deployment. Working through this alongside Andrew Ng’s theory creates a",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 6
+    }
+  },
+  {
+    "chunk_id": "4c146b69-0710-4775-913c-b3f6a877193a",
+    "content": "hyperparameter tuning, and deployment. Working through this alongside Andrew Ng’s theory creates a\npowerful learn-by-doing loop. Géron’s book is particularly valuable because it’s written by a practitioner\n(former YouTube video classification lead) and includes production-ready techniques that courses often\nskip (ML in Production) .\nscikit-learn is the primary library for classical ML — it implements virtually every algorithm you’ll need",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 6
+    }
+  },
+  {
+    "chunk_id": "8dfd6d03-8b4c-4733-8cb5-9e0e280e9be4",
+    "content": "with a consistent API: fit(), predict(), score() (Wikitechy) . By Week 4, you should be comfortable\nwith the standard workflow: train_test_split →preprocessing pipeline →model fitting →evaluation\nmetrics. Implementing Linear Regression and Logistic Regression from scratch (using NumPy) alongside\nscikit-learn’s built-in versions deepens understanding of what the library is actually doing under the hood.\nWeek 5: ML Algorithms + First ML Project\nDay\nFocus Area\nActivity\nHours\nResource\n1-3\nML",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 6
+    }
+  },
+  {
+    "chunk_id": "4b0fc0c4-b70a-4a21-a174-d177016752ee",
+    "content": "Week 5: ML Algorithms + First ML Project\nDay\nFocus Area\nActivity\nHours\nResource\n1-3\nML\nClassification\nalgorithms: SVM,\nDecision Trees, Random\nForest\n6\nHands-On ML Ch. 5-7\nGenerated by Kimi.ai",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 6
+    }
+  },
+  {
+    "chunk_id": "a370483d-19b0-4a88-9e79-90c189646bc5",
+    "content": "Table 6 – continued\nDay\nFocus Area\nActivity\nHours\nResource\n4-5\nML\nUnsupervised learning:\nK-Means, PCA\n4\nAndrew Ng Course 3 +\nHands-On ML\n6-7\nML\nProject: Customer\nChurn Predictor\n6\nSelf-directed\nDaily\nDSA\nNeetCode Heap +\nBacktracking (5\nproblems)\n10\nNeetCode 150\n5-7\nAI/LLMs\nOpenAI API basics:\ncompletions,\nembeddings\n5\nOpenAI API docs\n3-5\nData\nFeature engineering\ntechniques\n9\nHands-On ML Ch. 2 +\nKaggle notebooks\nTotal: 40 hours | ML: 14h, DSA: 10h, AI: 5h, Data: 9h, Projects: 2h",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 7
+    }
+  },
+  {
+    "chunk_id": "f00b5807-a0e0-4345-be3f-08f30a7ae77b",
+    "content": "Kaggle notebooks\nTotal: 40 hours | ML: 14h, DSA: 10h, AI: 5h, Data: 9h, Projects: 2h\nWeek 5 expands your algorithm toolkit while starting your first significant ML project: a Customer\nChurn Predictor. This is a classic binary classification problem that demonstrates end-to-end ML\ncompetency — data collection (use a public telecom dataset), cleaning, feature engineering, model training\n(compare Logistic Regression, Random Forest, and XGBoost), evaluation (precision, recall, F1-score —",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 7
+    }
+  },
+  {
+    "chunk_id": "9e3ddf68-8341-455d-981c-64b09c708bdc",
+    "content": "not just accuracy), and a simple Streamlit dashboard for predictions. The project should be GitHub-ready\nwith a comprehensive README explaining your methodology and results.\nFeature engineering is where ML transitions from “running library functions” to “genuine data science\nintuition”. Understanding when to create interaction terms, how to handle categorical variables (one-hot\nencoding vs. target encoding), and why feature scaling matters for some algorithms but not others —",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 7
+    }
+  },
+  {
+    "chunk_id": "3b7918ed-4861-4c30-b3e9-e641a85f548b",
+    "content": "encoding vs. target encoding), and why feature scaling matters for some algorithms but not others —\nthese decisions separate pipeline operators from ML practitioners. Hands-On ML Chapter 2 covers these\ntechniques comprehensively (ML in Production) .\nThe first exposure to OpenAI’s API marks the transition toward AI engineering. Understanding how\nto structure prompts, handle API responses, and manage rate limits is foundational for all subsequent",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 7
+    }
+  },
+  {
+    "chunk_id": "8594b1e8-c81f-4149-8f03-3635738f7b36",
+    "content": "LLM work. Start with simple completion requests before moving to embeddings — the embeddings API\nis what powers RAG systems, which you’ll build in Week 8.\nWeek 6: Deep Learning Introduction + Neural Networks\nDay\nFocus Area\nActivity\nHours\nResource\n1-3\nML\nNeural Networks:\nfeed-forward,\nbackpropagation\n8\nAndrew Ng Course 2 +\nHands-On ML Ch. 10\n4-5\nML\nPyTorch\nfundamentals (tensors,\nautograd, nn.Module)\n8\nPyTorch Oﬀicial\nTutorials\n(mljourney.com)\n6-7\nML\nBuild first neural\nnetwork: MNIST\nclassifier\n5",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 7
+    }
+  },
+  {
+    "chunk_id": "eb4a816d-7eac-419c-b63a-3014a13434cb",
+    "content": "8\nPyTorch Oﬀicial\nTutorials\n(mljourney.com)\n6-7\nML\nBuild first neural\nnetwork: MNIST\nclassifier\n5\nPyTorch tutorials\nGenerated by Kimi.ai",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 7
+    }
+  },
+  {
+    "chunk_id": "4184a05c-eb2d-4f1b-8dcf-862b73daa355",
+    "content": "Table 7 – continued\nDay\nFocus Area\nActivity\nHours\nResource\nDaily\nDSA\nNeetCode Graph +\nDynamic Programming\nbasics\n10\nNeetCode 150\n5-7\nAI/LLMs\nOllama setup + local\nLLM experimentation\n10\nOllama Tutorial (T\nRecommendation\nH.263)\nTotal: 40 hours | ML: 15h, DSA: 10h, AI: 10h, Projects: 5h\nWeek 6 introduces deep learning with PyTorch — and this is where framework choice matters.\nResearch consistently shows PyTorch is the better choice for beginners in 2025: it’s more Pythonic, has",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 8
+    }
+  },
+  {
+    "chunk_id": "86a2fa14-ce26-4d9f-8f6a-00a728a90e91",
+    "content": "cleaner debugging (standard Python debuggers work), and dominates the research community which\nmeans better tutorials and pre-trained models (acecloud.ai) . TensorFlow’s Keras API is simpler for\nbasic models, but PyTorch’s flexibility pays dividends when you move to custom architectures.\nFor\nML internships, PyTorch knowledge is increasingly expected — especially for roles involving LLMs or\ncomputer vision.",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 8
+    }
+  },
+  {
+    "chunk_id": "e4a53af1-0116-49f8-8fd0-0026df47425c",
+    "content": "computer vision.\nUnderstanding neural networks at the implementation level (not just calling model.fit()) is crucial.\nBuilding MNIST from scratch with PyTorch — defining the nn.Module, implementing the training loop\nwith autograd, and manually computing loss — gives you the intuition that makes debugging complex\nmodels possible later. The jump from scikit-learn’s declarative API to PyTorch’s imperative style is\nsignificant but necessary for any serious ML work.",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 8
+    }
+  },
+  {
+    "chunk_id": "f0004ff8-8f31-4be5-bc16-a07391b2f82d",
+    "content": "significant but necessary for any serious ML work.\nOllama becomes your local LLM infrastructure this week. Setting up Ollama to run models like Llama\n3.1 locally gives you unlimited experimentation without API costs (T Recommendation H.263) . The\nsetup is remarkably simple — one-line installation, then ollama run llama3.1 gets you a ChatGPT-like\ninterface running entirely on your machine. This enables rapid experimentation with prompt engineering,",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 8
+    }
+  },
+  {
+    "chunk_id": "8245f93c-74d1-40e1-86d6-48798cdfa5a3",
+    "content": "model comparison, and eventually RAG pipeline development without worrying about per-token pricing.\n6. Phase 3: AI, LLMs & Agents (Weeks 7-8)\nWeek 7: LangChain, RAG & Vector Databases\nDay\nFocus Area\nActivity\nHours\nResource\n1-2\nAI/LLMs\nLangChain\nfundamentals: Chains,\nPrompts, Models\n6\nLangChain Crash\nCourse (Udemy)\n(Udemy)\n3-4\nAI/LLMs\nVector databases:\nChromaDB setup &\nembeddings\n6\nChromaDB docs (Agix\nTechnologies)\n5-6\nAI/LLMs\nBuild RAG pipeline:\ndocument ingestion →\nretrieval →generation\n8",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 8
+    }
+  },
+  {
+    "chunk_id": "730af643-980e-4fb2-be7d-387ba9cf7d78",
+    "content": "Technologies)\n5-6\nAI/LLMs\nBuild RAG pipeline:\ndocument ingestion →\nretrieval →generation\n8\nLangChain RAG\nTutorial\nGenerated by Kimi.ai",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 8
+    }
+  },
+  {
+    "chunk_id": "84870fcf-c579-4041-8391-e7e58aad8c89",
+    "content": "Table 8 – continued\nDay\nFocus Area\nActivity\nHours\nResource\n7\nAI/LLMs\nRAG evaluation &\noptimization\n4\nSelf-directed\nDaily\nDSA\nLeetCode Mixed\npractice (previously\ncovered topics)\n8\nLeetCode\n5-7\nML\nModel evaluation &\nhyperparameter tuning\ndeep dive\n8\nHands-On ML Ch. 2 +\nscikit-learn docs\nTotal: 40 hours | AI/LLMs: 16h, DSA: 8h, ML: 12h, Projects: 4h\nWeek 7 is where your plan’s AI/LLM focus truly materializes. LangChain has become the standard",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 9
+    }
+  },
+  {
+    "chunk_id": "08a93b08-3c1c-41de-a2f0-3af5040b0822",
+    "content": "Week 7 is where your plan’s AI/LLM focus truly materializes. LangChain has become the standard\nframework for building LLM applications, and the latest v0.3 release significantly streamlined the API\n(Udemy) .\nThe core abstractions — ChatModels, PromptTemplates, Chains, and Agents — provide a\nconsistent interface for combining LLMs with external data sources and tools. Understanding when to",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 9
+    }
+  },
+  {
+    "chunk_id": "1bd45cdd-bf67-4c36-a9b4-719c1a833f83",
+    "content": "consistent interface for combining LLMs with external data sources and tools. Understanding when to\nuse a simple Chain versus a full Agent with tool-calling capabilities is a key architectural decision in LLM\napplication design.\nRetrieval-Augmented Generation (RAG) is the most important LLM pattern for practical appli-\ncations. Instead of relying on an LLM’s static training knowledge, RAG retrieves relevant documents",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 9
+    }
+  },
+  {
+    "chunk_id": "fa8198e6-ce64-4799-b0ea-ac7603c53642",
+    "content": "cations. Instead of relying on an LLM’s static training knowledge, RAG retrieves relevant documents\nfrom a vector database and injects them into the prompt context — dramatically improving accuracy\nfor domain-specific queries (wordpress.com) . Building a complete RAG pipeline involves: (1) document\nloading and chunking, (2) embedding generation (using OpenAI or local models via Ollama), (3) vec-\ntor storage in ChromaDB, (4) similarity search for relevant chunks, and (5) response generation with",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 9
+    }
+  },
+  {
+    "chunk_id": "99588885-3836-4168-ac39-4eaf168e0fb1",
+    "content": "retrieved context. This is a substantial project that becomes a major portfolio piece.\nChromaDB is the recommended vector database for beginners — it’s lightweight, open-source, and has\nexcellent LangChain integration (Agix Technologies) . For prototyping and learning, it requires zero\ninfrastructure setup (runs embedded in your Python process). Understanding vector similarity search —\nhow embeddings convert text into high-dimensional vectors and how cosine similarity finds “close” vectors",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 9
+    }
+  },
+  {
+    "chunk_id": "aee68daf-55e2-4a85-ab49-861924c67819",
+    "content": "— is foundational modern AI engineering knowledge.\nWeek 8: AI Agents + Project Integration\nDay\nFocus Area\nActivity\nHours\nResource\n1-2\nAI/LLMs\nLangGraph: building\nmulti-agent workflows\n6\nLangGraph docs\n3-4\nAI/LLMs\nBuild AI Email\nTriage Bot\n(LangChain + RAG +\nStreamlit)\n10\nSelf-directed\n5\nAI/LLMs\nNo-code tools: explore\nLangflow, Crew AI\n4\nLangflow\n6-7\nProjects\nDeploy projects: Flask\nAPIs, Docker basics\n6\nFlask docs + Docker\ndocs\nGenerated by Kimi.ai",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 9
+    }
+  },
+  {
+    "chunk_id": "a2ffe5ac-1841-43a3-8513-4b174c29862d",
+    "content": "Table 9 – continued\nDay\nFocus Area\nActivity\nHours\nResource\nDaily\nDSA\nLeetCode mixed + SQL\npractice\n8\nLeetCode + DataLemur\n7\nCareer\nGitHub cleanup, resume\ndraft, LinkedIn update\n6\nSelf-directed\nTotal: 40 hours | AI/LLMs: 14h, Projects: 10h, DSA: 8h, Career: 6h, ML: 2h\nWeek 8 integrates everything into production-like projects. The AI Email Triage Bot combines multi-\nple skills: using LangChain to process emails, vector storage for historical context, LLM summarization,",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 10
+    }
+  },
+  {
+    "chunk_id": "6847d3cd-ad92-474b-bb5b-bb4a918b39a1",
+    "content": "and a Streamlit dashboard for user interaction. This isn’t a toy project — it’s architecturally similar\nto real enterprise AI tools. Building it demonstrates that you can combine APIs, databases, and UI\ncomponents into a cohesive application.\nLangGraph (LangChain’s extension for building agent workflows) enables multi-step reasoning where\nan agent can plan, execute tools, observe results, and iterate — the “agent loop” pattern that powers",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 10
+    }
+  },
+  {
+    "chunk_id": "f58e2512-951e-4d6d-8760-4eefed2161cc",
+    "content": "sophisticated AI applications (onlinetutorials.me) . Understanding this pattern is increasingly important\nas companies move beyond simple Q&A chatbots to AI systems that can actually perform tasks.\nDeployment skills — building Flask APIs, containerizing with Docker, and hosting on platforms like\nRender or Hugging Face Spaces — transform notebooks into production artifacts. An ML model that\nonly runs on your laptop is a prototype; an ML model accessible via REST API is a product.\nFor",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 10
+    }
+  },
+  {
+    "chunk_id": "03e6bbaf-1a67-454c-a1c1-78d2b65e3213",
+    "content": "only runs on your laptop is a prototype; an ML model accessible via REST API is a product.\nFor\ninternships, demonstrating deployment awareness signals that you understand the full ML lifecycle, not\njust the training phase.\n7. Phase 4: Project Sprint & Interview Prep (Weeks 9-10)\nWeek 9: Portfolio Project Development\nDay\nFocus Area\nActivity\nHours\nResource\n1-3\nProjects\nProject: AI\nKnowledge Base\nAssistant (full RAG\napp)\n15\nSelf-directed\n4-5\nProjects\nProject:\nData-Driven\nRecommendation\nEngine\n10",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 10
+    }
+  },
+  {
+    "chunk_id": "1fe4ec59-d338-4cb8-8488-a9d337cc0122",
+    "content": "app)\n15\nSelf-directed\n4-5\nProjects\nProject:\nData-Driven\nRecommendation\nEngine\n10\nSelf-directed\n6-7\nProjects\nPolish GitHub repos,\nwrite READMEs,\ncreate demos\n7\nSelf-directed\nDaily\nDSA\nLeetCode medium\nproblems + mock\ninterview practice\n8\nLeetCode + Pramp\nGenerated by Kimi.ai",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 10
+    }
+  },
+  {
+    "chunk_id": "c9b65040-afee-4fbe-af17-23a66bc2cc7e",
+    "content": "Total: 40 hours | Projects: 25h, DSA: 8h, Polish: 7h\nWeek 9 is project sprint week. The goal is completing two substantial portfolio projects:\nProject 1: AI Knowledge Base Assistant — A full RAG application that ingests documents (PDFs,\nMarkdown files, or web pages), stores them in a vector database, and answers questions via a Streamlit\ninterface. This demonstrates LangChain, vector databases, embeddings, and UI development. Deploy it",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 11
+    }
+  },
+  {
+    "chunk_id": "b973541c-3905-41e1-9d6d-bb8a520782af",
+    "content": "interface. This demonstrates LangChain, vector databases, embeddings, and UI development. Deploy it\non Streamlit Community Cloud for a live demo link you can share with recruiters.\nProject 2: Data-Driven Recommendation Engine — Use clustering (K-Means or DBSCAN) on a\npurchase history dataset to segment users, then build a simple content-based recommender using scikit-\nlearn. Expose recommendations via a Flask API with proper documentation. This demonstrates classical",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 11
+    }
+  },
+  {
+    "chunk_id": "c1e16d53-0b22-4213-998b-92518428d8e8",
+    "content": "ML skills alongside API development — showing versatility across the ML stack.\nThe key to portfolio projects is README quality. Each project needs: (1) clear problem statement,\n(2) tech stack list, (3) setup instructions, (4) architecture diagram, (5) demo screenshots or GIFs, and (6)\ndiscussion of challenges faced and trade-offs made. A project with a great README gets attention; a\nproject with code-only gets ignored.\nWeek 10: Final Polish + Interview Readiness\nDay\nFocus Area\nActivity\nHours",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 11
+    }
+  },
+  {
+    "chunk_id": "7fbca2fa-d4c4-4f3e-84f5-d5dcb2cdc35d",
+    "content": "Week 10: Final Polish + Interview Readiness\nDay\nFocus Area\nActivity\nHours\nResource\n1-3\nProjects\nCapstone:\nEnd-to-End ML\nPipeline\n(MLOps-style)\n15\nSelf-directed\n4-5\nProjects\nDeploy all projects,\ncreate portfolio website\n8\nGitHub Pages +\nStreamlit\n6-7\nDSA\nIntensive LeetCode:\nfocus on top 50 most\ncommon\n10\nLeetCode + NeetCode\n5-7\nCareer\nResume finalization,\nLinkedIn optimization,\napply to internships\n7\nSelf-directed\nTotal: 40 hours | Projects: 23h, DSA: 10h, Career: 7h",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 11
+    }
+  },
+  {
+    "chunk_id": "ba99643a-f089-4a5c-b7e1-36639c8db8c3",
+    "content": "apply to internships\n7\nSelf-directed\nTotal: 40 hours | Projects: 23h, DSA: 10h, Career: 7h\nWeek 10’s capstone project ties everything together: an end-to-end ML pipeline that includes data\ningestion, preprocessing, model training with experiment tracking (MLflow), automated evaluation, and\nAPI deployment. This demonstrates MLOps awareness — the engineering practices that separate aca-\ndemic ML from production ML. Even a simplified version (using GitHub Actions for automation instead of",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 11
+    }
+  },
+  {
+    "chunk_id": "188dfb39-56ab-46d6-83f3-8f78618dfa28",
+    "content": "Airflow) shows you understand that ML systems require ongoing maintenance, not just one-time training.\nFinal DSA push focuses on the most commonly asked problem types. By Week 10, you should have\ncompleted roughly 60-80 NeetCode problems across Arrays, Hashing, Two Pointers, Sliding Window,\nBinary Search, Trees, and basic Graph/DP. This is suﬀicient for ML/AI internship interviews, which\ntypically don’t reach the diﬀiculty of pure SWE roles (logicmojo) . Practice explaining your solutions out",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 11
+    }
+  },
+  {
+    "chunk_id": "16e09aa6-54d3-4b82-b28e-e5335d2acf50",
+    "content": "loud — communication is as important as correctness in interviews.\nThe final career tasks — resume polish, LinkedIn optimization, and beginning applications — should\nhappen simultaneously with project completion. Your resume should lead with technical skills (Python,\nGenerated by Kimi.ai",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 11
+    }
+  },
+  {
+    "chunk_id": "db83ebe4-498e-48ce-8efe-f4ac0cf6efc5",
+    "content": "PyTorch, scikit-learn, LangChain, SQL) followed by project descriptions with quantified outcomes (“Built\nRAG pipeline achieving 85% answer relevance on domain-specific queries”). Apply broadly: LinkedIn,\ncompany career pages, AngelList for startups, and your university’s career services. The goal in Week 10\nisn’t to get an offer — it’s to get conversations started while your skills are fresh.\n8. Curated Resource Guide: The Best Free Tools for Each Topic\nPython Foundations\nResource\nType\nTime",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 12
+    }
+  },
+  {
+    "chunk_id": "d4b30839-697a-4fcc-95d3-0cdbb8aea101",
+    "content": "8. Curated Resource Guide: The Best Free Tools for Each Topic\nPython Foundations\nResource\nType\nTime\nBest For\nCS50P (Harvard)\n(rivenintech.com)\nVideo course +\nproblem sets\n30-40 hours\nBest Python foundation for\nengineers\nKaggle Learn Python\n(substack.com)\nInteractive\nmicro-course\n6-10 hours\nData-science-oriented Python\nbasics\nReal Python\nArticles + tutorials\nOngoing\nReference for specific topics\nCS50P is the undisputed best starting point. David Malan’s teaching style, the engaging problem sets,",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 12
+    }
+  },
+  {
+    "chunk_id": "3c357bbc-df8d-4c56-90b9-05871e9dda9d",
+    "content": "and the coverage of Pythonic patterns (comprehensions, generators, type hints) make it superior to\ngeneric Python courses (rivenintech.com) . The course assumes no prior programming experience, but\nyour CE background means you’ll move through the early lectures quickly and benefit most from the\nlater lectures on libraries, file I/O, and code style.\nData Structures & Algorithms\nResource\nType\nTime\nBest For\nNeetCode 150 (PracHub)\nCurated problem\nlist + videos\n80-100 hours",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 12
+    }
+  },
+  {
+    "chunk_id": "e14900df-b9d7-48ca-aebf-7667e3a088be",
+    "content": "Resource\nType\nTime\nBest For\nNeetCode 150 (PracHub)\nCurated problem\nlist + videos\n80-100 hours\nStructured DSA interview prep\nLeetCode\nProblem platform\nOngoing\nPractice problems, mock\nassessments\nDataLemur\nSQL + DSA\nproblems\n10-20 hours\nData science interview focus\nNeetCode’s structured roadmap is the highest-ROI DSA resource for time-constrained learners.\nThe\ndependency-aware sequencing (master Arrays before Two Pointers, learn Trees before Graphs) eliminates",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 12
+    }
+  },
+  {
+    "chunk_id": "cde7d394-657d-427a-b285-9b4bbce04342",
+    "content": "the random-walk problem of unsorted LeetCode practice (PracHub) . For ML/AI roles, focus on the first\n100 problems — the remaining 50 are more relevant for FAANG SWE roles than ML internships.\nSQL & Data Literacy\nResource\nType\nTime\nBest For\nSQLBolt (ai2sql.io)\nInteractive browser\ntutorial\n4-8 hours\nZero-setup SQL fundamentals\nKaggle Learn SQL\nInteractive\nmicro-course\n6-8 hours\nData science SQL patterns\nGenerated by Kimi.ai",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 12
+    }
+  },
+  {
+    "chunk_id": "3d880a5c-c193-4324-beb8-f305a87fc1c8",
+    "content": "Table 14 – continued\nResource\nType\nTime\nBest For\nMode Analytics SQL\nTutorial + real\ndatasets\n10-15 hours\nAnalytics-focused SQL\nDataLemur\nPractice problems\n5-10 hours\nSQL interview preparation\nSQLBolt is the fastest on-ramp — no signup, no installation, immediate feedback (ai2sql.io) . But it\nintentionally stops at basics, so follow it with Kaggle’s SQL course for window functions and complex\njoins (mimo.org) .\nMode Analytics has the best free tutorial for analytics-style SQL (GROUP BY,",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 13
+    }
+  },
+  {
+    "chunk_id": "3f22fc18-2713-4472-9919-34971bb998be",
+    "content": "joins (mimo.org) .\nMode Analytics has the best free tutorial for analytics-style SQL (GROUP BY,\nwindow functions, CTEs) with realistic datasets. For ML specifically, focus on: SELECT/JOIN fluency,\naggregation with GROUP BY, window functions for time-series, and subqueries for feature engineering.\nMachine Learning Fundamentals\nResource\nType\nTime\nBest For\nAndrew Ng ML\nSpecialization\n(wordpress.com)\nCoursera course (3\ncourses)\n40-60 hours\nML theory + conceptual\nfoundation\nHands-On ML (Géron) (ML",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 13
+    }
+  },
+  {
+    "chunk_id": "5c3161e1-bde9-497b-8109-cf5083a2f812",
+    "content": "Coursera course (3\ncourses)\n40-60 hours\nML theory + conceptual\nfoundation\nHands-On ML (Géron) (ML\nin Production)\nBook (O’Reilly)\n60-80 hours\nPractical ML implementation\nscikit-learn docs +\nexamples\nDocumentation\nOngoing\nReference for specific algorithms\nKaggle Competitions\nCompetitions +\nnotebooks\nOngoing\nReal-world problem practice\nAndrew Ng gives you the map; Géron’s book gives you the workshop (CourseFacts) . This pairing is the",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 13
+    }
+  },
+  {
+    "chunk_id": "8f2f5a1d-06ee-4935-9f54-2dfbf1f254ac",
+    "content": "most effective ML learning combination available. The specialization’s strength is diagnostic vocabulary\n— understanding why models fail — while the book provides production-ready code patterns (ML in\nProduction) . For a 10-week timeline, focus on: Courses 1-2 of the specialization (Supervised Learning +\nNeural Networks) and Chapters 1-7, 10-11 of Hands-On ML. Save the rest for post-internship deepening.\nDeep Learning Framework\nResource\nType\nTime\nBest For\nPyTorch Oﬀicial Tutorials",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 13
+    }
+  },
+  {
+    "chunk_id": "0a98d5bc-6327-4eb6-b122-ea3d5413e1b7",
+    "content": "Deep Learning Framework\nResource\nType\nTime\nBest For\nPyTorch Oﬀicial Tutorials\n(mljourney.com)\nCode tutorials\n15-20 hours\nDeep learning implementation\nFast.ai (Practical Deep\nLearning) (CourseFacts)\nFree course\n40-50 hours\nTop-down deep learning\nDeeplizard PyTorch Playlist\n(FreeCodecamp)\nYouTube videos\n10-15 hours\nVisual learners\nPyTorch is the recommended framework for beginners in 2025. It’s more Pythonic than Tensor-",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 13
+    }
+  },
+  {
+    "chunk_id": "d4d57635-9c68-4da0-9bc3-356e3e28799b",
+    "content": "PyTorch is the recommended framework for beginners in 2025. It’s more Pythonic than Tensor-\nFlow, dominates research (meaning better pre-trained models and community support), and has cleaner\ndebugging (acecloud.ai) . TensorFlow’s Keras API is simpler for basic models, but PyTorch’s flexibility\nGenerated by Kimi.ai",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 13
+    }
+  },
+  {
+    "chunk_id": "3c0052ba-8e7b-4095-acc3-bc8d7ce847fa",
+    "content": "pays dividends for any custom architecture work. The oﬀicial PyTorch tutorials — especially the “Learn\nthe Basics” series and the MNIST classifier walkthrough — provide the most reliable starting point.\nAI/LLMs & Agents\nResource\nType\nTime\nBest For\nLangChain Crash Course\n(Udemy) (Udemy)\nVideo course\n6-8 hours\nLangChain v0.3 fundamentals\nLangChain RAG Tutorial (\nLangChain)\nOﬀicial docs\n4-6 hours\nBuilding RAG pipelines\nOllama + local LLMs (T\nRecommendation H.263)\nTool + practice\n4-6 hours",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 14
+    }
+  },
+  {
+    "chunk_id": "f383e5a8-949e-487e-898e-51bc52886e09",
+    "content": "Building RAG pipelines\nOllama + local LLMs (T\nRecommendation H.263)\nTool + practice\n4-6 hours\nLocal LLM experimentation\nChromaDB docs (Agix\nTechnologies)\nDocumentation\n2-3 hours\nVector database basics\nLangGraph docs\nDocumentation\n3-4 hours\nMulti-agent workflows\nThe LangChain Crash Course for Beginners 2025 is the most up-to-date resource for the current v0.3 API\n(Udemy) . LangChain evolves quickly, and older tutorials often use deprecated APIs that won’t work",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 14
+    }
+  },
+  {
+    "chunk_id": "35fb5fa8-7ac3-4531-8b01-28fce2509372",
+    "content": "(Udemy) . LangChain evolves quickly, and older tutorials often use deprecated APIs that won’t work\nwith current versions. For RAG specifically, the oﬀicial LangChain RAG tutorial provides a complete\nworking example that you can adapt for your projects ( LangChain) . Ollama is essential infrastructure\n— running models locally eliminates API costs and enables rapid iteration (T Recommendation H.263) .\nDeployment & Tools\nResource\nType\nTime\nBest For\nStreamlit docs\nDocumentation\n3-4 hours\nML app UIs",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 14
+    }
+  },
+  {
+    "chunk_id": "72f9e873-352b-4053-8733-1a8c403346a4",
+    "content": "Deployment & Tools\nResource\nType\nTime\nBest For\nStreamlit docs\nDocumentation\n3-4 hours\nML app UIs\nFlask Quickstart\nDocumentation\n2-3 hours\nREST APIs for ML models\nDocker for ML (tutorial)\nTutorial\n3-4 hours\nContainerization\nHugging Face Spaces\nPlatform\n1-2 hours\nFree ML app hosting\n9. Expected Outcomes: What You’ll Know by Week 10\nBy the end of this 10-week program, you will have developed demonstrable competency across the",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 14
+    }
+  },
+  {
+    "chunk_id": "e822ee4c-29fd-4bba-a542-7430d3af2470",
+    "content": "By the end of this 10-week program, you will have developed demonstrable competency across the\nfull ML/AI stack — not just theoretical knowledge, but implemented, deployed projects that prove your\nskills to interviewers. The portfolio you’ll build consists of 4-5 substantial projects: an EDA analysis,\na classical ML model (churn prediction), a neural network classifier, a RAG-based AI assistant, and an",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 14
+    }
+  },
+  {
+    "chunk_id": "b250c530-fdc6-4949-9111-70734fe1bb5e",
+    "content": "end-to-end ML pipeline. Each project lives on GitHub with professional documentation, and at least two\nwill have live deployments you can demo during interviews.\nYour DSA preparation will position you to confidently handle LeetCode Medium-level problems in\nArrays, Hashing, Two Pointers, Sliding Window, Binary Search, Trees, and basic Graph traversal. For\nML/AI internships, this is the standard technical bar — you’re not competing with SWE candidates",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 14
+    }
+  },
+  {
+    "chunk_id": "38157e7e-959a-4762-94a6-277569349c64",
+    "content": "ML/AI internships, this is the standard technical bar — you’re not competing with SWE candidates\nwho grind Hard problems, but you need to demonstrate clean, eﬀicient code under interview conditions\n(logicmojo) . The consistent 8-12 hours/week of DSA practice builds both the problem-solving skills and\nthe interview stamina (solving problems while explaining your thinking) that technical screens require.\nGenerated by Kimi.ai",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 14
+    }
+  },
+  {
+    "chunk_id": "569f6273-3586-4da6-ad8e-94198689d622",
+    "content": "Perhaps most importantly, you’ll have developed engineering judgment — the ability to choose the\nright tool for a given problem. You’ll understand when scikit-learn is suﬀicient versus when PyTorch\nis necessary, when a simple API call beats a custom model, when vector databases add value versus\nwhen they’re overkill, and when no-code tools accelerate delivery versus when they create technical debt.",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 15
+    }
+  },
+  {
+    "chunk_id": "d80267b5-cffd-4963-a6b3-81a42fbfa8d8",
+    "content": "This judgment is what distinguishes engineers from tool-users, and it’s what hiring managers look for in\ninternship candidates who might convert to full-time roles.\nCompetency Area\nWeek 1 Level\nWeek 10 Level\nPython\nBasic syntax\nFluent with pandas, NumPy,\nscikit-learn, PyTorch\nDSA\nNone\n60-80 problems solved,\ninterview-ready\nSQL\nNone\nComplex queries, window\nfunctions, joins\nML Theory\nNone\nUnderstands supervised/\nunsupervised, overfitting,\nregularization\nML Implementation\nNone",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 15
+    }
+  },
+  {
+    "chunk_id": "f79be128-4324-452c-aba8-9cbffe83bc2e",
+    "content": "None\nUnderstands supervised/\nunsupervised, overfitting,\nregularization\nML Implementation\nNone\nEnd-to-end pipelines with\nscikit-learn + PyTorch\nLLMs/AI\nNone\nRAG systems, LangChain agents,\nlocal LLM deployment\nDeployment\nNone\nFlask APIs, Streamlit UIs, Docker\ncontainers\nPortfolio\nEmpty\n4-5 projects on GitHub with live\ndemos\n10. Final Recommendations & Success Factors\nThe single most important success factor for this plan is consistency over intensity. Forty hours per",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 15
+    }
+  },
+  {
+    "chunk_id": "20a4abb3-ea04-4060-8762-fe1d838addc0",
+    "content": "week is substantial but sustainable if you maintain daily DSA practice (1.5-2 hours) and block larger\nchunks for project work. Missing a day of DSA practice creates a compounding deficit — the pattern\nrecognition that makes you fast at problem-solving requires repeated exposure. Conversely, the ML/AI\ncontent is more forgiving of scheduling variations because projects can absorb focused weekend sessions.\nStart applying before you feel “ready”. The job market rewards momentum — early applications",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 15
+    }
+  },
+  {
+    "chunk_id": "78768abe-5d46-4a30-b224-a39ae357793c",
+    "content": "Start applying before you feel “ready”. The job market rewards momentum — early applications\ngenerate interview practice (which reveals gaps you can fill), feedback on your resume, and potentially\nearly offers that reduce pressure. Begin submitting applications in Week 8, even as you’re still building\nprojects. Many companies have multi-week interview processes, so applications submitted in Week 8\nmight lead to interviews in Week 10 when your projects are polished.",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 15
+    }
+  },
+  {
+    "chunk_id": "1544e4a0-1699-450f-9e8a-77137e099aa5",
+    "content": "might lead to interviews in Week 10 when your projects are polished.\nFinally, document your learning publicly. Write short LinkedIn posts about what you’re building,\nshare GitHub repos with descriptive READMEs, and consider writing 1-2 Medium articles explaining\na project or a concept you learned deeply. Public learning signals enthusiasm, creates opportunities for\nmentorship connections, and makes you discoverable to recruiters who search for candidates by project",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 15
+    }
+  },
+  {
+    "chunk_id": "6f1495dc-4953-45dc-8f6b-15205ef7864b",
+    "content": "keywords. The ML/AI community values openness — contributing what you learn back to the community,\neven as a beginner, builds relationships that lead to referrals and insider opportunities.\nGenerated by Kimi.ai",
+    "metadata": {
+      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "page": 15
+    }
+  }
+]

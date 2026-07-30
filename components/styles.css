@@ -394,3 +394,10 @@ hr{
     max-width:700px;
     line-height:1.8;
 }
+
+/* Lists */
+ul,
+ol,
+li {
+    color: #173B67 !important;
+}
