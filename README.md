@@ -150,19 +150,21 @@ AI-Knowledge-Orchestrator/
 │
 ├── app/
 │   ├── core/
+│   ├── embeddings/
 │   ├── indexing/
 │   ├── ingestion/
+│   ├── llm/
 │   ├── retrieval/
-│   ├── services/
-│   ├── vectorstore/
-│   └── llm/
+│   └── services/
+│   └── utils/
+│   └── vectorstore/
 │
 ├── components/
+│   └── assets/
 │   ├── chat/
 │   ├── layout/
 │   ├── pages/
 │   ├── sidebar/
-│   └── assets/
 │
 ├── data/
 ├── app.py
