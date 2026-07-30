@@ -54,4 +54,9 @@ def render_workspace(rag):
             ):
                 kb.delete_document(document)
                 rag.reload()
+                workspace = Workspace()
+
+                if len(workspace.documents()) == 0:
+                    st.session_state.messages = []
+                    st.session_state.pop("chat_prompt", None)
                 st.rerun()
