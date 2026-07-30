@@ -18,7 +18,7 @@ Python • Streamlit • Ollama • ChromaDB • Hybrid Retrieval • BM25 • R
 
 <p align="center">
 
-![Hero Screenshot](componenets/assets/hero.png)
+![Hero Screenshot](components/assets/hero.png)
 
 </p>
 
