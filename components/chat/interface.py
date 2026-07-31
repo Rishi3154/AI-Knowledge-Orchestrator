@@ -92,7 +92,9 @@ def render_metrics(latency, chunks):
 # =====================================================
 
 def render_chat():
-
+    
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
     rag = get_rag()
 
     if rag.retriever is None:
