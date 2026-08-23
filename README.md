@@ -83,7 +83,7 @@ The entire inference pipeline runs locally through Ollama, enabling private docu
 
 # 🎥 Demo
 
-> *https://diabetes-detection-explainable-ai.streamlit.app/*
+> *https://ai-knowledge-orchestrator.streamlit.app/*
 
 ---
 
