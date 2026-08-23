@@ -89,7 +89,7 @@ The entire inference pipeline runs locally through Ollama, enabling private docu
 
 # 🏗️ System Architecture
 
-![Architecture](componenets/assets/arch.png)
+![Architecture](components/assets/arch.png)
 
 The application follows a modular Retrieval-Augmented Generation pipeline consisting of document ingestion, semantic indexing, hybrid retrieval, prompt construction, and local language model inference.
 
