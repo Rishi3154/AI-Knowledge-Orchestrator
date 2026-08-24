@@ -1,18 +1,13 @@
 """
-rag_pipeline.py
-
 End-to-end Retrieval-Augmented Generation pipeline.
 """
 
 from time import perf_counter
 
 from app.core.models import ChatResponse
-from app.core.config import (
-    LLM_MODEL,
-    CHUNK_INDEX_FILE,
-)
+from app.core.config import CHUNK_INDEX_FILE
 
-from app.llm.llm import OllamaLLM
+from app.llm.llm import create_llm
 from app.llm.prompt_builder import PromptBuilder
 
 from app.retrieval.hybrid_retriever import HybridRetriever
@@ -25,9 +20,12 @@ class RAGPipeline:
 
     def __init__(self):
 
-        self.llm = OllamaLLM(LLM_MODEL)
+        # Create the correct LLM provider
+        self.llm = create_llm()
 
-        self.chunk_index = ChunkIndex(CHUNK_INDEX_FILE)
+        self.chunk_index = ChunkIndex(
+            CHUNK_INDEX_FILE
+        )
 
         self.retriever = None
 
@@ -79,7 +77,7 @@ class RAGPipeline:
             latency=latency,
         )
 
-    def stream(self, question):
+    def stream(self, question: str):
 
         if self.retriever is None:
 

@@ -8,14 +8,13 @@ from pathlib import Path
 
 from app.ingestion.document_loader import PDFLoader
 from app.ingestion.chunker import DocumentChunker
-from app.embeddings.embedder import OllamaEmbedder
+from app.embeddings.embedder import create_embedder
 from app.indexing.chunk_index import ChunkIndex
 from app.vectorstore.vector_store import VectorStore
 
 from app.core.models import IngestionResponse
 from app.core.config import (
-    EMBEDDING_MODEL,
-    CHUNK_INDEX_FILE,
+    CHUNK_INDEX_FILE
 )
 
 
@@ -25,7 +24,7 @@ class DocumentIngestor:
 
         self.loader = PDFLoader
         self.chunker = DocumentChunker()
-        self.embedder = OllamaEmbedder(EMBEDDING_MODEL)
+        self.embedder = create_embedder()
         self.vector_store = VectorStore()
         self.chunk_index = ChunkIndex(CHUNK_INDEX_FILE)
 

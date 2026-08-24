@@ -24,7 +24,7 @@ def render_hero():
 <div style="text-align:center;
             font-size:20px;
             color:#64748B;
-            max-width:700px;
+            max-width:1400px;
             margin:auto;">
 Ask questions, summarize documents, and discover insights from your PDFs.
 </div>

@@ -1,770 +1,442 @@
 [
   {
-    "chunk_id": "19a31191-acf7-40dc-9123-c56b58b6887b",
-    "content": "10-Week ML/AI Internship Prep: Plan Evaluation & Complete\nRoadmap\nTL;DR\nYour original study guide is a solid 7.5/10 — well-structured and covers the right topics, but it critically\nmisses Data Structures & Algorithms (DSA) and underestimates the time needed for hands-on\nprojects. For an ML/AI internship, DSA isn’t just “nice to have” — it’s the gatekeeper to getting past\ntechnical interviews. With 40 hours/week over 10 weeks, this enhanced plan adds DSA alongside your",
+    "chunk_id": "3de26fd9-33a2-4708-97f6-f2fb991c9200",
+    "content": "CSCI 585 - Database Systems \nUnits: 4 \nFall 2026 - Lecture Monday 5-7:20 pm \n                    Discussion Monday 7:30-8:20 pm \nRoom:  SGM 123 \n \nInstructor: Shahram Ghandeharizadeh \nOffice: GCS 505E \nOffice Hours: Mon 10-12:30 pm, Mon 2-4 pm \nContact Info: shahram@usc.edu, 213-740-4781. \n \n \nCourse Description \nThe database management industry is a substantial and rapidly growing sector.  It is driven by the",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 1
     }
   },
   {
-    "chunk_id": "651a88e5-b4a6-4c1c-92c3-2095e14f7fb5",
-    "content": "technical interviews. With 40 hours/week over 10 weeks, this enhanced plan adds DSA alongside your\noriginal roadmap, integrates the best free resources for each topic, and allocates 20+ hours in the final\nweeks exclusively to portfolio projects. The result: a rigorous, interview-ready preparation that\ntransforms your guide from a learning curriculum into a job-winning system.\n1. Rating Your Original Plan: Strengths & Gaps",
+    "chunk_id": "48976688-8310-4ce3-a1d0-f7543e7aeea7",
+    "content": "The database management industry is a substantial and rapidly growing sector.  It is driven by the \nexponential increase in data, the widespread adoption of cloud computing, and advancements in AI and \nanalytics.  In 2023, the global Database Management System (DBMS) market was valued between 60 to 100 \nbillion dollars.  While NoSQL databases are growing rapidly, relational databases with ACID transactions still",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 1
     }
   },
   {
-    "chunk_id": "4361574b-965c-4555-9a10-f5afe4969b1e",
-    "content": "1. Rating Your Original Plan: Strengths & Gaps\nYour original study guide demonstrates excellent strategic thinking about ML/AI skill acquisition. The\nphased approach — moving from Python foundations through data literacy, hands-on AI models, core\nML, LLMs, and finally real-world projects — follows a pedagogically sound progression. As someone\nwith a CE background transitioning to MSCS, you’re in an ideal position to execute this because you",
+    "chunk_id": "f44cf73e-f22a-4ba8-b3c3-948b6d338682",
+    "content": "hold a significant share estimated at 60-70%.  CSCI 585 introduces students to techniques that enable both \nSQL and NoSQL DBMSs to scale in the cloud (both within a data center and across data centers), physical \norganization of data for enhanced performance and availability, cache augmented database systems and \nmemory management, disaggregated database systems, transactional storage managers, and data analytics.",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 1
     }
   },
   {
-    "chunk_id": "7b6076fd-e86b-43e2-a738-06c45ba897c8",
-    "content": "with a CE background transitioning to MSCS, you’re in an ideal position to execute this because you\nalready understand programming fundamentals, computer architecture, and likely have some exposure\nto algorithms. This isn’t starting from zero; it’s redirecting existing engineering instincts toward ML/\nAI-specific tooling and workflows.\nThe plan’s most significant strength is its emphasis on project-based learning. Too many ML learners",
+    "chunk_id": "85c3c80f-da99-4e19-ab05-fc2c7ef32d0d",
+    "content": "The discussion sections introduce basics of transactions with ACID properties,  a file system, conceptual and \nrelational data models, SQL and Gremlin, persistent index structures such as hashing and B+-tree, relational \nalgebra, normal forms, fundamentals of a magnetic disk drive and solid state drives including their working \ndetails, algorithms such as LRU, concurrency control protocols such as locking and time-stamp, and crash",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 1
     }
   },
   {
-    "chunk_id": "079bc95f-4d28-4a9c-9a97-a7f26b10dda5",
-    "content": "get stuck in “tutorial hell” — consuming courses without ever building anything original. Your Step 6\n(“Build Lots of Real-World AI Applications”) and the inclusion of mini-project workflows within each\nstep show you understand that portfolios get interviews, not certificates. The coverage of modern\nAI tooling — LangChain, RAG, vector databases, Streamlit — is particularly strong and aligned with\nwhat ML engineering teams actually use in 2025 (wordpress.com) . The recognition that no-code/low-",
+    "chunk_id": "a12767c1-5d38-4949-92dc-4f369b229cf0",
+    "content": "recovery protocols such as logging.  An understanding of these concepts is fundamental when using AI to \nauthor software for data driven applications.  \n \nGuest lecturers from companies such as LinkedIn, eBay, and Databricks will share their insights on building \ndatabase systems. \n●​\nSeptember 14, 2026:  Dr. Hieu Nguyen of eBay presents transactional storage manager \nFoundationDB, its use to implement a graph database, Gremlin query language, and an execution \nengine process Gremlin queries.",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 1
     }
   },
   {
-    "chunk_id": "2a4e3260-f819-4514-8468-6c77b3ebfa3c",
-    "content": "what ML engineering teams actually use in 2025 (wordpress.com) . The recognition that no-code/low-\ncode tools (Crew AI, Langflow, n8n) have a place in an engineer’s toolkit also shows practical maturity\n— knowing when to reach for a visual workflow builder versus writing Python from scratch is a genuinely\nvaluable skill.\nHowever, there are three critical gaps that would prevent this plan from reliably landing an ML/AI",
+    "chunk_id": "138998c6-c650-4957-8f43-85088ae72456",
+    "content": "engine process Gremlin queries. \n●​\nOctober 19, 2026: Dr. Haoyu Huang of Databricks presents Lakebase, a new open database \narchitecture that decouples transactional compute from storage while placing data in low-cost \ncloud object stores in open format.  \n \nLearning Objectives \nBy the end of the semester, students should have a grasp of fundamental concepts, design decisions, \nprotocols and algorithms to build a database system using off-the-shelf software and hardware components.",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 1
     }
   },
   {
-    "chunk_id": "c9099353-8846-4f29-b499-bf60e4c85b90",
-    "content": "However, there are three critical gaps that would prevent this plan from reliably landing an ML/AI\ninternship. First and most importantly: the complete absence of Data Structures & Algorithms\n(DSA). Technical interviews for ML/AI roles still test coding problem-solving — not at FAANG-hard\nlevels necessarily, but you’ll absolutely face LeetCode-style questions. LogicMojo’s analysis of 200+ suc-\ncessful AI placements found that candidates who practiced DSA alongside ML learning had significantly",
+    "chunk_id": "e6e88cce-0558-43f7-b9f5-ad3dd1547eb8",
+    "content": "They should understand analytics and ACID semantics and their application to both storage managers, \ndatabase systems, and applications.  Finally, they should be able to provide an abstraction of today’s \nhardware in support of database systems. ​ \n   \nPrerequisite(s): Principles of Software Development (CSCI 201). \n \nRecommended Preparation: A good understanding of in-memory data structures such as records",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 1
     }
   },
   {
-    "chunk_id": "7e70d6c0-7c64-4435-b5e6-f4d42f58a20e",
-    "content": "higher success rates (logicmojo) . Second, the original plan lacks specific resource recommendations be-\nyond generic library names — “learn pandas” is good direction, but without knowing whether to use\nKaggle Learn, DataCamp, or a YouTube playlist, a beginner wastes hours evaluating options instead of\nlearning. Third, the timeline is too compressed for genuine competency — 10 weeks is achievable, but",
+    "chunk_id": "cdcff196-70a7-4abe-9de2-9710dad83e11",
+    "content": "Recommended Preparation: A good understanding of in-memory data structures such as records \nand their organizations in arrays, trees, hash tables, etc.  Knowledge of relational databases, SQL, \nrelational algebra and physical database design is required.  We will cover the relational data \nmodel+algebra, SQL, physical database design in the discussion sections. \n8/2026",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 1
     }
   },
   {
-    "chunk_id": "ba1ac46b-9c88-48b1-b6a6-f5f1d73329a0",
-    "content": "only with extremely focused resource selection and aggressive project milestones. Without these addi-\ntions, the plan risks producing a learner who can discuss ML concepts but struggles to pass a coding\nscreen or demonstrate production-ready skills.\nGenerated by Kimi.ai",
+    "chunk_id": "9132645f-b3b0-422a-a35d-405a16503d97",
+    "content": "Course Notes:   \n●​\nAll lecture material will be posted on the USC Brightspace.  \n●​\nGrading breakdown  \no​\nExam 1, Oct 12, 2026:  50% \no​\nExam 2, Nov 30, 2026: 50% \n●​\nEach Exam counts toward 50% of their grade. \n●​\nThis course has no comprehensive final exam.  Exam 2 is held during the last lecture and covers material \npresented since Exam 1. \n \nCommunication \nThis course uses the USC Brightspace system to disseminate lectures and assigned readings, and make \nannouncements.",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 1
-    }
-  },
-  {
-    "chunk_id": "1deceae5-1e33-4197-a720-b8e5d7ded429",
-    "content": "Aspect\nOriginal Plan\nEnhanced Plan (This Guide)\nDSA Coverage\nNone —critical gap\n8-12 hrs/week dedicated LeetCode practice\nResource\nSpecificity\nGeneric library names only\nCurated courses, books, tutorials with links\nProject\nMilestones\nVague “build projects” step\n4 portfolio projects with weekly deliverables\nInterview\nPrep\nNot addressed\nIntegrated DSA + system design fundamentals\nTime\nAllocation\nUnclear\n40 hrs/week with precise hourly breakdowns\nLLM/AI\nAgents Depth\nGood coverage",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 2
     }
   },
   {
-    "chunk_id": "c502093a-cd74-45af-a388-0a59bca519b9",
-    "content": "Allocation\nUnclear\n40 hrs/week with precise hourly breakdowns\nLLM/AI\nAgents Depth\nGood coverage\nEnhanced with LangChain v0.3 + Ollama local LLMs\nReal-World\nDeployment\nStreamlit mentioned\nFlask APIs, Docker, GitHub Actions added\n2. Why DSA Is Non-Negotiable for ML/AI Internships\nThe ML/AI field has a peculiar dual gatekeeping system. On one side, you need ML competency —\nknowing how to clean data, train models, evaluate performance, and deploy solutions. On the other",
+    "chunk_id": "116a753b-9611-4997-b92a-d9ed05be38ad",
+    "content": "announcements.   \n \nTechnological Proficiency and Hardware/Software Required \n \nRequired Readings and Supplementary Materials \nThis course assumes students are Internet savvy and capable of using it as a digital library.  This includes use \nof ACM/IEEE/Springer digital libraries.  All USC students have access to these digital collections \nautomatically.   \n \nGrading Breakdown \nBased on prior experience teaching this course, students who attend lectures do very well.  In specific,",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 2
     }
   },
   {
-    "chunk_id": "917b8b47-e18e-4b18-9247-5494e383e18e",
-    "content": "knowing how to clean data, train models, evaluate performance, and deploy solutions. On the other\nside, you need software engineering fundamentals — and DSA is the universal language of technical\ninterviewing. Even ML research internships at top companies include coding assessments. The NeetCode\n150/250 curriculum, built by a former Google SWE, has become the de facto standard for structured\nDSA preparation because it organizes problems by topic with dependency-aware sequencing (PracHub)",
+    "chunk_id": "34cd09b7-9908-4df7-932d-f11fbce6d8e2",
+    "content": "students who skip lectures do poorly on Exam 1 and spend the second half of the semester concerned with \ntheir grade.  To prevent this, attend lectures and participate by asking questions.  Each Exam is worth 50% of \nthe overall grade. \n \nAssessment Tool (assignments) \nPoints \n% of Grade \nExam 1, Oct 12, 2026 \n100 \n50% \nExam 2, Nov 30, 2026 \n100 \n50% \nTOTAL \n \n100% \n \n \nGrading Scale \nThe final letter grade is based on a curve.",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 2
     }
   },
   {
-    "chunk_id": "48ebfe27-96b0-4d30-9a70-3ecef774d138",
-    "content": "DSA preparation because it organizes problems by topic with dependency-aware sequencing (PracHub)\n. Following this alongside your ML learning ensures you don’t become the candidate who can explain\ntransformer architectures but can’t invert a binary tree.\nThe good news is that DSA for ML roles is less intense than for pure SWE roles.\nYou’re\nnot grinding LeetCode Hard graph problems daily. Most ML/AI internship interviews focus on Arrays,",
+    "chunk_id": "17d78979-390c-46bb-ad7a-d48a42d7cd2a",
+    "content": "100 \n50% \nTOTAL \n \n100% \n \n \nGrading Scale \nThe final letter grade is based on a curve. \n \nCourse-specific Policies (Assignment Submission, Grading Timeline, Late work, and \nTechnology) \nAll deadlines are firm.  No late submissions or e-mail submissions are accepted for class participation. \n \nAttendance \nBased on prior experience, students who do not attend lectures perform poorly on exams.  CSCI 585",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 2
     }
   },
   {
-    "chunk_id": "953edbe2-0e5c-4eb6-969f-722f5538357e",
-    "content": "not grinding LeetCode Hard graph problems daily. Most ML/AI internship interviews focus on Arrays,\nHashMaps, Two Pointers, Sliding Window, basic Trees, and simple Dynamic Programming — roughly\nthe first half of NeetCode 150 (logicmojo) . The recommended approach in this plan dedicates 8-12\nhours per week consistently to DSA practice, which is suﬀicient to build interview-ready competency\nwithout derailing your ML learning. This parallel-track approach mirrors what successful candidates",
+    "chunk_id": "1e3a3484-e179-4ef3-89ba-a6ece3b7eb53",
+    "content": "Based on prior experience, students who do not attend lectures perform poorly on exams.  CSCI 585 \naccommodates student athletes with approved Travel Request Letters and students who give advance notice \nof religious observation. \n \nAssigned Reading \n \nWeek 1:  Introductions, ER Data Model & Relational Data Model \nAssigned reading: Chen, Peter (March 1976). \"The \nEntity-Relationship Model - Toward a Unified View of Data\". ACM \nTransactions on Database Systems. 1 (1): 9–36.",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 2
     }
   },
   {
-    "chunk_id": "df71b1dc-4880-42c8-9f45-e798986e0bee",
-    "content": "without derailing your ML learning. This parallel-track approach mirrors what successful candidates\nactually do — LogicMojo’s mentorship data shows that students who ran DSA practice alongside AI\nlearning (rather than sequencing them) had measurably better placement outcomes (logicmojo) .\nDSA practice also has a surprising secondary benefit for ML work: it sharpens the exact type of\nstructured thinking that debugging ML pipelines requires. When you’re tracking down why your",
+    "chunk_id": "d2914647-2041-46ed-b29c-f8898425a3b3",
+    "content": "Transactions on Database Systems. 1 (1): 9–36.  \nhttps://dl.acm.org/doi/pdf/10.1145/320434.320440 \n8/2026",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 2
     }
   },
   {
-    "chunk_id": "da5c1f13-6dc6-4483-945e-b39527c70313",
-    "content": "structured thinking that debugging ML pipelines requires. When you’re tracking down why your\nneural network’s loss isn’t converging, the systematic debugging approach you developed solving LeetCode\nproblems transfers directly. The pattern-matching skills from recognizing that a problem is a “sliding\nwindow” variant mirror the intuition for recognizing that a dataset needs a particular preprocessing",
+    "chunk_id": "e4231cec-c2f3-4d42-8084-62fb75da0709",
+    "content": "Discussion \nW. Kent.  1983.  A Simple Guide to Five Normal Forms in Relational Database \nTheory.  Communications of the ACM, Volume 25, Issue 2, February 1983.  \nhttps://doi.org/10.1145/358024.358054 \n \nD. D. Chamberlin, \"Early History of SQL,\" in IEEE Annals of the History of \nComputing, vol. 34, no. 4, pp. 78-82, Oct.-Dec. 2012, doi: \nhttps://doi.org/10.1109/MAHC.2012.61 \n \nWeek 2: Labor Day  \n \nWeek 3: Parallel Relational Database Management Systems",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 2
-    }
-  },
-  {
-    "chunk_id": "53e22778-7d07-4259-80d4-0936d45c49d6",
-    "content": "approach. DSA isn’t interview trivia — it’s deliberate practice for the problem-solving loops you’ll run\nconstantly as an ML engineer.\nGenerated by Kimi.ai",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 2
-    }
-  },
-  {
-    "chunk_id": "17c83aa6-a46a-4300-b8f9-d004136ab8b0",
-    "content": "3. The 10-Week Schedule: Complete Breakdown\nThe schedule below allocates 40 hours per week across six focus areas: Python (CS50P), DSA (Neet-\nCode/LeetCode), SQL & Data Literacy, ML Fundamentals (scikit-learn/PyTorch), AI/LLMs & Agents\n(LangChain/RAG), and Projects & Portfolio. The allocation shifts progressively from foundations (Weeks\n1-3) through ML core (Weeks 4-6) and AI/LLMs (Weeks 7-8) to an intensive project sprint (Weeks 9-10).\nFigure 1: 10-Week Schedule Timeline",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 3
     }
   },
   {
-    "chunk_id": "974f4b23-8020-4c5a-a83d-7d4f257b75eb",
-    "content": "Figure 1: 10-Week Schedule Timeline\n4. Phase 1: Foundations (Weeks 1-3)\nWeek 1: Python Deep Dive + DSA Kickoff\nDay\nFocus Area\nActivity\nHours\nResource\n1-3\nPython\nCS50P Lectures 0-3\n(Functions, Variables,\nConditionals)\n5\nCS50P\n4-5\nPython\nCS50P Problem Sets\n0-3\n4\nCS50P Problem Sets\n6-7\nPython\nCS50P Lectures 4-5\n(Libraries, Unit Tests)\n4\nCS50P\nDaily\nDSA\nNeetCode Arrays &\nHashing (5 problems)\n10\nNeetCode 150\nDaily\nSQL\nSQLBolt Lessons 1-9\n10\nSQLBolt\n5-7\nPython\nPersonal scripting",
+    "chunk_id": "b6de1c1b-c304-4c56-93f0-f073bf422a71",
+    "content": "Week 2: Labor Day  \n \nWeek 3: Parallel Relational Database Management Systems \nAssigned Reading: D. J. DeWitt, S. Ghandeharizadeh, D. A. \nSchneider, A. Bricker, H. -I. Hsiao and R. Rasmussen, \"The Gamma \ndatabase machine project,\" in IEEE Transactions on Knowledge and \nData Engineering, vol. 2, no. 1, pp. 44-62, March 1990, doi: \nhttps://doi.org/10.1109/69.50905 \n \nDiscussion \nTransactions and Crash Recovery (Presented by CSCI 585 TA Quankai Gao).  Textbook",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 3
     }
   },
   {
-    "chunk_id": "e1a732ce-dceb-47ff-95b9-0e9f05c39aa5",
-    "content": "10\nNeetCode 150\nDaily\nSQL\nSQLBolt Lessons 1-9\n10\nSQLBolt\n5-7\nPython\nPersonal scripting\nproject (web scraper or\nautomation)\n7\nSelf-directed\nTotal: 40 hours | Python: 15h, DSA: 10h, SQL: 10h, ML: 5h\nGenerated by Kimi.ai",
+    "chunk_id": "8d9f604c-f0f6-4ee3-9fdb-c596c195c7c3",
+    "content": "Discussion \nTransactions and Crash Recovery (Presented by CSCI 585 TA Quankai Gao).  Textbook \nmaterial, e.g., Look at Chapters 15 and 17 of Database Systems Concepts, 4th \nedition, by Silberschatz, Korth, Sudarshan, publisher Morgan Kaufmann. \n \n \nWeek 4: Transactional Storage Managers  \nAssigned Reading: ​Jingyu Zhou, Meng Xu, Alexander Shraer, \nBala Namasivayam, Alex Miller, Evan Tschannen, Steve \nAtherton, Andrew J. Beamon, Rusty Sears, John Leach, Dave",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 3
     }
   },
   {
-    "chunk_id": "b35adc80-e460-4da3-a4bb-22bb7bc57d16",
-    "content": "Week 1 front-loads Python because your CE background means you can accelerate through CS50P faster\nthan a complete beginner.\nCS50P is the best Python foundation course available — it’s taught by\nDavid Malan with Harvard-level rigor, covers not just syntax but code style, type hints, docstrings, list\ncomprehensions, and generators that most beginner courses skip (rivenintech.com) . The problem sets",
+    "chunk_id": "e213aa51-3f6b-481c-976c-86ab6799b66a",
+    "content": "Atherton, Andrew J. Beamon, Rusty Sears, John Leach, Dave \nRosenthal, Xin Dong, Will Wilson, Ben Collins, David \nScherer, Alec Grieser, Young Liu, Alvin Moore, Bhaskar \nMuppana, Xiaoge Su, and Vishesh Yadav. 2022. FoundationDB: A \nDistributed Key Value Store. SIGMOD Rec. 51, 1 (March 2022), \n24–31. https://doi.org/10.1145/3542700.3542707 \n \nDiscussion \nGhandeharizadeh, S., Bernstein, P.A., Borthakur, D., Huang, H., Menon, J., Puri,",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
+      "page": 3
+    }
+  },
+  {
+    "chunk_id": "895e0e80-9265-4aa9-ac78-90b5d8766529",
+    "content": "Discussion \nGhandeharizadeh, S., Bernstein, P.A., Borthakur, D., Huang, H., Menon, J., Puri, \nS. (2023). Disaggregated Database Management Systems. In: Nambiar, R., Poess, M. \n(eds) Performance Evaluation and Benchmarking. TPCTC 2022. Lecture Notes in \nComputer Science, vol 13860. Springer, Cham. From the USC secure network, use the \nfollowing link to access the paper:  \nhttps://libcatalog.usc.edu/discovery/fulldisplay?context=PC&vid=01USC_INST:01USC&",
+    "metadata": {
+      "source": "SyllabusCSCI585Fall2026.pdf",
+      "page": 3
+    }
+  },
+  {
+    "chunk_id": "00438b3d-423a-4e51-ad3c-1f44e8a659aa",
+    "content": "https://libcatalog.usc.edu/discovery/fulldisplay?context=PC&vid=01USC_INST:01USC&\nsearch_scope=MyInst_and_CI&tab=Everything&docid=cdi_scopus_primary_2_s2_0_8515253\n3804 \n \n \nShahram Ghandeharizadeh and Hieu Nguyen. 2019. Design, Implementation, and \nEvaluation of Write-Back Policy with Cache Augmented Data Stores.  VLDB 2019. \nhttps://www.vldb.org/pvldb/vol12/p836-ghandeharizadeh.pdf \n \n \n \n \n \nPage 3",
+    "metadata": {
+      "source": "SyllabusCSCI585Fall2026.pdf",
+      "page": 3
+    }
+  },
+  {
+    "chunk_id": "6c9b7d4f-44e9-4a65-9061-fe4a7255cbab",
+    "content": "Week 5: Physical Data Design \nAssigned Reading: Shahram Ghandeharizadeh and David J. DeWitt. \n1990. Hybrid-Range Partitioning Strategy: A New Declustering \nStrategy for Multiprocessor Database Machines. In Proceedings of \nthe 16th International Conference on Very Large Data Bases (VLDB \n'90). Morgan Kaufmann Publishers Inc., San Francisco, CA, USA, \n481–492.  https://www.vldb.org/conf/1990/P481.PDF \n \nDiscussion \nTransactions: Concurrency Control Protocols \n \n \nWeek 6: Benchmarks",
+    "metadata": {
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 4
     }
   },
   {
-    "chunk_id": "bc3d1638-7c49-4f5c-8643-e32bc59f1025",
-    "content": "comprehensions, and generators that most beginner courses skip (rivenintech.com) . The problem sets\nare genuinely engaging and build real skills. Don’t skip the “Et Cetera” lecture — it covers Pythonic\npatterns you’ll use constantly.\nDSA starts immediately with NeetCode’s Arrays & Hashing section because these are the most fre-\nquently asked problem types and they require minimal algorithmic theory to get started. The pattern of",
+    "chunk_id": "74be06e8-3564-4145-bf11-b2e148a80d5c",
+    "content": "Discussion \nTransactions: Concurrency Control Protocols \n \n \nWeek 6: Benchmarks \nAssigned Reading: S. Barahmand and S. Ghandeharizadeh.  BG:  \nA Benchmark to Evaluate Interactive Social Networking \nActions.  Proceedings of the biennial Conference on \nInnovative Data Systems Research (CIDR), Asilomar, \nCalifornia, January 6-9, 2013. \nhttps://www.cidrdb.org/cidr2013/Papers/CIDR13_Paper93.pdf \n \nDiscussion \nBrian F. Cooper, Adam Silberstein, Erwin Tam, Raghu Ramakrishnan, and Russell",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 4
     }
   },
   {
-    "chunk_id": "ccb54ddb-412c-43f9-875e-473ec5b43fa5",
-    "content": "“use a HashMap for O(1) lookups” is something you’ll internalize quickly and use constantly. Aim for 5\nproblems in the first week — quality over quantity, with full understanding of the optimal solution.\nSQLBolt is the fastest path to SQL fundamentals — it’s entirely browser-based, requires no setup, and\ncovers 90% of the SQL you’ll write in real-world data work (ai2sql.io) . Lessons 1-9 take you from basic",
+    "chunk_id": "90e06505-d1d5-41ab-9586-3c70782564ff",
+    "content": "Discussion \nBrian F. Cooper, Adam Silberstein, Erwin Tam, Raghu Ramakrishnan, and Russell \nSears. 2010. Benchmarking cloud serving systems with YCSB. In Proceedings of the \n1st ACM symposium on Cloud computing (SoCC '10). Association for Computing \nMachinery, New York, NY, USA, 143–154. https://doi.org/10.1145/1807128.1807152 \n \n \nWeek 7: Graph Query Processing \nAssigned Reading: Chen, Hongzhi and Li, Changji and Fang, \nJuncheng and Huang, Chenghuan and Cheng, James and Zhang, Jian",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 4
     }
   },
   {
-    "chunk_id": "c0abfadd-35ad-4391-a4d4-f466b8d460e8",
-    "content": "SELECT queries through JOINs and NULL handling. The interactive exercises give immediate feedback,\nwhich is crucial for early SQL learning where syntax errors are frustratingly opaque.\nWeek 2: Python Mastery + DSA Progression\nDay\nFocus Area\nActivity\nHours\nResource\n1-3\nPython\nCS50P Lectures 6-8\n(File I/O, Regular\nExpressions, OOP)\n5\nCS50P\n4-5\nPython\nCS50P Final Project +\nProblem Sets\n5\nCS50P\n6-7\nPython\nKaggle Python\nmicro-course + Pandas\nintro\n4\nKaggle Learn\nDaily\nDSA\nNeetCode Two Pointers",
+    "chunk_id": "1357f258-9fe7-48d7-8c0d-d62449cf2d8c",
+    "content": "Juncheng and Huang, Chenghuan and Cheng, James and Zhang, Jian \nand Hou, Yifan and Yan, Xiao.  Grasper: A High Performance \nDistributed System for OLAP on Property Graphs, 2019, Proceedings \nof the ACM Symposium on Cloud Computing. \nhttps://doi.org/10.1145/3357223.3362715 \n \n \nWeek 8: Exam 1 \nExam 1 covers Week 1-7 assigned readings.  \n \nWeek 9: Separation of Storage from Processing \nAssigned Reading: Jasraj Dange, Andrei Dragus, Ali Ghodsi, Haoyu",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 4
     }
   },
   {
-    "chunk_id": "aefa3870-e0de-4c0e-9e13-a862330a5cef",
-    "content": "6-7\nPython\nKaggle Python\nmicro-course + Pandas\nintro\n4\nKaggle Learn\nDaily\nDSA\nNeetCode Two Pointers\n+ Stack (5 problems)\n10\nNeetCode 150\nDaily\nSQL\nSQLBolt Lessons 10-18\n+ Kaggle SQL course\nstart\n10\nSQLBolt + Kaggle\n5-7\nData\nNumPy fundamentals\n(array operations,\nbroadcasting)\n6\nNumPy Fundamentals\n(Datacamp)\nTotal: 40 hours | Python: 12h, DSA: 10h, SQL: 10h, ML: 8h\nWeek 2 completes CS50P and transitions into data-specific Python tooling. The Kaggle Python micro-",
+    "chunk_id": "5c3c4cb9-5f6f-41db-b350-50052714d9e7",
+    "content": "Assigned Reading: Jasraj Dange, Andrei Dragus, Ali Ghodsi, Haoyu \nHuang, Yihe Huang, Stas Kelvich, Heikki Linnakangas, Hans \nNorheim, Ippokratis Pandis, Nikita Shamgunov, Em Sharnoff, John \nSpray, Zhou \nSun, Reynold Xin, Matei Zaharia. Lakebase: Serverless Postgres \nover Open Lake Storage. VLDB 2026 \n \nDiscussion \nHaoyu Huang and Shahram Ghandeharizadeh. 2021. Nova-LSM: A \nDistributed, Component-based LSM-tree Key-value Store. In \n \nPage 4",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 4
     }
   },
   {
-    "chunk_id": "106d7727-47bc-4a55-bae7-56d58257daec",
-    "content": "Week 2 completes CS50P and transitions into data-specific Python tooling. The Kaggle Python micro-\ncourse is excellent for data science-oriented Python — it’s concise, practical, and browser-based (sub-\nstack.com) . Immediately follow it with Kaggle’s Pandas micro-course since pandas is the primary data\nmanipulation tool you’ll use for all subsequent ML work. The Kaggle ecosystem is particularly valuable\nbecause all exercises run in-browser with real datasets, eliminating setup friction.",
+    "chunk_id": "d157cbbc-689e-4747-b95c-2df8d179cf2d",
+    "content": "Proceedings of the 2021 International Conference on Management of \nData (SIGMOD '21). Association for Computing Machinery, New York, \nNY, USA, 749–763. https://doi.org/10.1145/3448016.3457297 \n \n \nWeek 10: Memory Management \nAssigned Reading: Shahram Ghandeharizadeh, Sandy Irani, \nJenny Lam, and Jason Yap. 2014. CAMP: A Cost Adaptive \nMulti-Queue Eviction Policy for Key-Value Stores. In \nProceedings of the 15th International Middleware Conference",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 4
-    }
-  },
-  {
-    "chunk_id": "48463be4-9970-4ff3-ad80-fa71399f7987",
-    "content": "because all exercises run in-browser with real datasets, eliminating setup friction.\nDSA progression moves into Two Pointers and Stack problems.\nThese patterns are less common\nin ML interviews than Arrays/Hashing but build crucial algorithmic intuition. The Two Pointer tech-\nnique (maintaining left/right pointers that converge) appears in problems involving sorted arrays and\npalindromes — the pattern recognition skills transfer to optimizing data processing pipelines.\nGenerated by Kimi.ai",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 4
-    }
-  },
-  {
-    "chunk_id": "37055c8f-508a-43be-a5f6-52fb1acd5bee",
-    "content": "SQL learning expands from SQLBolt’s basics into Kaggle’s SQL micro-course, which introduces window\nfunctions and more complex aggregations that SQLBolt intentionally skips (ai2sql.io) . Window functions\n(ROW_NUMBER, RANK, LAG, LEAD) are essential for time-series analysis and feature engineering in\nML pipelines — they’re the difference between basic SQL fluency and data-engineering-ready skills.\nWeek 3: Data Literacy + DSA Consolidation\nDay\nFocus Area\nActivity\nHours\nResource\n1-3\nData",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 5
     }
   },
   {
-    "chunk_id": "44f6069f-0ed9-4a05-a3ae-0a46cb3555e0",
-    "content": "Week 3: Data Literacy + DSA Consolidation\nDay\nFocus Area\nActivity\nHours\nResource\n1-3\nData\nPandas deep dive:\nmerging, groupby,\ntime-series\n6\nKaggle Learn + Pandas\ndocs\n4-5\nData\nMatplotlib & Seaborn\nvisualization mastery\n6\nSeaborn Tutorials\n(KDnuggets)\n(KDnuggets)\n6-7\nData\nEnd-to-end EDA\nproject on Kaggle\ndataset\n6\nSelf-directed\nDaily\nDSA\nNeetCode Binary\nSearch + Sliding\nWindow (5 problems)\n12\nNeetCode 150\nDaily\nSQL\nSQL practice on\nDataLemur/LeetCode\nSQL (10 problems)\n10\nDataLemur",
+    "chunk_id": "0697d856-c0e2-43bf-a05a-9e99fb573c3e",
+    "content": "Proceedings of the 15th International Middleware Conference \n(Middleware '14). Association for Computing Machinery, New \nYork, NY, USA, 289–300. \nhttps://doi.org/10.1145/2663165.2663317 \n \nDiscussion \nElizabeth J. O'Neil, Patrick E. O'Neil, and Gerhard Weikum. 1993. The LRU-K page \nreplacement algorithm for database disk buffering. SIGMOD Rec. 22, 2 (June 1, \n1993), 297–306. https://doi.org/10.1145/170036.170081 \n \n \nWeek 11: Raft & PAXOS",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 5
     }
   },
   {
-    "chunk_id": "97575709-89a4-4f50-afea-2e80c1b95229",
-    "content": "12\nNeetCode 150\nDaily\nSQL\nSQL practice on\nDataLemur/LeetCode\nSQL (10 problems)\n10\nDataLemur\nTotal: 40 hours | DSA: 12h, SQL: 10h, Data: 12h, ML: 6h\nWeek 3 is the data literacy consolidation week. Pandas merging, multi-indexing, and time-series\nhandling are the operations you’ll perform in virtually every ML project.\nThe Kaggle Learn micro-\ncourses combined with the oﬀicial pandas documentation provide both guided learning and reference",
+    "chunk_id": "02e96f9f-0a2c-4719-b28e-022096312a8c",
+    "content": "1993), 297–306. https://doi.org/10.1145/170036.170081 \n \n \nWeek 11: Raft & PAXOS \nAssigned Reading: Diego Ongaro and John Ousterhout. 2014. In \nsearch of an understandable consensus algorithm. In \nProceedings of the 2014 USENIX conference on USENIX Annual \nTechnical Conference (USENIX ATC'14). USENIX Association, \nUSA, 305–320. \n \nOptional reading: \nZhiying Liang, Vahab Jabrayilov, Abutalib Aghayev, Aleksey Charapko.  2025.",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 5
     }
   },
   {
-    "chunk_id": "addc8fa5-dd93-4db5-a96c-8c1f5e10cd92",
-    "content": "courses combined with the oﬀicial pandas documentation provide both guided learning and reference\nmaterial. For visualization, seaborn’s statistical plotting capabilities (distribution plots, regression plots,\ncategorical plots) produce publication-quality figures with minimal code — understanding when to use\neach plot type is a skill that distinguishes competent data scientists from beginners (KDnuggets) .",
+    "chunk_id": "5c55c50d-8967-4618-a774-81e56779eede",
+    "content": "Optional reading: \nZhiying Liang, Vahab Jabrayilov, Abutalib Aghayev, Aleksey Charapko.  2025. \nHoliPaxos: Towards More Predictable Performance in State Machine Replication. \nVLDB, Volume 18, No. 8, 2025. https://www.vldb.org/pvldb/vol18/p2505-charapko.pdf  \nhttps://doi.org/10.14778/3742728.3742744 \n \n \n \nWeek 12: Cache Augmented Database Management Systems \nAssigned Reading: Shahram Ghandeharizadeh, Jason Yap, and \nHieu Nguyen. 2014. Strong consistency in cache augmented SQL",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 5
     }
   },
   {
-    "chunk_id": "78313b2b-eedd-4df3-b990-4d291eb7484c",
-    "content": "each plot type is a skill that distinguishes competent data scientists from beginners (KDnuggets) .\nThe EDA (Exploratory Data Analysis) project is your first mini-portfolio piece. Pick a Kaggle dataset\nwith interesting features — the Titanic dataset is classic for beginners, or choose something domain-\nrelevant to your interests. The goal isn’t model building yet; it’s demonstrating that you can load data,",
+    "chunk_id": "cd35243c-f99d-4d5a-a721-32afa6e71d15",
+    "content": "Hieu Nguyen. 2014. Strong consistency in cache augmented SQL \nsystems. Proceedings of the 15th International Middleware \nConference (Middleware '14). Association for Computing \nMachinery, New York, NY, USA, 181–192. \nhttps://doi.org/10.1145/2663165.2663318 OR using USC DL \nhttps://dl-acm-org.libproxy1.usc.edu/doi/pdf/10.1145/2663165\n.2663318 \n \nDiscussion \nShahram Ghandeharizadeh, Sandy Irani, and Jenny Lam. 2015. Cache replacement with",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 5
     }
   },
   {
-    "chunk_id": "525aa095-5249-4970-922e-83edf949d976",
-    "content": "handle missing values, create informative visualizations, and extract actionable insights. This project\ngoes on your GitHub with a clean README.\nDSA progresses to Binary Search and Sliding Window — both are high-frequency interview patterns.\nBinary Search variants (finding boundaries, rotated arrays) appear constantly because they’re easy to\nexplain but have subtle edge cases that trip up unprepared candidates. Sliding Window is essential for",
+    "chunk_id": "c7fca1f0-6254-4f6d-9117-ebf90d06f8d7",
+    "content": "Discussion \nShahram Ghandeharizadeh, Sandy Irani, and Jenny Lam. 2015. Cache replacement with \nmemory allocation. In Proceedings of the Meeting on Algorithm Engineering & \nExperiments (ALENEX '15). Society for Industrial and Applied Mathematics, USA, \n1–9. https://epubs.siam.org/doi/10.1137/1.9781611973754.1 \n \n \nPage 5",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 5
     }
   },
   {
-    "chunk_id": "ec626706-c6ea-4d0f-ab25-dce311e61a7c",
-    "content": "substring/subarray problems and has direct analogies to batch processing in ML pipelines.\n5. Phase 2: Machine Learning Core (Weeks 4-6)\nWeek 4: ML Fundamentals Begin\nGenerated by Kimi.ai",
+    "chunk_id": "da7464c1-9b6b-4b24-8796-6c202a895b02",
+    "content": "Week 13: MapReduce \nAssigned Reading: Jeffrey Dean and Sanjay Ghemawat.  \nMapReduce: Simplified Data Processing on Large Clusters.  \nSixth Symposium on Operating System Design and \nImplementation (OSDI)2004. \nhttps://dl.acm.org/doi/pdf/10.1145/1327452.1327492 \n \nDiscussion \nJuwei Shi, Yunjie Qiu, Umar Farooq Minhas, Limei Jiao, Chen Wang, Berthold \nReinwald, and Fatma Özcan. 2015. Clash of the titans: MapReduce vs. Spark for",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 5
-    }
-  },
-  {
-    "chunk_id": "dbca8cf2-d2d0-4be0-8c7f-d59dfafeb132",
-    "content": "Day\nFocus Area\nActivity\nHours\nResource\n1-3\nML\nAndrew Ng ML\nSpecialization Course 1\n(Supervised Learning)\n8\nCoursera: ML\nSpecialization\n(wordpress.com)\n4-5\nML\nHands-On ML Book Ch.\n1-2 (End-to-end ML\nproject)\n8\nHands-On ML (Géron)\n(ML in Production)\n6-7\nML\nscikit-learn: Linear/\nLogistic Regression\nimplementation\n5\nscikit-learn docs\nDaily\nDSA\nNeetCode Tree\nproblems (BFS/DFS)\n12\nNeetCode 150\n5-7\nSQL\nAdvanced SQL: window\nfunctions practice\n7\nLeetCode SQL + Mode\nAnalytics",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 6
     }
   },
   {
-    "chunk_id": "e5ad6e08-6ae1-4070-80b8-5d54daea1d62",
-    "content": "12\nNeetCode 150\n5-7\nSQL\nAdvanced SQL: window\nfunctions practice\n7\nLeetCode SQL + Mode\nAnalytics\nTotal: 40 hours | ML: 13h, DSA: 12h, SQL: 10h, Python: 5h\nWeek 4 introduces the Andrew Ng Machine Learning Specialization — the single most recom-\nmended ML course for beginners, with over 5 million enrolled students (wordpress.com) . The specializa-\ntion’s strength is diagnostic vocabulary: understanding why models underfit, overfit, or fail to generalize.",
+    "chunk_id": "45f886e4-64eb-4ac4-88f9-f2ee021951af",
+    "content": "Reinwald, and Fatma Özcan. 2015. Clash of the titans: MapReduce vs. Spark for \nlarge scale data analytics. Proc. VLDB Endow. 8, 13 (September 2015), 2110–2121. \nhttps://doi.org/10.14778/2831360.2831365 \n \n \nWeek 14: RAID \nAssigned Reading:  David A. Patterson, Garth Gibson, and \nRandy H. Katz. 1988. A case for redundant arrays of \ninexpensive disks (RAID). In Proceedings of the 1988 ACM \nSIGMOD international conference on Management of data",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 6
     }
   },
   {
-    "chunk_id": "80ef2b5f-d19a-4e4c-8dca-fef1d69ca938",
-    "content": "This conceptual foundation prevents the common beginner mistake of throwing neural networks at every\nproblem without understanding whether the issue is data quality, feature engineering, or model selection.\nThe course uses Python, NumPy, and scikit-learn — tools you’re already familiar with from Weeks 1-3.\nParallel to the course, start reading Aurélien Géron’s “Hands-On Machine Learning with Scikit-\nLearn, Keras & TensorFlow” — widely considered the best practical ML book (FreeCodecamp) .",
+    "chunk_id": "bf76d33b-74ad-4c11-8cc8-df9f10b782ee",
+    "content": "SIGMOD international conference on Management of data \n(SIGMOD '88). Association for Computing Machinery, New York, \nNY, USA, 109–116. https://doi.org/10.1145/50202.50214 \n \n \nWeek 15: Course Evaluation, Review, and Exam 2 \nExam 2 covers assigned readings of Week 9-14.  \n \n \n \nFall 2026 Course Schedule:  A Weekly Breakdown \n \nTopics/Daily \nActivities \nReadings/Preparation \nKey Concepts  \nWeek 1 \n8/24 \n \nIntroduction, SDM, \nRelational \nER, Conceptual model \nConceptual data models \nWeek 2 \n8/31",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 6
     }
   },
   {
-    "chunk_id": "a6d0dd2a-f5f3-40d6-ae3e-50049b1ecc87",
-    "content": "Learn, Keras & TensorFlow” — widely considered the best practical ML book (FreeCodecamp) .\nThe book’s Chapter 2 presents a complete end-to-end ML project (predicting California housing prices)\nthat demonstrates the full workflow: data exploration, preprocessing, model selection, cross-validation,\nhyperparameter tuning, and deployment. Working through this alongside Andrew Ng’s theory creates a",
+    "chunk_id": "bd90edd3-51b4-415a-85cb-d2165f4191f0",
+    "content": "8/24 \n \nIntroduction, SDM, \nRelational \nER, Conceptual model \nConceptual data models \nWeek 2 \n8/31 \n \nParallel DBMSs \nGamma \nParallel query processing, crash \nrecovery, shared-nothing \narchitecture \nWeek 3 \n9/7 \n \nLabor Day \nNo Class \nNo Class \nWeek 4 \n9/14 \n \nXact Storage \nManagers \nFoundationDB \nGuest lecture by Dr. Hieu \nNguyen of eBay \nOCC, MVCC, Fat Clients, DBMS \nas a collection of microservices  \nWeek 5 \n9/21 \n \nData Declustering \nHybrid Range Partitioning \nStrategy",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 6
     }
   },
   {
-    "chunk_id": "4c146b69-0710-4775-913c-b3f6a877193a",
-    "content": "hyperparameter tuning, and deployment. Working through this alongside Andrew Ng’s theory creates a\npowerful learn-by-doing loop. Géron’s book is particularly valuable because it’s written by a practitioner\n(former YouTube video classification lead) and includes production-ready techniques that courses often\nskip (ML in Production) .\nscikit-learn is the primary library for classical ML — it implements virtually every algorithm you’ll need",
+    "chunk_id": "74e84a32-cbfe-4f26-8ead-484c0e28088f",
+    "content": "Week 5 \n9/21 \n \nData Declustering \nHybrid Range Partitioning \nStrategy   \nSharding, Load Balancing \nWeek 6 \n9/28 \n \nBenchmarks \nBG Social Networking \nBenchmark \nPerformance metrics, Closed \nand Open Simulation Models \n \nPage 6",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 6
     }
   },
   {
-    "chunk_id": "8dfd6d03-8b4c-4733-8cb5-9e0e280e9be4",
-    "content": "with a consistent API: fit(), predict(), score() (Wikitechy) . By Week 4, you should be comfortable\nwith the standard workflow: train_test_split →preprocessing pipeline →model fitting →evaluation\nmetrics. Implementing Linear Regression and Logistic Regression from scratch (using NumPy) alongside\nscikit-learn’s built-in versions deepens understanding of what the library is actually doing under the hood.\nWeek 5: ML Algorithms + First ML Project\nDay\nFocus Area\nActivity\nHours\nResource\n1-3\nML",
+    "chunk_id": "6fc21e3c-dab3-48b7-84dd-cd2738f65948",
+    "content": "Week 7 \n10/5 \n \nGraph Query \nProcessing \nGrasper \nGraph data model, Gremlin \nquery language, operators \nWeek 8 \n10/12 \n \nReview for Exam 1 \n(1 hour) + 1 hour  \nExam 1 is on the \nsame day \nExam 1 \nReview for Exam 1 + Exam 1. \nWeek 9 \n10/19 \n \nDisaggregated \nDBMSs \nLakebase \nGuest lecture by Dr. Haoyu \nHuang of Databricks \nSeparation of storage from \nprocessing, shared disk \narchitecture. \nWeek 10 \n10/26 \n \nMemory Mgmt \nCAMP and LRU \nLow complexity memory mgmt \nalgorithms that consider size",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 6
-    }
-  },
-  {
-    "chunk_id": "4b0fc0c4-b70a-4a21-a174-d177016752ee",
-    "content": "Week 5: ML Algorithms + First ML Project\nDay\nFocus Area\nActivity\nHours\nResource\n1-3\nML\nClassification\nalgorithms: SVM,\nDecision Trees, Random\nForest\n6\nHands-On ML Ch. 5-7\nGenerated by Kimi.ai",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 6
-    }
-  },
-  {
-    "chunk_id": "a370483d-19b0-4a88-9e79-90c189646bc5",
-    "content": "Table 6 – continued\nDay\nFocus Area\nActivity\nHours\nResource\n4-5\nML\nUnsupervised learning:\nK-Means, PCA\n4\nAndrew Ng Course 3 +\nHands-On ML\n6-7\nML\nProject: Customer\nChurn Predictor\n6\nSelf-directed\nDaily\nDSA\nNeetCode Heap +\nBacktracking (5\nproblems)\n10\nNeetCode 150\n5-7\nAI/LLMs\nOpenAI API basics:\ncompletions,\nembeddings\n5\nOpenAI API docs\n3-5\nData\nFeature engineering\ntechniques\n9\nHands-On ML Ch. 2 +\nKaggle notebooks\nTotal: 40 hours | ML: 14h, DSA: 10h, AI: 5h, Data: 9h, Projects: 2h",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 7
     }
   },
   {
-    "chunk_id": "f00b5807-a0e0-4345-be3f-08f30a7ae77b",
-    "content": "Kaggle notebooks\nTotal: 40 hours | ML: 14h, DSA: 10h, AI: 5h, Data: 9h, Projects: 2h\nWeek 5 expands your algorithm toolkit while starting your first significant ML project: a Customer\nChurn Predictor. This is a classic binary classification problem that demonstrates end-to-end ML\ncompetency — data collection (use a public telecom dataset), cleaning, feature engineering, model training\n(compare Logistic Regression, Random Forest, and XGBoost), evaluation (precision, recall, F1-score —",
+    "chunk_id": "2ad30df2-ab14-46a8-a145-2081a2182bb3",
+    "content": "10/26 \n \nMemory Mgmt \nCAMP and LRU \nLow complexity memory mgmt \nalgorithms that consider size \nand cost. \nWeek 11 \n11/2 \n \nRaft & Paxos  \nRaft consensus algorithm \nDistributed consensus and an \nalgorithm to implement it. \nWeek 12 \n11/9 \n \nCache Augmented \nDatabase Mgmt \nSystems  \nIQ Framework \nImpact of caches on \ntransactions \nWeek 13 \n11/16 \n \nMapReduce \nProgramming paradigm for \nparallelism. \nDivide-and-Conquer, Resilient \nto failures. \nWeek 14 \n11/23 \n \nRedundant arrays \nof disks \nRAID",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 7
     }
   },
   {
-    "chunk_id": "9e3ddf68-8341-455d-981c-64b09c708bdc",
-    "content": "not just accuracy), and a simple Streamlit dashboard for predictions. The project should be GitHub-ready\nwith a comprehensive README explaining your methodology and results.\nFeature engineering is where ML transitions from “running library functions” to “genuine data science\nintuition”. Understanding when to create interaction terms, how to handle categorical variables (one-hot\nencoding vs. target encoding), and why feature scaling matters for some algorithms but not others —",
+    "chunk_id": "9b0cab55-23db-4298-80e9-bbefd83be87a",
+    "content": "Divide-and-Conquer, Resilient \nto failures. \nWeek 14 \n11/23 \n \nRedundant arrays \nof disks \nRAID \nParity, availability, Amdhal's \nlaw, small & large I/O. \n \nWeek 15 \n11/30 \n \nCourse Evals, \nReview for Exam 2 \n& + 1 hour Exam 2 \nReview + Exam 2 \nCourse Evaluation, Review for \nExam 2 + Exam 2 \n \n \n \n \nTime Permitting: NoSQL Database Systems \nAssigned Reading: Joseph Idziorek and Alex Keyes and Colin \nLazier and Somu Perianayagam and Prithvi Ramanathan and",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 7
     }
   },
   {
-    "chunk_id": "3b7918ed-4861-4c30-b3e9-e641a85f548b",
-    "content": "encoding vs. target encoding), and why feature scaling matters for some algorithms but not others —\nthese decisions separate pipeline operators from ML practitioners. Hands-On ML Chapter 2 covers these\ntechniques comprehensively (ML in Production) .\nThe first exposure to OpenAI’s API marks the transition toward AI engineering. Understanding how\nto structure prompts, handle API responses, and manage rate limits is foundational for all subsequent",
+    "chunk_id": "c28fe067-575c-4b1c-8bd2-98f281bc0e8d",
+    "content": "Lazier and Somu Perianayagam and Prithvi Ramanathan and \nJames Christopher Sorenson III and Doug Terry and Akshat \nVig. 2023. Distributed Transactions at Scale in Amazon \nDynamoDB. 2023 USENIX Annual Technical Conference (USENIX \nATC 23). \nhttps://www.usenix.org/conference/atc23/presentation/idziore\nk \n \n \nDiscussion \nMostafa Elhemali and Niall Gallagher and Nick Gordon and Joseph Idziorek and \nRichard Krog and Colin Lazier and Erben Mo and Akhilesh Mritunjai and",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 7
     }
   },
   {
-    "chunk_id": "8594b1e8-c81f-4149-8f03-3635738f7b36",
-    "content": "LLM work. Start with simple completion requests before moving to embeddings — the embeddings API\nis what powers RAG systems, which you’ll build in Week 8.\nWeek 6: Deep Learning Introduction + Neural Networks\nDay\nFocus Area\nActivity\nHours\nResource\n1-3\nML\nNeural Networks:\nfeed-forward,\nbackpropagation\n8\nAndrew Ng Course 2 +\nHands-On ML Ch. 10\n4-5\nML\nPyTorch\nfundamentals (tensors,\nautograd, nn.Module)\n8\nPyTorch Oﬀicial\nTutorials\n(mljourney.com)\n6-7\nML\nBuild first neural\nnetwork: MNIST\nclassifier\n5",
+    "chunk_id": "45887cea-618e-4e52-8836-b9d30cb5ccc2",
+    "content": "Richard Krog and Colin Lazier and Erben Mo and Akhilesh Mritunjai and \nSomasundaram Perianayagam and Tim Rath and Swami Sivasubramanian and James \nChristopher Sorenson III and Sroaj Sosothikul and Doug Terry and Akshat Vig. \n2022. Amazon DynamoDB: A Scalable, Predictably Performant, and Fully Managed \nNoSQL Database Service, 2022 USENIX Annual Technical Conference (USENIX ATC 22). \nhttps://www.usenix.org/conference/atc22/presentation/elhemali",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 7
     }
   },
   {
-    "chunk_id": "eb4a816d-7eac-419c-b63a-3014a13434cb",
-    "content": "8\nPyTorch Oﬀicial\nTutorials\n(mljourney.com)\n6-7\nML\nBuild first neural\nnetwork: MNIST\nclassifier\n5\nPyTorch tutorials\nGenerated by Kimi.ai",
+    "chunk_id": "9c128eca-cdec-43b7-b941-36c12ea75a71",
+    "content": "https://www.usenix.org/conference/atc22/presentation/elhemali \n \nJingyu Zhou, Meng Xu, Alexander Shraer, Bala Namasivayam, Alex Miller, Evan \nTschannen, Steve Atherton, Andrew J. Beamon, Rusty Sears, John Leach, Dave \n \nPage 7",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 7
     }
   },
   {
-    "chunk_id": "4184a05c-eb2d-4f1b-8dcf-862b73daa355",
-    "content": "Table 7 – continued\nDay\nFocus Area\nActivity\nHours\nResource\nDaily\nDSA\nNeetCode Graph +\nDynamic Programming\nbasics\n10\nNeetCode 150\n5-7\nAI/LLMs\nOllama setup + local\nLLM experimentation\n10\nOllama Tutorial (T\nRecommendation\nH.263)\nTotal: 40 hours | ML: 15h, DSA: 10h, AI: 10h, Projects: 5h\nWeek 6 introduces deep learning with PyTorch — and this is where framework choice matters.\nResearch consistently shows PyTorch is the better choice for beginners in 2025: it’s more Pythonic, has",
+    "chunk_id": "1a298b15-3839-4bb8-a6f4-802875507ed2",
+    "content": "Rosenthal, Xin Dong, Will Wilson, Ben Collins, David Scherer, Alec Grieser, Young \nLiu, Alvin Moore, Bhaskar Muppana, Xiaoge Su, Vishesh Yadav: \nFoundationDB: A Distributed Unbundled Transactional Key Value Store. SIGMOD \nConference 2021: 2653-2666  https://www.foundationdb.org/files/fdb-paper.pdf \n \n \n \n \n \n \nStatement on Academic Conduct and Support Systems \n \nAcademic Conduct: \n \nPlagiarism – presenting someone else’s ideas as your own, either verbatim or recast in your own words",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 8
     }
   },
   {
-    "chunk_id": "86a2fa14-ce26-4d9f-8f6a-00a728a90e91",
-    "content": "cleaner debugging (standard Python debuggers work), and dominates the research community which\nmeans better tutorials and pre-trained models (acecloud.ai) . TensorFlow’s Keras API is simpler for\nbasic models, but PyTorch’s flexibility pays dividends when you move to custom architectures.\nFor\nML internships, PyTorch knowledge is increasingly expected — especially for roles involving LLMs or\ncomputer vision.",
+    "chunk_id": "053abb8b-047d-4cba-b077-b77cc49e5012",
+    "content": "– is a serious academic offense with serious consequences. Please familiarize yourself with the \ndiscussion of plagiarism in SCampus in Part B, Section 11, “Behavior Violating University Standards” \npolicy.usc.edu/scampus-part-b. Other forms of academic dishonesty are equally unacceptable. See \nadditional information in SCampus and university policies on Research and Scholarship Misconduct. \n \nStudents and Disability Accommodations:",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 8
     }
   },
   {
-    "chunk_id": "e4a53af1-0116-49f8-8fd0-0026df47425c",
-    "content": "computer vision.\nUnderstanding neural networks at the implementation level (not just calling model.fit()) is crucial.\nBuilding MNIST from scratch with PyTorch — defining the nn.Module, implementing the training loop\nwith autograd, and manually computing loss — gives you the intuition that makes debugging complex\nmodels possible later. The jump from scikit-learn’s declarative API to PyTorch’s imperative style is\nsignificant but necessary for any serious ML work.",
+    "chunk_id": "aa962cf4-aa18-43e6-aab9-5694f59adf5c",
+    "content": "Students and Disability Accommodations: \n \nUSC welcomes students with disabilities into all of the University’s educational programs. The Office of \nStudent Accessibility Services (OSAS) is responsible for the determination of appropriate \naccommodations for students who encounter disability-related barriers. Once a student has completed \nthe OSAS process (registration, initial appointment, and submitted documentation) and",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 8
     }
   },
   {
-    "chunk_id": "f0004ff8-8f31-4be5-bc16-a07391b2f82d",
-    "content": "significant but necessary for any serious ML work.\nOllama becomes your local LLM infrastructure this week. Setting up Ollama to run models like Llama\n3.1 locally gives you unlimited experimentation without API costs (T Recommendation H.263) . The\nsetup is remarkably simple — one-line installation, then ollama run llama3.1 gets you a ChatGPT-like\ninterface running entirely on your machine. This enables rapid experimentation with prompt engineering,",
+    "chunk_id": "7a27ef66-f87f-462f-a97d-c2622059622b",
+    "content": "the OSAS process (registration, initial appointment, and submitted documentation) and \naccommodations are determined to be reasonable and appropriate, a Letter of Accommodation (LOA) \nwill be available to generate for each course. The LOA must be given to each course instructor by the \nstudent and followed up with a discussion. This should be done as early in the semester as possible as \naccommodations are not retroactive. More information can be found at osas.usc.edu. You may contact",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 8
     }
   },
   {
-    "chunk_id": "8245f93c-74d1-40e1-86d6-48798cdfa5a3",
-    "content": "model comparison, and eventually RAG pipeline development without worrying about per-token pricing.\n6. Phase 3: AI, LLMs & Agents (Weeks 7-8)\nWeek 7: LangChain, RAG & Vector Databases\nDay\nFocus Area\nActivity\nHours\nResource\n1-2\nAI/LLMs\nLangChain\nfundamentals: Chains,\nPrompts, Models\n6\nLangChain Crash\nCourse (Udemy)\n(Udemy)\n3-4\nAI/LLMs\nVector databases:\nChromaDB setup &\nembeddings\n6\nChromaDB docs (Agix\nTechnologies)\n5-6\nAI/LLMs\nBuild RAG pipeline:\ndocument ingestion →\nretrieval →generation\n8",
+    "chunk_id": "14034f44-8cdb-4a5e-a48f-c9b3df378a2a",
+    "content": "accommodations are not retroactive. More information can be found at osas.usc.edu. You may contact \nOSAS at (213) 740-0776 or via email at osasfrontdesk@usc.edu. \n \nSupport Systems: \n \nCounseling and Mental Health - (213) 740-9355 – 24/7 on call \nstudenthealth.usc.edu/counseling \nFree and confidential mental health treatment for students, including short-term psychotherapy, group \ncounseling, stress fitness workshops, and crisis intervention.",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 8
     }
   },
   {
-    "chunk_id": "730af643-980e-4fb2-be7d-387ba9cf7d78",
-    "content": "Technologies)\n5-6\nAI/LLMs\nBuild RAG pipeline:\ndocument ingestion →\nretrieval →generation\n8\nLangChain RAG\nTutorial\nGenerated by Kimi.ai",
+    "chunk_id": "7dd7eeac-22cb-4f45-a333-977aa640dccb",
+    "content": "counseling, stress fitness workshops, and crisis intervention. \n \nNational Suicide Prevention Lifeline - 1 (800) 273-8255 – 24/7 on call \nsuicidepreventionlifeline.org \nFree and confidential emotional support to people in suicidal crisis or emotional distress 24 hours a \nday, 7 days a week. \n \nRelationship and Sexual Violence Prevention Services (RSVP) - (213) 740-9355(WELL), press “0” after \nhours – 24/7 on call \nstudenthealth.usc.edu/sexual-assault",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 8
     }
   },
   {
-    "chunk_id": "84870fcf-c579-4041-8391-e7e58aad8c89",
-    "content": "Table 8 – continued\nDay\nFocus Area\nActivity\nHours\nResource\n7\nAI/LLMs\nRAG evaluation &\noptimization\n4\nSelf-directed\nDaily\nDSA\nLeetCode Mixed\npractice (previously\ncovered topics)\n8\nLeetCode\n5-7\nML\nModel evaluation &\nhyperparameter tuning\ndeep dive\n8\nHands-On ML Ch. 2 +\nscikit-learn docs\nTotal: 40 hours | AI/LLMs: 16h, DSA: 8h, ML: 12h, Projects: 4h\nWeek 7 is where your plan’s AI/LLM focus truly materializes. LangChain has become the standard",
+    "chunk_id": "d5976522-9669-45b0-b291-30a01b99009f",
+    "content": "hours – 24/7 on call \nstudenthealth.usc.edu/sexual-assault \nFree and confidential therapy services, workshops, and training for situations related to gender-based \nharm. \n \nOffice for Equity, Equal Opportunity, and Title IX (EEO-TIX) - (213) 740-5086 \neeotix.usc.edu \n \nPage 8",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
+      "page": 8
+    }
+  },
+  {
+    "chunk_id": "111240f5-e9ad-41e2-849c-ae3b945f2faa",
+    "content": "Information about how to get help or help someone affected by harassment or discrimination, rights of \nprotected classes, reporting options, and additional resources for students, faculty, staff, visitors, and \napplicants. \n \nReporting Incidents of Bias or Harassment - (213) 740-5086 or (213) 821-8298 \nusc-advocate.symplicity.com/care_report \nAvenue to report incidents of bias, hate crimes, and microaggressions to the Office for Equity, Equal",
+    "metadata": {
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 9
     }
   },
   {
-    "chunk_id": "08a93b08-3c1c-41de-a2f0-3af5040b0822",
-    "content": "Week 7 is where your plan’s AI/LLM focus truly materializes. LangChain has become the standard\nframework for building LLM applications, and the latest v0.3 release significantly streamlined the API\n(Udemy) .\nThe core abstractions — ChatModels, PromptTemplates, Chains, and Agents — provide a\nconsistent interface for combining LLMs with external data sources and tools. Understanding when to",
+    "chunk_id": "326b1a4e-cdf4-4c0d-a80b-8c44e7e84c7b",
+    "content": "Opportunity, and Title for appropriate investigation, supportive measures, and response. \n \nThe Office of Student Accessibility Services (OSAS) - (213) 740-0776 \nosas.usc.edu \nOSAS ensures equal access for students with disabilities through providing academic accommodations \nand auxiliary aids in accordance with federal laws and university policy. \nUSC Campus Support and Intervention - (213) 821-4710 \ncampussupport.usc.edu",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 9
     }
   },
   {
-    "chunk_id": "1bd45cdd-bf67-4c36-a9b4-719c1a833f83",
-    "content": "consistent interface for combining LLMs with external data sources and tools. Understanding when to\nuse a simple Chain versus a full Agent with tool-calling capabilities is a key architectural decision in LLM\napplication design.\nRetrieval-Augmented Generation (RAG) is the most important LLM pattern for practical appli-\ncations. Instead of relying on an LLM’s static training knowledge, RAG retrieves relevant documents",
+    "chunk_id": "4df8ca91-fdaf-44d7-bc8d-5b5314384872",
+    "content": "USC Campus Support and Intervention - (213) 821-4710 \ncampussupport.usc.edu \nAssists students and families in resolving complex personal, financial, and academic issues adversely \naffecting their success as a student. \n \nDiversity, Equity and Inclusion - (213) 740-2101 \ndiversity.usc.edu \nInformation on events, programs and training, the Provost’s Diversity and Inclusion Council, Diversity \nLiaisons for each academic school, chronology, participation, and various resources for students.",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 9
     }
   },
   {
-    "chunk_id": "fa8198e6-ce64-4799-b0ea-ac7603c53642",
-    "content": "cations. Instead of relying on an LLM’s static training knowledge, RAG retrieves relevant documents\nfrom a vector database and injects them into the prompt context — dramatically improving accuracy\nfor domain-specific queries (wordpress.com) . Building a complete RAG pipeline involves: (1) document\nloading and chunking, (2) embedding generation (using OpenAI or local models via Ollama), (3) vec-\ntor storage in ChromaDB, (4) similarity search for relevant chunks, and (5) response generation with",
+    "chunk_id": "f82fa734-1db5-480a-ad0b-21347fd4c8fc",
+    "content": "USC Emergency - UPC: (213) 740-4321, HSC: (323) 442-1000 – 24/7 on call \ndps.usc.edu, emergency.usc.edu \nEmergency assistance and avenue to report a crime. Latest updates regarding safety, including ways in \nwhich instruction will be continued if an officially declared emergency makes travel to campus \ninfeasible. \n \nUSC Department of Public Safety - UPC: (213) 740-6000, HSC: (323) 442-120 – 24/7 on call \ndps.usc.edu \nNon-emergency assistance or information.",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 9
     }
   },
   {
-    "chunk_id": "99588885-3836-4168-ac39-4eaf168e0fb1",
-    "content": "retrieved context. This is a substantial project that becomes a major portfolio piece.\nChromaDB is the recommended vector database for beginners — it’s lightweight, open-source, and has\nexcellent LangChain integration (Agix Technologies) . For prototyping and learning, it requires zero\ninfrastructure setup (runs embedded in your Python process). Understanding vector similarity search —\nhow embeddings convert text into high-dimensional vectors and how cosine similarity finds “close” vectors",
+    "chunk_id": "d755ae7f-e113-4a16-9f6d-8b44e001f754",
+    "content": "dps.usc.edu \nNon-emergency assistance or information. \n \nOffice of the Ombuds - (213) 821-9556 (UPC) / (323-442-0382 (HSC) \nombuds.usc.edu   \nA safe and confidential place to share your USC-related issues with a University Ombuds who will work \nwith you to explore options or paths to manage your concern. \n \nOccupational Therapy Faculty Practice - (323) 442-3340 or otfp@med.usc.edu \nchan.usc.edu/otfp",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 9
     }
   },
   {
-    "chunk_id": "aee68daf-55e2-4a85-ab49-861924c67819",
-    "content": "— is foundational modern AI engineering knowledge.\nWeek 8: AI Agents + Project Integration\nDay\nFocus Area\nActivity\nHours\nResource\n1-2\nAI/LLMs\nLangGraph: building\nmulti-agent workflows\n6\nLangGraph docs\n3-4\nAI/LLMs\nBuild AI Email\nTriage Bot\n(LangChain + RAG +\nStreamlit)\n10\nSelf-directed\n5\nAI/LLMs\nNo-code tools: explore\nLangflow, Crew AI\n4\nLangflow\n6-7\nProjects\nDeploy projects: Flask\nAPIs, Docker basics\n6\nFlask docs + Docker\ndocs\nGenerated by Kimi.ai",
+    "chunk_id": "2f3c3889-c86b-4ca8-a283-2aa0dd8e377c",
+    "content": "Occupational Therapy Faculty Practice - (323) 442-3340 or otfp@med.usc.edu \nchan.usc.edu/otfp \n​Confidential Lifestyle Redesign services for USC students to support health promoting habits and \nroutines that enhance quality of life and academic performance. \n \nPage 9",
     "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
+      "source": "SyllabusCSCI585Fall2026.pdf",
       "page": 9
-    }
-  },
-  {
-    "chunk_id": "a2ffe5ac-1841-43a3-8513-4b174c29862d",
-    "content": "Table 9 – continued\nDay\nFocus Area\nActivity\nHours\nResource\nDaily\nDSA\nLeetCode mixed + SQL\npractice\n8\nLeetCode + DataLemur\n7\nCareer\nGitHub cleanup, resume\ndraft, LinkedIn update\n6\nSelf-directed\nTotal: 40 hours | AI/LLMs: 14h, Projects: 10h, DSA: 8h, Career: 6h, ML: 2h\nWeek 8 integrates everything into production-like projects. The AI Email Triage Bot combines multi-\nple skills: using LangChain to process emails, vector storage for historical context, LLM summarization,",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 10
-    }
-  },
-  {
-    "chunk_id": "6847d3cd-ad92-474b-bb5b-bb4a918b39a1",
-    "content": "and a Streamlit dashboard for user interaction. This isn’t a toy project — it’s architecturally similar\nto real enterprise AI tools. Building it demonstrates that you can combine APIs, databases, and UI\ncomponents into a cohesive application.\nLangGraph (LangChain’s extension for building agent workflows) enables multi-step reasoning where\nan agent can plan, execute tools, observe results, and iterate — the “agent loop” pattern that powers",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 10
-    }
-  },
-  {
-    "chunk_id": "f58e2512-951e-4d6d-8760-4eefed2161cc",
-    "content": "sophisticated AI applications (onlinetutorials.me) . Understanding this pattern is increasingly important\nas companies move beyond simple Q&A chatbots to AI systems that can actually perform tasks.\nDeployment skills — building Flask APIs, containerizing with Docker, and hosting on platforms like\nRender or Hugging Face Spaces — transform notebooks into production artifacts. An ML model that\nonly runs on your laptop is a prototype; an ML model accessible via REST API is a product.\nFor",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 10
-    }
-  },
-  {
-    "chunk_id": "03e6bbaf-1a67-454c-a1c1-78d2b65e3213",
-    "content": "only runs on your laptop is a prototype; an ML model accessible via REST API is a product.\nFor\ninternships, demonstrating deployment awareness signals that you understand the full ML lifecycle, not\njust the training phase.\n7. Phase 4: Project Sprint & Interview Prep (Weeks 9-10)\nWeek 9: Portfolio Project Development\nDay\nFocus Area\nActivity\nHours\nResource\n1-3\nProjects\nProject: AI\nKnowledge Base\nAssistant (full RAG\napp)\n15\nSelf-directed\n4-5\nProjects\nProject:\nData-Driven\nRecommendation\nEngine\n10",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 10
-    }
-  },
-  {
-    "chunk_id": "1fe4ec59-d338-4cb8-8488-a9d337cc0122",
-    "content": "app)\n15\nSelf-directed\n4-5\nProjects\nProject:\nData-Driven\nRecommendation\nEngine\n10\nSelf-directed\n6-7\nProjects\nPolish GitHub repos,\nwrite READMEs,\ncreate demos\n7\nSelf-directed\nDaily\nDSA\nLeetCode medium\nproblems + mock\ninterview practice\n8\nLeetCode + Pramp\nGenerated by Kimi.ai",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 10
-    }
-  },
-  {
-    "chunk_id": "c9b65040-afee-4fbe-af17-23a66bc2cc7e",
-    "content": "Total: 40 hours | Projects: 25h, DSA: 8h, Polish: 7h\nWeek 9 is project sprint week. The goal is completing two substantial portfolio projects:\nProject 1: AI Knowledge Base Assistant — A full RAG application that ingests documents (PDFs,\nMarkdown files, or web pages), stores them in a vector database, and answers questions via a Streamlit\ninterface. This demonstrates LangChain, vector databases, embeddings, and UI development. Deploy it",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 11
-    }
-  },
-  {
-    "chunk_id": "b973541c-3905-41e1-9d6d-bb8a520782af",
-    "content": "interface. This demonstrates LangChain, vector databases, embeddings, and UI development. Deploy it\non Streamlit Community Cloud for a live demo link you can share with recruiters.\nProject 2: Data-Driven Recommendation Engine — Use clustering (K-Means or DBSCAN) on a\npurchase history dataset to segment users, then build a simple content-based recommender using scikit-\nlearn. Expose recommendations via a Flask API with proper documentation. This demonstrates classical",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 11
-    }
-  },
-  {
-    "chunk_id": "c1e16d53-0b22-4213-998b-92518428d8e8",
-    "content": "ML skills alongside API development — showing versatility across the ML stack.\nThe key to portfolio projects is README quality. Each project needs: (1) clear problem statement,\n(2) tech stack list, (3) setup instructions, (4) architecture diagram, (5) demo screenshots or GIFs, and (6)\ndiscussion of challenges faced and trade-offs made. A project with a great README gets attention; a\nproject with code-only gets ignored.\nWeek 10: Final Polish + Interview Readiness\nDay\nFocus Area\nActivity\nHours",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 11
-    }
-  },
-  {
-    "chunk_id": "7fbca2fa-d4c4-4f3e-84f5-d5dcb2cdc35d",
-    "content": "Week 10: Final Polish + Interview Readiness\nDay\nFocus Area\nActivity\nHours\nResource\n1-3\nProjects\nCapstone:\nEnd-to-End ML\nPipeline\n(MLOps-style)\n15\nSelf-directed\n4-5\nProjects\nDeploy all projects,\ncreate portfolio website\n8\nGitHub Pages +\nStreamlit\n6-7\nDSA\nIntensive LeetCode:\nfocus on top 50 most\ncommon\n10\nLeetCode + NeetCode\n5-7\nCareer\nResume finalization,\nLinkedIn optimization,\napply to internships\n7\nSelf-directed\nTotal: 40 hours | Projects: 23h, DSA: 10h, Career: 7h",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 11
-    }
-  },
-  {
-    "chunk_id": "ba99643a-f089-4a5c-b7e1-36639c8db8c3",
-    "content": "apply to internships\n7\nSelf-directed\nTotal: 40 hours | Projects: 23h, DSA: 10h, Career: 7h\nWeek 10’s capstone project ties everything together: an end-to-end ML pipeline that includes data\ningestion, preprocessing, model training with experiment tracking (MLflow), automated evaluation, and\nAPI deployment. This demonstrates MLOps awareness — the engineering practices that separate aca-\ndemic ML from production ML. Even a simplified version (using GitHub Actions for automation instead of",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 11
-    }
-  },
-  {
-    "chunk_id": "188dfb39-56ab-46d6-83f3-8f78618dfa28",
-    "content": "Airflow) shows you understand that ML systems require ongoing maintenance, not just one-time training.\nFinal DSA push focuses on the most commonly asked problem types. By Week 10, you should have\ncompleted roughly 60-80 NeetCode problems across Arrays, Hashing, Two Pointers, Sliding Window,\nBinary Search, Trees, and basic Graph/DP. This is suﬀicient for ML/AI internship interviews, which\ntypically don’t reach the diﬀiculty of pure SWE roles (logicmojo) . Practice explaining your solutions out",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 11
-    }
-  },
-  {
-    "chunk_id": "16e09aa6-54d3-4b82-b28e-e5335d2acf50",
-    "content": "loud — communication is as important as correctness in interviews.\nThe final career tasks — resume polish, LinkedIn optimization, and beginning applications — should\nhappen simultaneously with project completion. Your resume should lead with technical skills (Python,\nGenerated by Kimi.ai",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 11
-    }
-  },
-  {
-    "chunk_id": "db83ebe4-498e-48ce-8efe-f4ac0cf6efc5",
-    "content": "PyTorch, scikit-learn, LangChain, SQL) followed by project descriptions with quantified outcomes (“Built\nRAG pipeline achieving 85% answer relevance on domain-specific queries”). Apply broadly: LinkedIn,\ncompany career pages, AngelList for startups, and your university’s career services. The goal in Week 10\nisn’t to get an offer — it’s to get conversations started while your skills are fresh.\n8. Curated Resource Guide: The Best Free Tools for Each Topic\nPython Foundations\nResource\nType\nTime",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 12
-    }
-  },
-  {
-    "chunk_id": "d4b30839-697a-4fcc-95d3-0cdbb8aea101",
-    "content": "8. Curated Resource Guide: The Best Free Tools for Each Topic\nPython Foundations\nResource\nType\nTime\nBest For\nCS50P (Harvard)\n(rivenintech.com)\nVideo course +\nproblem sets\n30-40 hours\nBest Python foundation for\nengineers\nKaggle Learn Python\n(substack.com)\nInteractive\nmicro-course\n6-10 hours\nData-science-oriented Python\nbasics\nReal Python\nArticles + tutorials\nOngoing\nReference for specific topics\nCS50P is the undisputed best starting point. David Malan’s teaching style, the engaging problem sets,",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 12
-    }
-  },
-  {
-    "chunk_id": "3c357bbc-df8d-4c56-90b9-05871e9dda9d",
-    "content": "and the coverage of Pythonic patterns (comprehensions, generators, type hints) make it superior to\ngeneric Python courses (rivenintech.com) . The course assumes no prior programming experience, but\nyour CE background means you’ll move through the early lectures quickly and benefit most from the\nlater lectures on libraries, file I/O, and code style.\nData Structures & Algorithms\nResource\nType\nTime\nBest For\nNeetCode 150 (PracHub)\nCurated problem\nlist + videos\n80-100 hours",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 12
-    }
-  },
-  {
-    "chunk_id": "e14900df-b9d7-48ca-aebf-7667e3a088be",
-    "content": "Resource\nType\nTime\nBest For\nNeetCode 150 (PracHub)\nCurated problem\nlist + videos\n80-100 hours\nStructured DSA interview prep\nLeetCode\nProblem platform\nOngoing\nPractice problems, mock\nassessments\nDataLemur\nSQL + DSA\nproblems\n10-20 hours\nData science interview focus\nNeetCode’s structured roadmap is the highest-ROI DSA resource for time-constrained learners.\nThe\ndependency-aware sequencing (master Arrays before Two Pointers, learn Trees before Graphs) eliminates",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 12
-    }
-  },
-  {
-    "chunk_id": "cde7d394-657d-427a-b285-9b4bbce04342",
-    "content": "the random-walk problem of unsorted LeetCode practice (PracHub) . For ML/AI roles, focus on the first\n100 problems — the remaining 50 are more relevant for FAANG SWE roles than ML internships.\nSQL & Data Literacy\nResource\nType\nTime\nBest For\nSQLBolt (ai2sql.io)\nInteractive browser\ntutorial\n4-8 hours\nZero-setup SQL fundamentals\nKaggle Learn SQL\nInteractive\nmicro-course\n6-8 hours\nData science SQL patterns\nGenerated by Kimi.ai",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 12
-    }
-  },
-  {
-    "chunk_id": "3d880a5c-c193-4324-beb8-f305a87fc1c8",
-    "content": "Table 14 – continued\nResource\nType\nTime\nBest For\nMode Analytics SQL\nTutorial + real\ndatasets\n10-15 hours\nAnalytics-focused SQL\nDataLemur\nPractice problems\n5-10 hours\nSQL interview preparation\nSQLBolt is the fastest on-ramp — no signup, no installation, immediate feedback (ai2sql.io) . But it\nintentionally stops at basics, so follow it with Kaggle’s SQL course for window functions and complex\njoins (mimo.org) .\nMode Analytics has the best free tutorial for analytics-style SQL (GROUP BY,",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 13
-    }
-  },
-  {
-    "chunk_id": "3f22fc18-2713-4472-9919-34971bb998be",
-    "content": "joins (mimo.org) .\nMode Analytics has the best free tutorial for analytics-style SQL (GROUP BY,\nwindow functions, CTEs) with realistic datasets. For ML specifically, focus on: SELECT/JOIN fluency,\naggregation with GROUP BY, window functions for time-series, and subqueries for feature engineering.\nMachine Learning Fundamentals\nResource\nType\nTime\nBest For\nAndrew Ng ML\nSpecialization\n(wordpress.com)\nCoursera course (3\ncourses)\n40-60 hours\nML theory + conceptual\nfoundation\nHands-On ML (Géron) (ML",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 13
-    }
-  },
-  {
-    "chunk_id": "5c3161e1-bde9-497b-8109-cf5083a2f812",
-    "content": "Coursera course (3\ncourses)\n40-60 hours\nML theory + conceptual\nfoundation\nHands-On ML (Géron) (ML\nin Production)\nBook (O’Reilly)\n60-80 hours\nPractical ML implementation\nscikit-learn docs +\nexamples\nDocumentation\nOngoing\nReference for specific algorithms\nKaggle Competitions\nCompetitions +\nnotebooks\nOngoing\nReal-world problem practice\nAndrew Ng gives you the map; Géron’s book gives you the workshop (CourseFacts) . This pairing is the",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 13
-    }
-  },
-  {
-    "chunk_id": "8f2f5a1d-06ee-4935-9f54-2dfbf1f254ac",
-    "content": "most effective ML learning combination available. The specialization’s strength is diagnostic vocabulary\n— understanding why models fail — while the book provides production-ready code patterns (ML in\nProduction) . For a 10-week timeline, focus on: Courses 1-2 of the specialization (Supervised Learning +\nNeural Networks) and Chapters 1-7, 10-11 of Hands-On ML. Save the rest for post-internship deepening.\nDeep Learning Framework\nResource\nType\nTime\nBest For\nPyTorch Oﬀicial Tutorials",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 13
-    }
-  },
-  {
-    "chunk_id": "0a98d5bc-6327-4eb6-b122-ea3d5413e1b7",
-    "content": "Deep Learning Framework\nResource\nType\nTime\nBest For\nPyTorch Oﬀicial Tutorials\n(mljourney.com)\nCode tutorials\n15-20 hours\nDeep learning implementation\nFast.ai (Practical Deep\nLearning) (CourseFacts)\nFree course\n40-50 hours\nTop-down deep learning\nDeeplizard PyTorch Playlist\n(FreeCodecamp)\nYouTube videos\n10-15 hours\nVisual learners\nPyTorch is the recommended framework for beginners in 2025. It’s more Pythonic than Tensor-",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 13
-    }
-  },
-  {
-    "chunk_id": "d4d57635-9c68-4da0-9bc3-356e3e28799b",
-    "content": "PyTorch is the recommended framework for beginners in 2025. It’s more Pythonic than Tensor-\nFlow, dominates research (meaning better pre-trained models and community support), and has cleaner\ndebugging (acecloud.ai) . TensorFlow’s Keras API is simpler for basic models, but PyTorch’s flexibility\nGenerated by Kimi.ai",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 13
-    }
-  },
-  {
-    "chunk_id": "3c0052ba-8e7b-4095-acc3-bc8d7ce847fa",
-    "content": "pays dividends for any custom architecture work. The oﬀicial PyTorch tutorials — especially the “Learn\nthe Basics” series and the MNIST classifier walkthrough — provide the most reliable starting point.\nAI/LLMs & Agents\nResource\nType\nTime\nBest For\nLangChain Crash Course\n(Udemy) (Udemy)\nVideo course\n6-8 hours\nLangChain v0.3 fundamentals\nLangChain RAG Tutorial (\nLangChain)\nOﬀicial docs\n4-6 hours\nBuilding RAG pipelines\nOllama + local LLMs (T\nRecommendation H.263)\nTool + practice\n4-6 hours",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 14
-    }
-  },
-  {
-    "chunk_id": "f383e5a8-949e-487e-898e-51bc52886e09",
-    "content": "Building RAG pipelines\nOllama + local LLMs (T\nRecommendation H.263)\nTool + practice\n4-6 hours\nLocal LLM experimentation\nChromaDB docs (Agix\nTechnologies)\nDocumentation\n2-3 hours\nVector database basics\nLangGraph docs\nDocumentation\n3-4 hours\nMulti-agent workflows\nThe LangChain Crash Course for Beginners 2025 is the most up-to-date resource for the current v0.3 API\n(Udemy) . LangChain evolves quickly, and older tutorials often use deprecated APIs that won’t work",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 14
-    }
-  },
-  {
-    "chunk_id": "35fb5fa8-7ac3-4531-8b01-28fce2509372",
-    "content": "(Udemy) . LangChain evolves quickly, and older tutorials often use deprecated APIs that won’t work\nwith current versions. For RAG specifically, the oﬀicial LangChain RAG tutorial provides a complete\nworking example that you can adapt for your projects ( LangChain) . Ollama is essential infrastructure\n— running models locally eliminates API costs and enables rapid iteration (T Recommendation H.263) .\nDeployment & Tools\nResource\nType\nTime\nBest For\nStreamlit docs\nDocumentation\n3-4 hours\nML app UIs",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 14
-    }
-  },
-  {
-    "chunk_id": "72f9e873-352b-4053-8733-1a8c403346a4",
-    "content": "Deployment & Tools\nResource\nType\nTime\nBest For\nStreamlit docs\nDocumentation\n3-4 hours\nML app UIs\nFlask Quickstart\nDocumentation\n2-3 hours\nREST APIs for ML models\nDocker for ML (tutorial)\nTutorial\n3-4 hours\nContainerization\nHugging Face Spaces\nPlatform\n1-2 hours\nFree ML app hosting\n9. Expected Outcomes: What You’ll Know by Week 10\nBy the end of this 10-week program, you will have developed demonstrable competency across the",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 14
-    }
-  },
-  {
-    "chunk_id": "e822ee4c-29fd-4bba-a542-7430d3af2470",
-    "content": "By the end of this 10-week program, you will have developed demonstrable competency across the\nfull ML/AI stack — not just theoretical knowledge, but implemented, deployed projects that prove your\nskills to interviewers. The portfolio you’ll build consists of 4-5 substantial projects: an EDA analysis,\na classical ML model (churn prediction), a neural network classifier, a RAG-based AI assistant, and an",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 14
-    }
-  },
-  {
-    "chunk_id": "b250c530-fdc6-4949-9111-70734fe1bb5e",
-    "content": "end-to-end ML pipeline. Each project lives on GitHub with professional documentation, and at least two\nwill have live deployments you can demo during interviews.\nYour DSA preparation will position you to confidently handle LeetCode Medium-level problems in\nArrays, Hashing, Two Pointers, Sliding Window, Binary Search, Trees, and basic Graph traversal. For\nML/AI internships, this is the standard technical bar — you’re not competing with SWE candidates",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 14
-    }
-  },
-  {
-    "chunk_id": "38157e7e-959a-4762-94a6-277569349c64",
-    "content": "ML/AI internships, this is the standard technical bar — you’re not competing with SWE candidates\nwho grind Hard problems, but you need to demonstrate clean, eﬀicient code under interview conditions\n(logicmojo) . The consistent 8-12 hours/week of DSA practice builds both the problem-solving skills and\nthe interview stamina (solving problems while explaining your thinking) that technical screens require.\nGenerated by Kimi.ai",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 14
-    }
-  },
-  {
-    "chunk_id": "569f6273-3586-4da6-ad8e-94198689d622",
-    "content": "Perhaps most importantly, you’ll have developed engineering judgment — the ability to choose the\nright tool for a given problem. You’ll understand when scikit-learn is suﬀicient versus when PyTorch\nis necessary, when a simple API call beats a custom model, when vector databases add value versus\nwhen they’re overkill, and when no-code tools accelerate delivery versus when they create technical debt.",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 15
-    }
-  },
-  {
-    "chunk_id": "d80267b5-cffd-4963-a6b3-81a42fbfa8d8",
-    "content": "This judgment is what distinguishes engineers from tool-users, and it’s what hiring managers look for in\ninternship candidates who might convert to full-time roles.\nCompetency Area\nWeek 1 Level\nWeek 10 Level\nPython\nBasic syntax\nFluent with pandas, NumPy,\nscikit-learn, PyTorch\nDSA\nNone\n60-80 problems solved,\ninterview-ready\nSQL\nNone\nComplex queries, window\nfunctions, joins\nML Theory\nNone\nUnderstands supervised/\nunsupervised, overfitting,\nregularization\nML Implementation\nNone",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 15
-    }
-  },
-  {
-    "chunk_id": "f79be128-4324-452c-aba8-9cbffe83bc2e",
-    "content": "None\nUnderstands supervised/\nunsupervised, overfitting,\nregularization\nML Implementation\nNone\nEnd-to-end pipelines with\nscikit-learn + PyTorch\nLLMs/AI\nNone\nRAG systems, LangChain agents,\nlocal LLM deployment\nDeployment\nNone\nFlask APIs, Streamlit UIs, Docker\ncontainers\nPortfolio\nEmpty\n4-5 projects on GitHub with live\ndemos\n10. Final Recommendations & Success Factors\nThe single most important success factor for this plan is consistency over intensity. Forty hours per",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 15
-    }
-  },
-  {
-    "chunk_id": "20a4abb3-ea04-4060-8762-fe1d838addc0",
-    "content": "week is substantial but sustainable if you maintain daily DSA practice (1.5-2 hours) and block larger\nchunks for project work. Missing a day of DSA practice creates a compounding deficit — the pattern\nrecognition that makes you fast at problem-solving requires repeated exposure. Conversely, the ML/AI\ncontent is more forgiving of scheduling variations because projects can absorb focused weekend sessions.\nStart applying before you feel “ready”. The job market rewards momentum — early applications",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 15
-    }
-  },
-  {
-    "chunk_id": "78768abe-5d46-4a30-b224-a39ae357793c",
-    "content": "Start applying before you feel “ready”. The job market rewards momentum — early applications\ngenerate interview practice (which reveals gaps you can fill), feedback on your resume, and potentially\nearly offers that reduce pressure. Begin submitting applications in Week 8, even as you’re still building\nprojects. Many companies have multi-week interview processes, so applications submitted in Week 8\nmight lead to interviews in Week 10 when your projects are polished.",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 15
-    }
-  },
-  {
-    "chunk_id": "1544e4a0-1699-450f-9e8a-77137e099aa5",
-    "content": "might lead to interviews in Week 10 when your projects are polished.\nFinally, document your learning publicly. Write short LinkedIn posts about what you’re building,\nshare GitHub repos with descriptive READMEs, and consider writing 1-2 Medium articles explaining\na project or a concept you learned deeply. Public learning signals enthusiasm, creates opportunities for\nmentorship connections, and makes you discoverable to recruiters who search for candidates by project",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 15
-    }
-  },
-  {
-    "chunk_id": "6f1495dc-4953-45dc-8f6b-15205ef7864b",
-    "content": "keywords. The ML/AI community values openness — contributing what you learn back to the community,\neven as a beginner, builds relationships that lead to referrals and insider opportunities.\nGenerated by Kimi.ai",
-    "metadata": {
-      "source": "ML_AI_10_Week_Internship_Guide.pdf",
-      "page": 15
     }
   }
 ]

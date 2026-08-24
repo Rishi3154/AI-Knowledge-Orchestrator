@@ -3,7 +3,8 @@ Application Configuration
 
 Central location for all project-wide constants and paths.
 """
-
+import os
+from pathlib import Path
 from pathlib import Path
 
 # ==========================================================
@@ -28,9 +29,30 @@ CHUNK_INDEX_FILE = INDEX_DIR / "chunks.json"
 # Models
 # ==========================================================
 
+# Local Ollama models
 EMBEDDING_MODEL = "nomic-embed-text"
-
 LLM_MODEL = "llama3.2:latest"
+
+# Cloud models
+CLOUD_EMBEDDING_MODEL = "text-embedding-3-small"
+CLOUD_LLM_MODEL = "gpt-4o-mini"
+
+# ==========================================================
+# Providers
+# ==========================================================
+
+USE_LOCAL_MODELS = os.getenv(
+    "USE_LOCAL_MODELS",
+    "true",
+).lower() == "true"
+
+# ==========================================================
+# API Keys
+# ==========================================================
+
+OPENAI_API_KEY = os.getenv(
+    "OPENAI_API_KEY"
+)
 
 # ==========================================================
 # Chunking

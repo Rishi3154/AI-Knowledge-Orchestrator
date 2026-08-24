@@ -10,10 +10,9 @@ from app.core.config import (
     CHROMA_DB_DIR,
     COLLECTION_NAME,
     TOP_K,
-    EMBEDDING_MODEL,
 )
 from app.core.models import SearchResult
-from app.embeddings.embedder import OllamaEmbedder
+from app.embeddings.embedder import create_embedder
 
 import chromadb
 
@@ -25,7 +24,7 @@ class Retriever:
 
     def __init__(self) -> None:
 
-        self.embedder = OllamaEmbedder(EMBEDDING_MODEL)
+        self.embedder = create_embedder()
 
         self.client = chromadb.PersistentClient(
             path=str(CHROMA_DB_DIR)
