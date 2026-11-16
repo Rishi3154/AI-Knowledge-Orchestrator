@@ -1,6 +1,7 @@
 import streamlit as st
 
 from app.services.workspace import Workspace
+from components.chat.interface import get_rag
 
 
 def render_architecture():
@@ -8,7 +9,7 @@ def render_architecture():
     # ==========================================================
     # Header
     # ==========================================================
-    workspace = Workspace()
+    workspace = Workspace(get_rag())
     st.title("🧠 AI Pipeline Architecture")
 
     st.caption(
@@ -30,7 +31,7 @@ def render_architecture():
         st.metric(
             "📄 Documents",
             stats["documents"],
-            help="Number of indexed PDF documents",
+            help="Number of indexed documents",
         )
 
     with col2:

@@ -26,7 +26,7 @@ def render_hero():
             color:#64748B;
             max-width:1400px;
             margin:auto;">
-Ask questions, summarize documents, and discover insights from your PDFs.
+Ask questions, summarize documents, and discover insights from your documents.
 </div>
             """,
             unsafe_allow_html=True,

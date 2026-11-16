@@ -26,18 +26,18 @@ class BM25Retriever:
 
         self.documents = chunks
 
+        # Documents and queries must be tokenized the same way,
+        # otherwise "Exam." in a chunk never matches "exam" in a query.
         corpus = [
-            chunk.content.split()
+            tokenize(chunk.content)
             for chunk in chunks
-            ]
+        ]
 
         if not corpus:
             self.bm25 = None
-            self.chunks = []
             return
 
         self.bm25 = BM25Okapi(corpus)
-        self.chunks = chunks
 
     def search(
         self,
@@ -62,11 +62,17 @@ class BM25Retriever:
 
         for chunk, score in ranked[:top_k]:
 
+            # A score of zero means no query term matched. Returning
+            # those would feed arbitrary chunks into the fusion.
+            if score <= 0:
+                break
+
             results.append(
                 SearchResult(
                     content=chunk.content,
                     metadata=chunk.metadata,
                     distance=-float(score),
+                    chunk_id=chunk.chunk_id,
                 )
             )
 

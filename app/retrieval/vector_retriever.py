@@ -46,13 +46,15 @@ class VectorRetriever:
             n_results=top_k,
         )
 
+        ids = results["ids"][0]
         documents = results["documents"][0]
         metadatas = results["metadatas"][0]
         distances = results["distances"][0]
 
         retrieved = []
 
-        for document, metadata, distance in zip(
+        for chunk_id, document, metadata, distance in zip(
+            ids,
             documents,
             metadatas,
             distances,
@@ -63,6 +65,7 @@ class VectorRetriever:
                     content=document,
                     metadata=metadata,
                     distance=float(distance),
+                    chunk_id=chunk_id,
                 )
             )
 

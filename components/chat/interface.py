@@ -1,15 +1,44 @@
+import re
+from html import escape
+
 import streamlit as st
 
+from app.llm.citations import cited_sources
 from app.rag_pipeline import RAGPipeline
 from components.layout.hero import render_hero
+from components.sidebar.model_picker import selected_llm
 
 
 # =====================================================
 # RAG
 # =====================================================
 
+@st.cache_resource
 def get_rag():
+    """
+    Build the pipeline once and reuse it across Streamlit reruns.
+
+    Without the cache, every click reloaded all chunks, rebuilt the
+    BM25 index and reopened ChromaDB. Call rag.reload() after the
+    knowledge base changes.
+    """
     return RAGPipeline()
+
+
+def render_user_message(text):
+    """
+    Render a user message in the styled bubble.
+
+    The text is escaped so anything that looks like HTML is shown
+    as plain text instead of being rendered by the browser.
+    """
+
+    safe = escape(text).replace("\n", "<br>")
+
+    st.markdown(
+        f'<div class="user-message">{safe}</div>',
+        unsafe_allow_html=True,
+    )
 
 
 # =====================================================
@@ -24,46 +53,50 @@ if "messages" not in st.session_state:
 # Sources
 # =====================================================
 
-def render_sources(sources):
+def render_sources(answer, sources):
+    """
+    List the sources the answer cites, numbered to match its [n]
+    markers; each one opens to show the passage itself. If it cites nothing, the retrieved passages are listed
+    under a different heading so they aren't mistaken for evidence.
+    """
 
-    st.markdown("### 📄 Sources")
+    if not sources:
+        return
 
-    sorted_sources = sorted(
-        sources,
-        key=lambda chunk: (
-            chunk.metadata["source"],
-            chunk.metadata["page"],
-        ),
-    )
+    cited = cited_sources(answer, sources)
 
-    seen = set()
+    if cited:
+        st.markdown("### 📄 Sources")
+    else:
+        st.markdown("### 🔍 Passages searched (none cited)")
+        cited = list(enumerate(sources, start=1))
 
-    for source in sorted_sources:
+    for number, source in cited:
 
-        key = (
-            source.metadata["source"],
-            source.metadata["page"],
-        )
+        # Opening a source shows the exact passage the model was
+        # given, so a claim can be checked against the document.
+        with st.expander(
+            f"\\[{number}\\] 📄 {escape_markdown(source.location)}"
+        ):
+            st.text(source.content)
 
-        if key in seen:
-            continue
 
-        seen.add(key)
+def escape_markdown(text):
+    """
+    Stop characters in a file name (such as _ or *) from being
+    read as Markdown formatting.
+    """
 
-        st.markdown(
-            f"""
-<div class="source-card">
+    return re.sub(r"([\\`*_{}\[\]()#+\-.!|~>$:])", r"\\\1", text)
 
-<b>📄 {source.metadata["source"]}</b>
 
-<br>
+def render_search_query(question, search_query):
+    """
+    Tell the user when a follow-up was reworded before searching.
+    """
 
-Page {source.metadata["page"]}
-
-</div>
-""",
-            unsafe_allow_html=True,
-        )
+    if search_query and search_query != question:
+        st.caption(f"Searched for: {search_query}")
 
 
 # =====================================================
@@ -99,69 +132,80 @@ def render_chat():
     if rag.retriever is None:
 
         st.write("📄 No Knowledge Base")
-        st.write("Upload a PDF to start chatting.")
+        st.write("Upload a document to start chatting.")
 
         return
 
+    # The hero lives in a placeholder so it can be removed as soon
+    # as the first question is asked.
+    hero = st.empty()
+
     if len(st.session_state.messages) == 0:
-        render_hero()
+        with hero.container():
+            render_hero()
+
+    # The conversation is drawn inside this container so new messages
+    # appear above the input box, not below it.
+    conversation = st.container()
 
     # ==============================================
     # Previous Messages
     # ==============================================
 
-    for message in st.session_state.messages:
+    with conversation:
 
-        with st.chat_message(message["role"]):
+        question = ""
 
-            if message["role"] == "user":
+        for message in st.session_state.messages:
 
-                st.markdown(
-                    f"""
-                <div class="user-message">
+            with st.chat_message(message["role"]):
 
-                {message["content"]}
+                if message["role"] == "user":
 
-                </div>
-                    """,
-                    unsafe_allow_html=True,
-                )
+                    question = message["content"]
 
-            else:
+                    render_user_message(question)
 
-                st.markdown(message["content"])
+                else:
 
-                render_sources(message["sources"])
+                    render_search_query(
+                        question,
+                        message.get("search_query", ""),
+                    )
 
-                render_metrics(
-                    message["latency"],
-                    message["chunks"],
-                )
+                    st.markdown(message["content"])
+
+                    render_sources(
+                        message["content"],
+                        message["sources"],
+                    )
+
+                    render_metrics(
+                        message["latency"],
+                        message["chunks"],
+                    )
 
     # ==============================================
-    # Custom ChatGPT Style Input
+    # Chat Input (Enter sends, box clears itself)
     # ==============================================
 
-    col1, col2 = st.columns([18, 1])
+    prompt = st.chat_input(
+        "Ask anything about your documents...",
+    )
 
-    with col1:
-
-        prompt = st.text_input(
-            "",
-            placeholder="Ask anything about your documents...",
-            label_visibility="collapsed",
-            key="chat_prompt",
-        )
-
-    with col2:
-
-        send = st.button(
-            "➜",
-            use_container_width=True,
-        )
-
-    if not send or not prompt.strip():
+    if not prompt or not prompt.strip():
         return
+
+    hero.empty()
+
+    # Earlier turns, so a follow-up question can be understood.
+    history = [
+        {
+            "role": message["role"],
+            "content": message["content"],
+        }
+        for message in st.session_state.messages
+    ]
 
     st.session_state.messages.append(
         {
@@ -170,52 +214,75 @@ def render_chat():
         }
     )
 
-    with st.chat_message("user"):
+    with conversation:
 
-        st.markdown(
-            f"""
-            <div class="user-message">
+        with st.chat_message("user"):
 
-                {prompt}
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-    # ==============================================
-    # Assistant
-    # ==============================================
-
-    with st.chat_message("assistant"):
-
-        placeholder = st.empty()
-
-        answer = ""
+            render_user_message(prompt)
 
         # ==============================================
-        # Stream Response
+        # Assistant
         # ==============================================
 
-        for token in rag.stream(prompt):
+        with st.chat_message("assistant"):
 
-            answer += token
+            query_note = st.empty()
 
-            placeholder.markdown(answer)
+            placeholder = st.empty()
 
-        response = rag.last_response
+            answer = ""
 
-        st.write("")
+            stream = rag.stream(
+                prompt,
+                history,
+                llm=selected_llm(),
+            )
 
-        render_sources(
-            response.sources
-        )
+            try:
 
-        st.write("")
+                for token in stream:
 
-        render_metrics(
-            response.latency,
-            response.retrieved_chunks,
-        )
+                    answer += token
+
+                    placeholder.markdown(answer)
+
+            except Exception as error:
+
+                # Drop the unanswered question so the history never
+                # holds a user message without a reply.
+                st.session_state.messages.pop()
+
+                placeholder.empty()
+
+                st.error(
+                    "Couldn't generate an answer. Check that the "
+                    "model provider is reachable (Ollama running, or "
+                    f"a valid OpenAI API key) and try again.\n\n{error}"
+                )
+
+                return
+
+            response = stream.response
+
+            with query_note:
+                render_search_query(
+                    prompt,
+                    response.search_query,
+                )
+
+            st.write("")
+
+            render_sources(
+                answer,
+                response.sources,
+            )
+
+            st.write("")
+
+            render_metrics(
+                response.latency,
+                response.retrieved_chunks,
+            )
 
     # ==============================================
     # Save Conversation
@@ -226,6 +293,7 @@ def render_chat():
             "role": "assistant",
             "content": answer,
             "sources": response.sources,
+            "search_query": response.search_query,
             "latency": response.latency,
             "chunks": response.retrieved_chunks,
         }

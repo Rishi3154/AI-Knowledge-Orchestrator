@@ -4,8 +4,14 @@ Application Configuration
 Central location for all project-wide constants and paths.
 """
 import os
+import re
 from pathlib import Path
-from pathlib import Path
+
+from dotenv import load_dotenv
+
+# Read settings from a local .env file if there is one (see
+# .env.example). Variables already set in the environment win.
+load_dotenv()
 
 # ==========================================================
 # Project Paths
@@ -15,15 +21,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 DATA_DIR = PROJECT_ROOT / "data"
 
-RAW_DATA_DIR = DATA_DIR / "raw"
-
-PROCESSED_DATA_DIR = DATA_DIR / "processed"
-
 CHROMA_DB_DIR = PROJECT_ROOT / "chroma_db"
-
-INDEX_DIR = DATA_DIR / "index"
-
-CHUNK_INDEX_FILE = INDEX_DIR / "chunks.json"
 
 # ==========================================================
 # Models
@@ -55,6 +53,34 @@ OPENAI_API_KEY = os.getenv(
 )
 
 # ==========================================================
+# Active Models
+# ==========================================================
+
+ACTIVE_EMBEDDING_MODEL = (
+    EMBEDDING_MODEL
+    if USE_LOCAL_MODELS
+    else CLOUD_EMBEDDING_MODEL
+)
+
+ACTIVE_LLM_MODEL = (
+    LLM_MODEL
+    if USE_LOCAL_MODELS
+    else CLOUD_LLM_MODEL
+)
+
+# Vectors from different embedding models have different sizes and
+# cannot share a collection, so each model gets its own. The original
+# local model keeps the original name so an index built before this
+# change still loads.
+_LEGACY_EMBEDDING_MODEL = "nomic-embed-text"
+
+_INDEX_SUFFIX = (
+    ""
+    if ACTIVE_EMBEDDING_MODEL == _LEGACY_EMBEDDING_MODEL
+    else "_" + re.sub(r"[^a-zA-Z0-9]+", "-", ACTIVE_EMBEDDING_MODEL).strip("-")
+)
+
+# ==========================================================
 # Chunking
 # ==========================================================
 
@@ -66,21 +92,33 @@ CHUNK_OVERLAP = 100
 # Retrieval
 # ==========================================================
 
-TOP_K = 5
+# Chunks passed to the LLM.
+TOP_K = 6
 
-MIN_RELEVANCE_DISTANCE = 1.5
+# Chunks fetched from each retriever before fusion. A wide pool lets
+# a chunk that only one retriever ranks well still make the final cut.
+CANDIDATE_K = 20
+
+# Cross-encoder that re-scores the fused candidates against the
+# question. Downloaded to MODEL_DIR on first use (about 34 MB).
+RERANK_MODEL = "ms-marco-MiniLM-L-12-v2"
+
+MODEL_DIR = DATA_DIR / "models"
+
+# Previous messages used to resolve follow-up questions.
+HISTORY_MESSAGES = 6
 
 # ==========================================================
 # ChromaDB
 # ==========================================================
 
-COLLECTION_NAME = "knowledge_base"
+COLLECTION_NAME = f"knowledge_base{_INDEX_SUFFIX}"
 
 # ==========================================================
-# Supported File Types
+# Uploads
 # ==========================================================
 
-SUPPORTED_EXTENSIONS = [".pdf"]
+SUPPORTED_EXTENSIONS = [".pdf", ".docx", ".txt", ".md"]
 
 UPLOAD_DIR = DATA_DIR / "uploads"
 

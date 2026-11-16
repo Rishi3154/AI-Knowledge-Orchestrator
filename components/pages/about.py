@@ -129,7 +129,6 @@ app/
 ├── indexing/
 ├── ingestion/
 ├── llm/
-├── memory/
 ├── retrieval/
 ├── services/
 ├── utils/
@@ -143,22 +142,21 @@ components/
 ├── layout/
 ├── pages/
 ├── sidebar/
-├── chat.py
-├── sidebar_panel.py
 ├── styles.css
 ├── theme.py
-├── visualizer.py
 │
 │
 data/
 │
-├── index/
-├── upload/
+├── models/
+├── uploads/
+│
+│
+evals/
+tests/
 │
 │
 app.py
-chat.py
-index.py
 requirements.txt
 
 """,

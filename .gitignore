@@ -29,3 +29,10 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# Local knowledge base (uploaded PDFs + generated indexes)
+data/uploads/
+data/index/
+data/processed/
+data/models/
+chroma_db/

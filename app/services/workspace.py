@@ -4,23 +4,26 @@ workspace.py
 Workspace service.
 """
 
-from app.core.config import CHUNK_INDEX_FILE
-from app.indexing.chunk_index import ChunkIndex
-
 
 class Workspace:
+    """
+    What is currently in the knowledge base.
 
-    def __init__(self):
+    Reads from the chunks the pipeline already holds in memory, so
+    drawing the sidebar costs no disk access.
+    """
 
-        self.chunk_index = ChunkIndex(CHUNK_INDEX_FILE)
+    def __init__(self, rag):
+
+        self.rag = rag
 
     def documents(self):
 
-        return self.chunk_index.documents()
+        return self.rag.documents
 
     def stats(self):
 
         return {
-            "documents": len(self.documents()),
-            "chunks": self.chunk_index.count(),
+            "documents": len(self.rag.documents),
+            "chunks": self.rag.chunk_count,
         }

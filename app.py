@@ -5,6 +5,7 @@ from components.layout.header import render_header
 from components.layout.navigation import render_navigation
 
 from components.chat.interface import render_chat
+from components.chat.export import render_export
 from components.pages.architecture import render_architecture
 from components.pages.about import render_about
 
@@ -29,7 +30,7 @@ render_header()
 left, right = st.columns([1, 3], gap="large")
 
 with left:
-    render_navigation()
+    export_slot = render_navigation()
 
 with right:
 
@@ -41,3 +42,7 @@ with right:
 
     elif st.session_state.page == "About":
         render_about()
+
+# Drawn last so the transcript includes the answer just given.
+with export_slot:
+    render_export()

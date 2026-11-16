@@ -5,7 +5,7 @@ from app.services.workspace import Workspace
 
 def render_workspace(rag):
 
-    workspace = Workspace()
+    workspace = Workspace(rag)
 
     stats = workspace.stats()
 
@@ -31,12 +31,10 @@ def render_workspace(rag):
 
     if not documents:
 
-        st.caption("No PDFs uploaded")
+        st.caption("No documents uploaded")
 
         return
 
-
-    kb = KnowledgeBase()
 
     for document in documents:
 
@@ -52,9 +50,8 @@ def render_workspace(rag):
                 key=f"delete_{document}",
                 use_container_width=True,
             ):
-                kb.delete_document(document)
+                KnowledgeBase().delete_document(document)
                 rag.reload()
-                workspace = Workspace()
 
                 if len(workspace.documents()) == 0:
                     st.session_state.messages = []

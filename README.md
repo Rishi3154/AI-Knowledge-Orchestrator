@@ -153,18 +153,20 @@ AI-Knowledge-Orchestrator/
 │   ├── ingestion/
 │   ├── llm/
 │   ├── retrieval/
-│   └── services/
-│   └── utils/
+│   ├── services/
+│   ├── utils/
 │   └── vectorstore/
 │
 ├── components/
-│   └── assets/
+│   ├── assets/
 │   ├── chat/
 │   ├── layout/
 │   ├── pages/
-│   ├── sidebar/
+│   └── sidebar/
 │
 ├── data/
+├── evals/
+├── tests/
 ├── app.py
 ├── requirements.txt
 └── README.md
@@ -187,14 +189,45 @@ pip install -r requirements.txt
 
 ollama pull llama3.2
 
+ollama pull nomic-embed-text
+
 streamlit run app.py
+```
+
+## Configuration
+
+Settings are read from environment variables, or from a `.env` file
+in the project root (copy `.env.example` to `.env`).
+
+| Variable | Default | Meaning |
+| --- | --- | --- |
+| `USE_LOCAL_MODELS` | `true` | `true` runs Ollama locally; `false` uses OpenAI. |
+| `OPENAI_API_KEY` | – | Required when `USE_LOCAL_MODELS=false`. |
+
+Each embedding model keeps its own index, so documents indexed
+locally need to be indexed again after switching to OpenAI.
+
+## Tests and evaluation
+
+```bash
+pip install -r requirements-dev.txt
+
+pytest
+```
+
+The tests run offline. To measure retrieval quality on your own
+documents, list questions and the pages that answer them in
+`evals/questions.json`, then run (Ollama must be running):
+
+```bash
+python -m evals.retrieval_eval
 ```
 
 ---
 
 # 💬 Usage
 
-1. Upload one or more PDF documents.
+1. Upload one or more documents (PDF, Word `.docx`, `.txt` or `.md`).
 2. Index the uploaded knowledge base.
 3. Ask questions in natural language.
 4. The application retrieves relevant document chunks using Hybrid Retrieval.

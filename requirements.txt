@@ -1,13 +1,10 @@
-chromadb>=1.0.0
-ollama>=0.5.1
-openai>=1.0.0
-pymupdf>=1.26.0
-httpx>=0.28.0
-pydantic>=2.0.0
-langchain-text-splitters>=0.3.0
-rank-bm25>=0.2.2
-<<<<<<< HEAD
+chromadb==1.5.9
+ollama==0.6.2
+openai==3.3.1
+pymupdf==1.28.0
+python-docx==1.2.0
+langchain-text-splitters==1.1.2
+rank-bm25==0.2.2
+flashrank==0.2.10
+python-dotenv==1.2.2
 streamlit==1.60.0
-=======
-streamlit==1.60.0
->>>>>>> a6a5232 (Add cloud LLM support and improve dashboard layout)

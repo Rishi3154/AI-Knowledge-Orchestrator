@@ -115,15 +115,75 @@ class CloudLLM:
                 yield content
 
 
-def create_llm() -> LLM:
+OLLAMA = "ollama"
+OPENAI = "openai"
+
+
+def default_model() -> tuple[str, str]:
     """
-    Create the correct LLM provider for the
-    current environment.
+    (provider, model) used unless the user picks another.
     """
 
     if USE_LOCAL_MODELS:
+        return OLLAMA, LLM_MODEL
+
+    return OPENAI, CLOUD_LLM_MODEL
+
+
+def available_models() -> list[tuple[str, str]]:
+    """
+    Every (provider, model) that can answer questions right now,
+    with the default first.
+
+    Only the chat model can be switched freely. The embedding model
+    is fixed by the configuration, because the stored index was
+    built with it.
+    """
+
+    models = [default_model()]
+
+    try:
+
+        # A short timeout keeps the page responsive when Ollama
+        # isn't running (for example on a cloud deployment).
+        installed = OllamaClient(timeout=2).list().models
+
+    except Exception:
+
+        installed = []
+
+    for entry in installed:
+
+        # Embedding models can't chat.
+        family = (entry.details.family or "") if entry.details else ""
+
+        if "bert" in family or "embed" in entry.model:
+            continue
+
+        models.append((OLLAMA, entry.model))
+
+    if OPENAI_API_KEY:
+        models.append((OPENAI, CLOUD_LLM_MODEL))
+
+    # Drop repeats while keeping the order.
+    return list(dict.fromkeys(models))
+
+
+def create_llm(
+    provider: str | None = None,
+    model: str | None = None,
+) -> LLM:
+    """
+    Create an LLM. With no arguments, the default for the
+    current environment.
+    """
+
+    if provider is None:
+        provider, model = default_model()
+
+    if provider == OLLAMA:
         return OllamaLLM(
-            model=LLM_MODEL,
+            model=model or LLM_MODEL,
         )
 
     if not OPENAI_API_KEY:
@@ -134,5 +194,5 @@ def create_llm() -> LLM:
 
     return CloudLLM(
         api_key=OPENAI_API_KEY,
-        model=CLOUD_LLM_MODEL,
+        model=model or CLOUD_LLM_MODEL,
     )

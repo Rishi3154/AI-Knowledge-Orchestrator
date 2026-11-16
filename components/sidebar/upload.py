@@ -1,14 +1,20 @@
 from app.services.upload_services import UploadService
 from app.indexing.document_ingester import DocumentIngestor
+from app.services.knowledge_base import KnowledgeBase
 import streamlit as st
+
+from app.core.config import SUPPORTED_EXTENSIONS
 
 def render_upload(rag):
 
-    st.subheader("📤 Upload PDF")
+    st.subheader("📤 Upload Document")
 
     uploaded = st.file_uploader(
-        "Choose a PDF",
-        type=["pdf"],
+        "Choose a document",
+        type=[
+            extension.lstrip(".")
+            for extension in SUPPORTED_EXTENSIONS
+        ],
         label_visibility="collapsed",
     )
 
@@ -24,11 +30,37 @@ def render_upload(rag):
 
             upload_service = UploadService()
 
-            pdf_path = upload_service.save(uploaded)
+            # Same name, different content: drop the old version so
+            # the new one replaces it instead of being skipped.
+            replaced = upload_service.is_new_version(uploaded)
 
-            ingestor = DocumentIngestor()
+            if replaced:
+                KnowledgeBase().delete_document(
+                    upload_service.destination(uploaded).name
+                )
 
-            response = ingestor.ingest(pdf_path)
+                rag.reload()
+
+            file_path = upload_service.save(uploaded)
+
+            try:
+
+                ingestor = DocumentIngestor()
+
+                response = ingestor.ingest(file_path)
+
+            except Exception as error:
+
+                # Nothing was indexed, so don't leave the file behind.
+                if file_path.name not in rag.documents:
+                    file_path.unlink(missing_ok=True)
+
+                st.error(
+                    "Indexing failed. Check that Ollama is running "
+                    f"and the embedding model is pulled.\n\n{error}"
+                )
+
+                return
 
             if response.indexed:
 
@@ -40,8 +72,19 @@ def render_upload(rag):
 
                 st.rerun()
 
-            else:
+            elif response.reason == "no_text":
+
+                # Nothing usable was stored, so don't keep the file.
+                file_path.unlink(missing_ok=True)
 
                 st.warning(
-                    "Document already exists or contains no extractable text."
+                    "No text could be read from this file. If it is "
+                    "a PDF, it is probably a scan or made of images, "
+                    "which isn't supported yet."
+                )
+
+            else:
+
+                st.info(
+                    f"{response.document} is already indexed."
                 )

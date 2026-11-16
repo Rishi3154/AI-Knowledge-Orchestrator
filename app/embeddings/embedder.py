@@ -2,9 +2,11 @@
 Embedding providers for indexing and retrieval.
 """
 
+from time import sleep
 from typing import Protocol
 
 from ollama import Client as OllamaClient
+from ollama import ResponseError
 from openai import OpenAI
 
 from app.core.config import (
@@ -52,15 +54,52 @@ class OllamaEmbedder:
 
         return response.embeddings[0]
 
+    # Number of chunks sent to Ollama per request. Sending a whole
+    # book (thousands of chunks) in one request can crash the local
+    # embedding process ("connection reset by peer").
+    BATCH_SIZE = 32
+
     def embed_many(
         self,
         texts: list[str],
     ) -> list[list[float]]:
 
-        response = self.client.embed(
-            model=self.model,
-            input=texts,
-        )
+        embeddings: list[list[float]] = []
+
+        for start in range(0, len(texts), self.BATCH_SIZE):
+
+            batch = texts[start:start + self.BATCH_SIZE]
+
+            embeddings.extend(
+                self._embed_batch(batch)
+            )
+
+        return embeddings
+
+    def _embed_batch(
+        self,
+        batch: list[str],
+    ) -> list[list[float]]:
+        """
+        Embed one batch, retrying once if the Ollama model
+        process dropped the connection and needs to restart.
+        """
+
+        try:
+
+            response = self.client.embed(
+                model=self.model,
+                input=batch,
+            )
+
+        except ResponseError:
+
+            sleep(2)
+
+            response = self.client.embed(
+                model=self.model,
+                input=batch,
+            )
 
         return response.embeddings
 

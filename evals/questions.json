@@ -1,0 +1,14 @@
+[
+  {"question": "Who is the instructor and when are office hours?", "source": "SyllabusCSCI585Fall2026.pdf", "pages": [1]},
+  {"question": "What is the grading breakdown for the course?", "source": "SyllabusCSCI585Fall2026.pdf", "pages": [2]},
+  {"question": "Are late submissions accepted?", "source": "SyllabusCSCI585Fall2026.pdf", "pages": [2]},
+  {"question": "What is the assigned reading on the Gamma database machine?", "source": "SyllabusCSCI585Fall2026.pdf", "pages": [3]},
+  {"question": "Which benchmark papers are covered in the Benchmarks week?", "source": "SyllabusCSCI585Fall2026.pdf", "pages": [4]},
+  {"question": "Which weeks does Exam 1 cover?", "source": "SyllabusCSCI585Fall2026.pdf", "pages": [4]},
+  {"question": "What is the assigned reading for memory management?", "source": "SyllabusCSCI585Fall2026.pdf", "pages": [5]},
+  {"question": "What paper is assigned for MapReduce?", "source": "SyllabusCSCI585Fall2026.pdf", "pages": [6]},
+  {"question": "In which week is RAID covered?", "source": "SyllabusCSCI585Fall2026.pdf", "pages": [6, 7]},
+  {"question": "Who is giving the guest lecture from Databricks?", "source": "SyllabusCSCI585Fall2026.pdf", "pages": [7]},
+  {"question": "What does the syllabus say about plagiarism?", "source": "SyllabusCSCI585Fall2026.pdf", "pages": [8]},
+  {"question": "What number do I call to report bias or harassment?", "source": "SyllabusCSCI585Fall2026.pdf", "pages": [9]}
+]
