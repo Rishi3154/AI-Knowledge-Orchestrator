@@ -257,7 +257,8 @@ def render_chat():
                 st.error(
                     "Couldn't generate an answer. Check that the "
                     "model provider is reachable (Ollama running, or "
-                    f"a valid OpenAI API key) and try again.\n\n{error}"
+                    "a valid Anthropic or OpenAI API key) and try "
+                    f"again.\n\n{error}"
                 )
 
                 return

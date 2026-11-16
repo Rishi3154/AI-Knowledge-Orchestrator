@@ -203,6 +203,7 @@ in the project root (copy `.env.example` to `.env`).
 | --- | --- | --- |
 | `USE_LOCAL_MODELS` | `true` | `true` runs Ollama locally; `false` uses OpenAI. |
 | `OPENAI_API_KEY` | – | Required when `USE_LOCAL_MODELS=false`. |
+| `ANTHROPIC_API_KEY` | – | Optional. Adds Claude to the model picker; embeddings still follow `USE_LOCAL_MODELS`. |
 
 Each embedding model keeps its own index, so documents indexed
 locally need to be indexed again after switching to OpenAI.

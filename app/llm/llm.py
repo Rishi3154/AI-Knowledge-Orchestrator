@@ -11,8 +11,11 @@ from app.core.config import (
     USE_LOCAL_MODELS,
     LLM_MODEL,
     CLOUD_LLM_MODEL,
+    CLAUDE_LLM_MODEL,
     OPENAI_API_KEY,
+    ANTHROPIC_API_KEY,
 )
+from app.llm.claude_llm import ClaudeLLM
 
 
 class LLM(Protocol):
@@ -117,6 +120,7 @@ class CloudLLM:
 
 OLLAMA = "ollama"
 OPENAI = "openai"
+CLAUDE = "claude"
 
 
 def default_model() -> tuple[str, str]:
@@ -162,6 +166,9 @@ def available_models() -> list[tuple[str, str]]:
 
         models.append((OLLAMA, entry.model))
 
+    if ANTHROPIC_API_KEY:
+        models.append((CLAUDE, CLAUDE_LLM_MODEL))
+
     if OPENAI_API_KEY:
         models.append((OPENAI, CLOUD_LLM_MODEL))
 
@@ -184,6 +191,19 @@ def create_llm(
     if provider == OLLAMA:
         return OllamaLLM(
             model=model or LLM_MODEL,
+        )
+
+    if provider == CLAUDE:
+
+        if not ANTHROPIC_API_KEY:
+            raise ValueError(
+                "ANTHROPIC_API_KEY is not configured. "
+                "Add it to your environment or Streamlit Secrets."
+            )
+
+        return ClaudeLLM(
+            api_key=ANTHROPIC_API_KEY,
+            model=model or CLAUDE_LLM_MODEL,
         )
 
     if not OPENAI_API_KEY:

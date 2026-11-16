@@ -35,6 +35,10 @@ LLM_MODEL = "llama3.2:latest"
 CLOUD_EMBEDDING_MODEL = "text-embedding-3-small"
 CLOUD_LLM_MODEL = "gpt-4o-mini"
 
+# Claude (Anthropic) chat model. Anthropic has no embedding model,
+# so embeddings still come from Ollama or OpenAI.
+CLAUDE_LLM_MODEL = "claude-opus-5-5"
+
 # ==========================================================
 # Providers
 # ==========================================================
@@ -50,6 +54,10 @@ USE_LOCAL_MODELS = os.getenv(
 
 OPENAI_API_KEY = os.getenv(
     "OPENAI_API_KEY"
+)
+
+ANTHROPIC_API_KEY = os.getenv(
+    "ANTHROPIC_API_KEY"
 )
 
 # ==========================================================

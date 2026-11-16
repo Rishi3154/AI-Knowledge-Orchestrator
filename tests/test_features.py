@@ -123,6 +123,7 @@ def test_available_models_survive_ollama_being_down(monkeypatch):
     monkeypatch.setattr(llm_module, "OllamaClient", unreachable)
     monkeypatch.setattr(llm_module, "USE_LOCAL_MODELS", False)
     monkeypatch.setattr(llm_module, "OPENAI_API_KEY", "test-key")
+    monkeypatch.setattr(llm_module, "ANTHROPIC_API_KEY", None)
 
     assert llm_module.available_models() == [llm_module.default_model()]
 
@@ -131,10 +132,47 @@ def test_openai_is_not_offered_without_a_key(monkeypatch):
 
     monkeypatch.setattr(llm_module, "USE_LOCAL_MODELS", True)
     monkeypatch.setattr(llm_module, "OPENAI_API_KEY", None)
+    monkeypatch.setattr(llm_module, "ANTHROPIC_API_KEY", None)
 
     providers = {provider for provider, _ in llm_module.available_models()}
 
     assert providers == {llm_module.OLLAMA}
+
+
+def test_claude_is_offered_only_with_a_key(monkeypatch):
+
+    monkeypatch.setattr(llm_module, "USE_LOCAL_MODELS", True)
+    monkeypatch.setattr(llm_module, "OPENAI_API_KEY", None)
+    monkeypatch.setattr(llm_module, "ANTHROPIC_API_KEY", None)
+
+    assert llm_module.CLAUDE not in {
+        provider for provider, _ in llm_module.available_models()
+    }
+
+    monkeypatch.setattr(llm_module, "ANTHROPIC_API_KEY", "test-key")
+
+    assert (
+        llm_module.CLAUDE,
+        llm_module.CLAUDE_LLM_MODEL,
+    ) in llm_module.available_models()
+
+    # Having a key doesn't move answers to the cloud by itself.
+    assert llm_module.default_model()[0] == llm_module.OLLAMA
+
+
+def test_create_llm_builds_claude_or_asks_for_its_key(monkeypatch):
+
+    monkeypatch.setattr(llm_module, "ANTHROPIC_API_KEY", "test-key")
+
+    chosen = llm_module.create_llm(llm_module.CLAUDE, "some-claude-model")
+
+    assert isinstance(chosen, llm_module.ClaudeLLM)
+    assert chosen.model == "some-claude-model"
+
+    monkeypatch.setattr(llm_module, "ANTHROPIC_API_KEY", None)
+
+    with pytest.raises(ValueError, match="ANTHROPIC_API_KEY"):
+        llm_module.create_llm(llm_module.CLAUDE, "any")
 
 
 def test_create_llm_uses_the_requested_model(monkeypatch):

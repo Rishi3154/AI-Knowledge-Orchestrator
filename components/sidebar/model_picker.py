@@ -1,6 +1,8 @@
 import streamlit as st
 
 from app.llm.llm import (
+    CLAUDE,
+    OLLAMA,
     OPENAI,
     available_models,
     create_llm,
@@ -31,6 +33,9 @@ def model_label(choice):
 
     if provider == OPENAI:
         return f"{model} (OpenAI, cloud)"
+
+    if provider == CLAUDE:
+        return f"{model} (Anthropic, cloud)"
 
     return f"{model} (local)"
 
@@ -75,8 +80,10 @@ def render_model_picker():
 
     st.session_state.model_choice = choice
 
-    if choice[0] == OPENAI and default_model()[0] != OPENAI:
+    if choice[0] != OLLAMA and default_model()[0] == OLLAMA:
+
+        company = "Anthropic" if choice[0] == CLAUDE else "OpenAI"
 
         st.caption(
-            "Questions and the retrieved passages are sent to OpenAI."
+            f"Questions and the retrieved passages are sent to {company}."
         )

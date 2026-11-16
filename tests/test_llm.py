@@ -160,3 +160,97 @@ def test_each_stream_keeps_its_own_response():
 
     assert first.response.sources[0].chunk_id == "a"
     assert second.response.sources[0].chunk_id == "b"
+
+
+# ---------------- Claude ----------------
+
+class Block:
+
+    def __init__(self, type, text=""):
+        self.type = type
+        self.text = text
+
+
+class Reply:
+
+    def __init__(self, stop_reason, content=()):
+        self.stop_reason = stop_reason
+        self.content = list(content)
+
+
+class FakeClaudeStream:
+
+    def __init__(self, tokens, final):
+        self.text_stream = iter(tokens)
+        self.final = final
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *error):
+        return False
+
+    def get_final_message(self):
+        return self.final
+
+
+class FakeClaudeMessages:
+
+    def __init__(self, reply, tokens=()):
+        self.reply = reply
+        self.tokens = tokens
+        self.requests = []
+
+    def create(self, **request):
+        self.requests.append(request)
+        return self.reply
+
+    def stream(self, **request):
+        self.requests.append(request)
+        return FakeClaudeStream(self.tokens, self.reply)
+
+
+def claude_with(messages):
+
+    from types import SimpleNamespace
+
+    from app.llm.claude_llm import ClaudeLLM
+
+    llm = ClaudeLLM(api_key="test-key", model="some-claude-model")
+    llm.client = SimpleNamespace(beta=SimpleNamespace(messages=messages))
+
+    return llm
+
+
+def test_claude_generate_joins_text_and_skips_thinking():
+
+    messages = FakeClaudeMessages(
+        Reply("end_turn", [Block("thinking"), Block("text", " Exam 1 "), Block("text", "[1] ")])
+    )
+
+    assert claude_with(messages).generate("When?") == "Exam 1 [1]"
+    assert messages.requests[0]["model"] == "some-claude-model"
+    assert messages.requests[0]["messages"] == [{"role": "user", "content": "When?"}]
+
+
+def test_claude_refusal_gives_a_blank_reply():
+
+    messages = FakeClaudeMessages(Reply("refusal", [Block("text", "partial")]))
+
+    assert claude_with(messages).generate("When?") == ""
+
+
+def test_claude_stream_yields_tokens():
+
+    messages = FakeClaudeMessages(Reply("end_turn"), tokens=["Exam ", "1"])
+
+    assert list(claude_with(messages).stream("When?")) == ["Exam ", "1"]
+
+
+def test_claude_stream_says_so_when_the_model_declines():
+
+    from app.llm.claude_llm import REFUSAL_MESSAGE
+
+    messages = FakeClaudeMessages(Reply("refusal"))
+
+    assert list(claude_with(messages).stream("When?")) == [REFUSAL_MESSAGE]
