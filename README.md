@@ -56,7 +56,7 @@ Search runs inside the app with a small embedding model, and answers come from C
 
 ### 🤖 Claude
 
-- Answers from Claude Opus 5.5, Sonnet 5.5 or Haiku 5.5
+- Answers from Claude Haiku 5.5 (more models can be added in `app/core/config.py`)
 - Numbered citations to the source passages
 - Fully offline execution
 - Streaming response generation

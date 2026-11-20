@@ -26,11 +26,12 @@ CHROMA_DB_DIR = PROJECT_ROOT / "chroma_db"
 # Models
 # ==========================================================
 
-# Answers come from Claude through the Anthropic API. The first
-# entry is the default; the others can be picked in the sidebar.
+# Answers come from Claude through the Anthropic API. Claude Haiku
+# 5.5 is the cheapest model, which matters on a public demo where
+# every visitor's question is billed to the app's key. Add more
+# entries (e.g. "claude-opus-5-5": "Claude Opus 5.5") to offer a
+# choice in the sidebar; the first entry is the default.
 CLAUDE_MODELS = {
-    "claude-opus-5-5": "Claude Opus 5.5",
-    "claude-sonnet-5-5": "Claude Sonnet 5.5",
     "claude-haiku-5-5": "Claude Haiku 5.5",
 }
 

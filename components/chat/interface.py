@@ -3,6 +3,7 @@ from html import escape
 
 import streamlit as st
 
+from app.core.code_version import code_version
 from app.llm.citations import cited_sources
 from app.rag_pipeline import RAGPipeline
 from components.layout.hero import render_hero
@@ -14,16 +15,25 @@ from components.sidebar.model_picker import selected_llm
 # RAG
 # =====================================================
 
-@st.cache_resource
-def get_rag():
+@st.cache_resource(max_entries=1, show_spinner=False)
+def build_rag(version):
     """
-    Build the pipeline once and reuse it across Streamlit reruns.
+    Build the pipeline once per code version.
 
     Without the cache, every click reloaded all chunks, rebuilt the
-    BM25 index and reopened ChromaDB. Call rag.reload() after the
-    knowledge base changes.
+    BM25 index and reopened ChromaDB. `version` is only part of the
+    cache key: after a code update a new pipeline is built, and
+    max_entries=1 drops the old one.
     """
     return RAGPipeline()
+
+
+def get_rag():
+    """
+    The shared pipeline for the current code. Call rag.reload() after
+    the knowledge base changes.
+    """
+    return build_rag(code_version())
 
 
 def render_user_message(text):

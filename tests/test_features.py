@@ -106,11 +106,11 @@ def test_location_omits_the_page_when_there_is_none():
 
 # ---------------- model choice ----------------
 
-def test_opus_is_the_default_and_every_model_is_claude():
+def test_haiku_is_the_default_and_every_model_is_claude():
 
     models = llm_module.available_models()
 
-    assert models[0] == "claude-opus-5-5"
+    assert models[0] == "claude-haiku-5-5"
     assert all(model.startswith("claude-") for model in models)
 
 
@@ -119,12 +119,12 @@ def test_create_llm_builds_claude_or_asks_for_its_key(monkeypatch):
     monkeypatch.setenv("ANTHROPIC_API_KEY", "test-key")
 
     assert llm_module.has_api_key()
-    assert llm_module.create_llm().model == "claude-opus-5-5"
+    assert llm_module.create_llm().model == "claude-haiku-5-5"
 
-    chosen = llm_module.create_llm("claude-haiku-5-5")
+    chosen = llm_module.create_llm("claude-sonnet-5-5")
 
     assert isinstance(chosen, llm_module.ClaudeLLM)
-    assert chosen.model == "claude-haiku-5-5"
+    assert chosen.model == "claude-sonnet-5-5"
 
     monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
 

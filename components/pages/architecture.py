@@ -176,10 +176,8 @@ This ensures grounded and context-aware responses.
     with st.expander("🤖 Claude"):
 
         st.markdown("""
-### Models
+### Model
 
-- Claude Opus 5.5 (default)
-- Claude Sonnet 5.5
 - Claude Haiku 5.5
 
 ### Features
