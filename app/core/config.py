@@ -36,9 +36,18 @@ CLAUDE_MODELS = {
 
 DEFAULT_CLAUDE_MODEL = next(iter(CLAUDE_MODELS))
 
-ANTHROPIC_API_KEY = os.getenv(
-    "ANTHROPIC_API_KEY"
-)
+
+def anthropic_api_key() -> str | None:
+    """
+    The Anthropic API key, read fresh on every call.
+
+    Streamlit Cloud copies Secrets into environment variables, and
+    updates them when Secrets are edited without restarting the app.
+    A value read once at import would miss a key added later.
+    """
+
+    return os.getenv("ANTHROPIC_API_KEY") or None
+
 
 # Anthropic has no embedding model, so search uses a small model
 # that runs inside the app (through ChromaDB and ONNX Runtime). It

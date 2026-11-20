@@ -1,13 +1,18 @@
 import streamlit as st
 
-from app.core.config import CLAUDE_MODELS, DEFAULT_CLAUDE_MODEL
+from app.core.config import (
+    CLAUDE_MODELS,
+    DEFAULT_CLAUDE_MODEL,
+    anthropic_api_key,
+)
 from app.llm.llm import available_models, create_llm, has_api_key
 
 
 @st.cache_resource(show_spinner=False)
-def get_llm(model):
+def get_llm(model, api_key):
     """
-    One client per model, shared between sessions.
+    One client per model, shared between sessions. The key is part
+    of the cache key so a replaced key gets a new client.
     """
     return create_llm(model)
 
@@ -18,7 +23,8 @@ def selected_llm():
     """
 
     return get_llm(
-        st.session_state.get("model_choice") or DEFAULT_CLAUDE_MODEL
+        st.session_state.get("model_choice") or DEFAULT_CLAUDE_MODEL,
+        anthropic_api_key(),
     )
 
 

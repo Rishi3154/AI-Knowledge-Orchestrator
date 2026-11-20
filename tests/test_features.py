@@ -116,7 +116,7 @@ def test_opus_is_the_default_and_every_model_is_claude():
 
 def test_create_llm_builds_claude_or_asks_for_its_key(monkeypatch):
 
-    monkeypatch.setattr(llm_module, "ANTHROPIC_API_KEY", "test-key")
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "test-key")
 
     assert llm_module.has_api_key()
     assert llm_module.create_llm().model == "claude-opus-5-5"
@@ -126,7 +126,7 @@ def test_create_llm_builds_claude_or_asks_for_its_key(monkeypatch):
     assert isinstance(chosen, llm_module.ClaudeLLM)
     assert chosen.model == "claude-haiku-5-5"
 
-    monkeypatch.setattr(llm_module, "ANTHROPIC_API_KEY", None)
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
 
     assert not llm_module.has_api_key()
 
@@ -134,9 +134,23 @@ def test_create_llm_builds_claude_or_asks_for_its_key(monkeypatch):
         llm_module.create_llm()
 
 
+def test_key_added_after_startup_is_picked_up(monkeypatch):
+
+    # Streamlit Cloud sets the variable when Secrets are saved, after
+    # the app's modules were imported.
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+
+    assert not llm_module.has_api_key()
+
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "added-later")
+
+    assert llm_module.has_api_key()
+    assert llm_module.create_llm().client.api_key == "added-later"
+
+
 def test_pipeline_starts_without_a_key(monkeypatch, temp_store):
 
-    monkeypatch.setattr(llm_module, "ANTHROPIC_API_KEY", None)
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
 
     import app.rag_pipeline as rag_pipeline
 
