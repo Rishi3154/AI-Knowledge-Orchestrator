@@ -15,8 +15,8 @@ settings to see whether the change helped:
 
     python -m evals.retrieval_eval
 
-Needs the embedding model to be reachable (Ollama running, or an
-OpenAI key in cloud mode). Questions about documents that are not
+Runs offline once the embedding model has been downloaded; it
+needs no API key. Questions about documents that are not
 currently indexed are skipped.
 """
 

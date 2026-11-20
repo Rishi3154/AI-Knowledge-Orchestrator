@@ -1,14 +1,14 @@
 # 🤖 AI Knowledge Assistant
 
 <p align="center">
-  <strong>An intelligent Retrieval-Augmented Generation (RAG) system that enables conversational interaction with PDF documents using Hybrid Retrieval, Local LLMs, and a modern Streamlit interface.</strong>
+  <strong>An intelligent Retrieval-Augmented Generation (RAG) system that enables conversational interaction with your documents using Hybrid Retrieval, Claude, and a modern Streamlit interface.</strong>
 </p>
 
 <p align="center">
 
 <!-- Badges (We'll add these later) -->
 
-Python • Streamlit • Ollama • ChromaDB • Hybrid Retrieval • BM25 • RAG
+Python • Streamlit • Claude • ChromaDB • Hybrid Retrieval • BM25 • RAG
 
 </p>
 
@@ -26,11 +26,11 @@ Python • Streamlit • Ollama • ChromaDB • Hybrid Retrieval • BM25 • R
 
 # 📖 Overview
 
-AI Knowledge Orchestrator is a fully local Retrieval-Augmented Generation (RAG) application that transforms PDF documents into an interactive knowledge base.
+AI Knowledge Orchestrator is a Retrieval-Augmented Generation (RAG) application that turns PDF, Word, text and Markdown documents into an interactive knowledge base.
 
 Instead of relying solely on semantic vector search, the application combines dense retrieval from ChromaDB with lexical retrieval using BM25. The retrieved results are fused using Reciprocal Rank Fusion (RRF), providing more accurate and context-aware responses.
 
-The entire inference pipeline runs locally through Ollama, enabling private document interaction without requiring cloud-based LLM APIs.
+Search runs inside the app with a small embedding model, and answers come from Claude through the Anthropic API. An Anthropic API key is the only thing you need to configure.
 
 ---
 
@@ -54,10 +54,10 @@ The entire inference pipeline runs locally through Ollama, enabling private docu
 
 ---
 
-### 🤖 Local AI
+### 🤖 Claude
 
-- Ollama-powered inference
-- Llama 3.2 integration
+- Answers from Claude Opus 5.5, Sonnet 5.5 or Haiku 5.5
+- Numbered citations to the source passages
 - Fully offline execution
 - Streaming response generation
 
@@ -118,7 +118,7 @@ The application follows a modular Retrieval-Augmented Generation pipeline consis
                            ▼
                  Context Construction
                            ▼
-                  Ollama (Llama 3.2)
+                Claude (Anthropic API)
                            ▼
                 Streaming Response
 ```
@@ -131,9 +131,8 @@ The application follows a modular Retrieval-Augmented Generation pipeline consis
 |-----------|------------|
 | Programming Language | Python |
 | Frontend | Streamlit |
-| Local LLM | Ollama |
-| Language Model | Llama 3.2 |
-| Embedding Model | Nomic Embed Text |
+| Language Model | Claude (Anthropic API) |
+| Embedding Model | all-MiniLM-L6-v2 (in-app, ONNX Runtime) |
 | Vector Database | ChromaDB |
 | PDF Processing | PyMuPDF |
 | Retrieval | Hybrid (Vector + BM25) |
@@ -187,9 +186,7 @@ source .venv/bin/activate
 
 pip install -r requirements.txt
 
-ollama pull llama3.2
-
-ollama pull nomic-embed-text
+cp .env.example .env   # then add your ANTHROPIC_API_KEY
 
 streamlit run app.py
 ```
@@ -199,14 +196,19 @@ streamlit run app.py
 Settings are read from environment variables, or from a `.env` file
 in the project root (copy `.env.example` to `.env`).
 
-| Variable | Default | Meaning |
-| --- | --- | --- |
-| `USE_LOCAL_MODELS` | `true` | `true` runs Ollama locally; `false` uses OpenAI. |
-| `OPENAI_API_KEY` | – | Required when `USE_LOCAL_MODELS=false`. |
-| `ANTHROPIC_API_KEY` | – | Optional. Adds Claude to the model picker; embeddings still follow `USE_LOCAL_MODELS`. |
+| Variable | Meaning |
+| --- | --- |
+| `ANTHROPIC_API_KEY` | Required to answer questions. Documents can be uploaded and indexed without it. |
 
-Each embedding model keeps its own index, so documents indexed
-locally need to be indexed again after switching to OpenAI.
+On Streamlit Community Cloud, add the key under the app's
+**Settings → Secrets**:
+
+```toml
+ANTHROPIC_API_KEY = "sk-ant-..."
+```
+
+The embedding model (about 80 MB) downloads on first use and then
+runs inside the app, so there is nothing else to install.
 
 ## Tests and evaluation
 
@@ -218,7 +220,7 @@ pytest
 
 The tests run offline. To measure retrieval quality on your own
 documents, list questions and the pages that answer them in
-`evals/questions.json`, then run (Ollama must be running):
+`evals/questions.json`, then run:
 
 ```bash
 python -m evals.retrieval_eval

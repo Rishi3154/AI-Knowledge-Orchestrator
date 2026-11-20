@@ -210,13 +210,13 @@ class FakeClaudeMessages:
         return FakeClaudeStream(self.tokens, self.reply)
 
 
-def claude_with(messages):
+def claude_with(messages, model="some-claude-model"):
 
     from types import SimpleNamespace
 
     from app.llm.claude_llm import ClaudeLLM
 
-    llm = ClaudeLLM(api_key="test-key", model="some-claude-model")
+    llm = ClaudeLLM(api_key="test-key", model=model)
     llm.client = SimpleNamespace(beta=SimpleNamespace(messages=messages))
 
     return llm
@@ -254,3 +254,16 @@ def test_claude_stream_says_so_when_the_model_declines():
     messages = FakeClaudeMessages(Reply("refusal"))
 
     assert list(claude_with(messages).stream("When?")) == [REFUSAL_MESSAGE]
+
+
+def test_fallback_is_requested_only_for_models_that_support_it():
+
+    opus = FakeClaudeMessages(Reply("end_turn", [Block("text", "ok")]))
+    haiku = FakeClaudeMessages(Reply("end_turn", [Block("text", "ok")]))
+
+    claude_with(opus, "claude-opus-5-5").generate("q")
+    claude_with(haiku, "claude-haiku-5-5").generate("q")
+
+    assert opus.requests[0]["fallbacks"] == "default"
+    assert "fallbacks" not in haiku.requests[0]
+    assert "betas" not in haiku.requests[0]

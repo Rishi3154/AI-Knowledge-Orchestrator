@@ -6,6 +6,7 @@ import streamlit as st
 from app.llm.citations import cited_sources
 from app.rag_pipeline import RAGPipeline
 from components.layout.hero import render_hero
+from app.llm.llm import MISSING_KEY_MESSAGE, has_api_key
 from components.sidebar.model_picker import selected_llm
 
 
@@ -189,6 +190,18 @@ def render_chat():
     # Chat Input (Enter sends, box clears itself)
     # ==============================================
 
+    # Documents can be indexed without a key, but answering needs one.
+    if not has_api_key():
+
+        st.warning(MISSING_KEY_MESSAGE)
+
+        st.chat_input(
+            "Add an Anthropic API key to ask questions",
+            disabled=True,
+        )
+
+        return
+
     prompt = st.chat_input(
         "Ask anything about your documents...",
     )
@@ -256,8 +269,8 @@ def render_chat():
 
                 st.error(
                     "Couldn't generate an answer. Check that the "
-                    "model provider is reachable (Ollama running, or "
-                    "a valid Anthropic or OpenAI API key) and try "
+                    "Anthropic API is reachable and ANTHROPIC_API_KEY "
+                    "is valid, then try "
                     f"again.\n\n{error}"
                 )
 

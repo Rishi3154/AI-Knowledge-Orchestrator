@@ -1,7 +1,7 @@
 """
 Shared fixtures.
 
-Nothing here talks to Ollama, OpenAI or the real knowledge base:
+Nothing here talks to the Anthropic API or the real knowledge base:
 storage is redirected to a temporary directory and the embedder
 is replaced with a deterministic fake.
 """

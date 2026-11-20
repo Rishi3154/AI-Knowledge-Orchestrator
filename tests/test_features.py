@@ -106,86 +106,45 @@ def test_location_omits_the_page_when_there_is_none():
 
 # ---------------- model choice ----------------
 
-def test_default_model_follows_the_environment(monkeypatch):
+def test_opus_is_the_default_and_every_model_is_claude():
 
-    monkeypatch.setattr(llm_module, "USE_LOCAL_MODELS", True)
-    assert llm_module.default_model()[0] == llm_module.OLLAMA
+    models = llm_module.available_models()
 
-    monkeypatch.setattr(llm_module, "USE_LOCAL_MODELS", False)
-    assert llm_module.default_model()[0] == llm_module.OPENAI
-
-
-def test_available_models_survive_ollama_being_down(monkeypatch):
-
-    def unreachable(**kwargs):
-        raise ConnectionError("no ollama")
-
-    monkeypatch.setattr(llm_module, "OllamaClient", unreachable)
-    monkeypatch.setattr(llm_module, "USE_LOCAL_MODELS", False)
-    monkeypatch.setattr(llm_module, "OPENAI_API_KEY", "test-key")
-    monkeypatch.setattr(llm_module, "ANTHROPIC_API_KEY", None)
-
-    assert llm_module.available_models() == [llm_module.default_model()]
-
-
-def test_openai_is_not_offered_without_a_key(monkeypatch):
-
-    monkeypatch.setattr(llm_module, "USE_LOCAL_MODELS", True)
-    monkeypatch.setattr(llm_module, "OPENAI_API_KEY", None)
-    monkeypatch.setattr(llm_module, "ANTHROPIC_API_KEY", None)
-
-    providers = {provider for provider, _ in llm_module.available_models()}
-
-    assert providers == {llm_module.OLLAMA}
-
-
-def test_claude_is_offered_only_with_a_key(monkeypatch):
-
-    monkeypatch.setattr(llm_module, "USE_LOCAL_MODELS", True)
-    monkeypatch.setattr(llm_module, "OPENAI_API_KEY", None)
-    monkeypatch.setattr(llm_module, "ANTHROPIC_API_KEY", None)
-
-    assert llm_module.CLAUDE not in {
-        provider for provider, _ in llm_module.available_models()
-    }
-
-    monkeypatch.setattr(llm_module, "ANTHROPIC_API_KEY", "test-key")
-
-    assert (
-        llm_module.CLAUDE,
-        llm_module.CLAUDE_LLM_MODEL,
-    ) in llm_module.available_models()
-
-    # Having a key doesn't move answers to the cloud by itself.
-    assert llm_module.default_model()[0] == llm_module.OLLAMA
+    assert models[0] == "claude-opus-5-5"
+    assert all(model.startswith("claude-") for model in models)
 
 
 def test_create_llm_builds_claude_or_asks_for_its_key(monkeypatch):
 
     monkeypatch.setattr(llm_module, "ANTHROPIC_API_KEY", "test-key")
 
-    chosen = llm_module.create_llm(llm_module.CLAUDE, "some-claude-model")
+    assert llm_module.has_api_key()
+    assert llm_module.create_llm().model == "claude-opus-5-5"
+
+    chosen = llm_module.create_llm("claude-haiku-5-5")
 
     assert isinstance(chosen, llm_module.ClaudeLLM)
-    assert chosen.model == "some-claude-model"
+    assert chosen.model == "claude-haiku-5-5"
 
     monkeypatch.setattr(llm_module, "ANTHROPIC_API_KEY", None)
 
+    assert not llm_module.has_api_key()
+
     with pytest.raises(ValueError, match="ANTHROPIC_API_KEY"):
-        llm_module.create_llm(llm_module.CLAUDE, "any")
+        llm_module.create_llm()
 
 
-def test_create_llm_uses_the_requested_model(monkeypatch):
+def test_pipeline_starts_without_a_key(monkeypatch, temp_store):
 
-    chosen = llm_module.create_llm(llm_module.OLLAMA, "some-model:latest")
+    monkeypatch.setattr(llm_module, "ANTHROPIC_API_KEY", None)
 
-    assert isinstance(chosen, llm_module.OllamaLLM)
-    assert chosen.model == "some-model:latest"
+    import app.rag_pipeline as rag_pipeline
 
-    monkeypatch.setattr(llm_module, "OPENAI_API_KEY", None)
+    monkeypatch.setattr(rag_pipeline, "create_llm", llm_module.create_llm)
 
-    with pytest.raises(ValueError, match="OPENAI_API_KEY"):
-        llm_module.create_llm(llm_module.OPENAI, "any")
+    pipeline = RAGPipeline()
+
+    assert pipeline.llm is None
 
 
 def test_stream_uses_the_llm_passed_for_that_answer():

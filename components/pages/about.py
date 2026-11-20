@@ -22,10 +22,10 @@ def render_about():
     col1, col2 = st.columns(2)
 
     with col1:
-        st.success("🧠 Local LLM Inference")
+        st.success("🧠 Answers by Claude")
         st.write(
-            "Run AI models entirely offline using Ollama for privacy "
-            "and fast local inference."
+            "Questions are answered by Claude through the Anthropic "
+            "API, using only passages from your documents."
         )
 
         st.success("📄 PDF Knowledge Base")
@@ -81,8 +81,8 @@ def render_about():
             "Technology": [
                 "Python",
                 "Streamlit",
-                "Ollama",
-                "nomic-embed-text",
+                "Claude (Anthropic API)",
+                "all-MiniLM-L6-v2 (runs in the app)",
                 "ChromaDB",
                 "PyMuPDF",
                 "Hybrid (Vector + BM25)",

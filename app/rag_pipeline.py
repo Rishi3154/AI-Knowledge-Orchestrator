@@ -44,8 +44,9 @@ class RAGPipeline:
 
     def __init__(self):
 
-        # Create the correct LLM provider
-        self.llm = create_llm()
+        # Created on first use, so the app can start (and index
+        # documents) before an API key is configured.
+        self.llm = None
 
         self.vector_store = VectorStore()
 
@@ -56,6 +57,13 @@ class RAGPipeline:
         self.chunk_count = 0
 
         self.reload()
+
+    def default_llm(self):
+
+        if self.llm is None:
+            self.llm = create_llm()
+
+        return self.llm
 
     def reload(self):
         """
@@ -81,7 +89,7 @@ class RAGPipeline:
 
     def ask(self, question: str, history=None, llm=None) -> ChatResponse:
 
-        llm = llm or self.llm
+        llm = llm or self.default_llm()
 
         retriever = self.retriever
 
@@ -136,7 +144,7 @@ class RAGPipeline:
 
         return AnswerStream(
             retriever=self.retriever,
-            llm=llm or self.llm,
+            llm=llm or self.default_llm(),
             question=question,
             history=history,
         )

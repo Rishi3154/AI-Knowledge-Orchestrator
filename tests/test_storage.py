@@ -1,5 +1,3 @@
-import importlib
-
 import pytest
 
 from app.core.models import Chunk
@@ -160,34 +158,25 @@ def test_upload_cannot_escape_the_upload_folder(temp_store):
     assert destination.parent == temp_store
 
 
-# ---------------- config ----------------
+# ---------------- embeddings ----------------
 
-@pytest.fixture
-def config(monkeypatch):
-    """
-    Reload the config under different settings, then restore it.
-    """
+def test_local_embedder_batches_and_returns_plain_floats(monkeypatch):
 
-    import app.core.config as config
+    from app.embeddings import embedder as embedder_module
 
-    def load(use_local):
-        monkeypatch.setenv("USE_LOCAL_MODELS", use_local)
-        return importlib.reload(config)
+    calls = []
 
-    yield load
+    class FakeModel:
+        def __call__(self, texts):
+            calls.append(len(texts))
+            return [[1, 2.5] for _ in texts]
 
-    monkeypatch.undo()
-    importlib.reload(config)
+    monkeypatch.setattr(embedder_module, "DefaultEmbeddingFunction", FakeModel)
 
+    embedder = embedder_module.LocalEmbedder()
+    vectors = embedder.embed_many(["text"] * 130)
 
-def test_local_model_keeps_the_original_collection(config):
-
-    assert config("true").COLLECTION_NAME == "knowledge_base"
-
-
-def test_cloud_model_gets_its_own_collection(config):
-
-    cloud = config("false")
-
-    assert cloud.COLLECTION_NAME == "knowledge_base_text-embedding-3-small"
-    assert cloud.ACTIVE_LLM_MODEL == cloud.CLOUD_LLM_MODEL
+    assert calls == [64, 64, 2]
+    assert vectors[0] == [1.0, 2.5]
+    assert all(type(value) is float for value in vectors[0])
+    assert embedder.embed("one") == [1.0, 2.5]

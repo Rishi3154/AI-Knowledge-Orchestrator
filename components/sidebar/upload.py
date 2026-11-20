@@ -56,8 +56,9 @@ def render_upload(rag):
                     file_path.unlink(missing_ok=True)
 
                 st.error(
-                    "Indexing failed. Check that Ollama is running "
-                    f"and the embedding model is pulled.\n\n{error}"
+                    "Indexing failed. The embedding model downloads "
+                    "on first use, so check the internet connection "
+                    f"and try again.\n\n{error}"
                 )
 
                 return

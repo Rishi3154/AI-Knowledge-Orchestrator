@@ -1,6 +1,4 @@
 chromadb==1.5.9
-ollama==0.6.2
-openai==3.3.1
 anthropic==2.8.0
 pymupdf==1.28.0
 python-docx==1.2.0

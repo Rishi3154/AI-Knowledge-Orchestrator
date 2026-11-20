@@ -1,25 +1,20 @@
 """
-Embedding providers for indexing and retrieval.
+Embedding model for indexing and retrieval.
+
+Runs all-MiniLM-L6-v2 inside the app through ChromaDB's bundled
+ONNX model, so it works anywhere Python runs: no API key, and no
+Ollama or other separate install.
 """
 
-from time import sleep
+from functools import lru_cache
 from typing import Protocol
 
-from ollama import Client as OllamaClient
-from ollama import ResponseError
-from openai import OpenAI
-
-from app.core.config import (
-    USE_LOCAL_MODELS,
-    EMBEDDING_MODEL,
-    CLOUD_EMBEDDING_MODEL,
-    OPENAI_API_KEY,
-)
+from chromadb.utils.embedding_functions import DefaultEmbeddingFunction
 
 
 class Embedder(Protocol):
     """
-    Common interface for all embedding providers.
+    Common interface for embedding models.
     """
 
     def embed(self, text: str) -> list[float]:
@@ -32,32 +27,24 @@ class Embedder(Protocol):
         ...
 
 
-class OllamaEmbedder:
+class LocalEmbedder:
     """
-    Local embedding provider using Ollama.
+    all-MiniLM-L6-v2, run in-process with ONNX Runtime.
     """
 
-    def __init__(self, model: str):
+    # Chunks embedded per call; keeps memory flat for long books.
+    BATCH_SIZE = 64
 
-        self.model = model
-        self.client = OllamaClient()
+    def __init__(self):
+
+        self.model = DefaultEmbeddingFunction()
 
     def embed(
         self,
         text: str,
     ) -> list[float]:
 
-        response = self.client.embed(
-            model=self.model,
-            input=text,
-        )
-
-        return response.embeddings[0]
-
-    # Number of chunks sent to Ollama per request. Sending a whole
-    # book (thousands of chunks) in one request can crash the local
-    # embedding process ("connection reset by peer").
-    BATCH_SIZE = 32
+        return self.embed_many([text])[0]
 
     def embed_many(
         self,
@@ -71,107 +58,17 @@ class OllamaEmbedder:
             batch = texts[start:start + self.BATCH_SIZE]
 
             embeddings.extend(
-                self._embed_batch(batch)
+                [float(value) for value in vector]
+                for vector in self.model(batch)
             )
 
         return embeddings
 
-    def _embed_batch(
-        self,
-        batch: list[str],
-    ) -> list[list[float]]:
-        """
-        Embed one batch, retrying once if the Ollama model
-        process dropped the connection and needs to restart.
-        """
 
-        try:
-
-            response = self.client.embed(
-                model=self.model,
-                input=batch,
-            )
-
-        except ResponseError:
-
-            sleep(2)
-
-            response = self.client.embed(
-                model=self.model,
-                input=batch,
-            )
-
-        return response.embeddings
-
-
-class OpenAIEmbedder:
-    """
-    Cloud embedding provider for deployed environments.
-    """
-
-    def __init__(
-        self,
-        api_key: str,
-        model: str,
-    ):
-
-        self.client = OpenAI(
-            api_key=api_key,
-        )
-
-        self.model = model
-
-    def embed(
-        self,
-        text: str,
-    ) -> list[float]:
-
-        response = self.client.embeddings.create(
-            model=self.model,
-            input=text,
-        )
-
-        return response.data[0].embedding
-
-    def embed_many(
-        self,
-        texts: list[str],
-    ) -> list[list[float]]:
-
-        if not texts:
-            return []
-
-        response = self.client.embeddings.create(
-            model=self.model,
-            input=texts,
-        )
-
-        return [
-            item.embedding
-            for item in response.data
-        ]
-
-
+@lru_cache(maxsize=1)
 def create_embedder() -> Embedder:
     """
-    Create the correct embedding provider depending
-    on the current environment.
+    The embedding model, loaded once per process.
     """
 
-    if USE_LOCAL_MODELS:
-
-        return OllamaEmbedder(
-            EMBEDDING_MODEL
-        )
-
-    if not OPENAI_API_KEY:
-
-        raise ValueError(
-            "OPENAI_API_KEY is not configured. "
-            "Add it to Streamlit Secrets."
-        )
-
-    return OpenAIEmbedder(
-        api_key=OPENAI_API_KEY,
-        model=CLOUD_EMBEDDING_MODEL,
-    )
+    return LocalEmbedder()

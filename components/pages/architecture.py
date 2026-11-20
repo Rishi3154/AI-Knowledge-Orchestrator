@@ -43,9 +43,9 @@ def render_architecture():
 
     with col3:
         st.metric(
-            "🤖 Local LLM",
-            "Llama 3.2",
-            help="Running locally through Ollama",
+            "🤖 Model",
+            "Claude",
+            help="Answers come from Claude through the Anthropic API",
         )
 
     with col4:
@@ -120,7 +120,7 @@ Overlapping chunks preserve context across chunk boundaries, improving retrieval
         st.markdown("""
 ### Model
 
-- nomic-embed-text
+- all-MiniLM-L6-v2, run inside the app with ONNX Runtime
 
 ### Purpose
 
@@ -173,18 +173,20 @@ Construct the final prompt using:
 This ensures grounded and context-aware responses.
 """)
 
-    with st.expander("🤖 Ollama LLM"):
+    with st.expander("🤖 Claude"):
 
         st.markdown("""
-### Current Model
+### Models
 
-- Llama 3.2:latest
+- Claude Opus 5.5 (default)
+- Claude Sonnet 5.5
+- Claude Haiku 5.5
 
 ### Features
 
-- Local inference
+- Served through the Anthropic API
 - Streaming responses
-- Privacy-first execution
+- Follow-up questions rewritten using the conversation
 """)
 
     with st.expander("📚 Response Generation"):

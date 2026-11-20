@@ -1,7 +1,5 @@
 import streamlit as st
 
-from app.core.config import USE_LOCAL_MODELS
-
 from components.chat.interface import get_rag
 from components.sidebar.upload import render_upload
 from components.sidebar.render_workspace import render_workspace
@@ -16,11 +14,10 @@ def render_navigation():
 
         render_upload(rag)
 
-        if not USE_LOCAL_MODELS:
-            st.caption(
-                "Shared workspace: documents uploaded here are "
-                "visible to everyone using this app."
-            )
+        st.caption(
+            "Shared workspace: documents uploaded here are "
+            "visible to everyone using this app."
+        )
 
         st.divider()
 
