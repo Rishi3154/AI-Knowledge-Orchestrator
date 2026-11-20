@@ -171,7 +171,7 @@ def test_local_embedder_batches_and_returns_plain_floats(monkeypatch):
             calls.append(len(texts))
             return [[1, 2.5] for _ in texts]
 
-    monkeypatch.setattr(embedder_module, "DefaultEmbeddingFunction", FakeModel)
+    monkeypatch.setattr(embedder_module, "ONNXMiniLM_L6_V2", FakeModel)
 
     embedder = embedder_module.LocalEmbedder()
     vectors = embedder.embed_many(["text"] * 130)
@@ -180,3 +180,4 @@ def test_local_embedder_batches_and_returns_plain_floats(monkeypatch):
     assert vectors[0] == [1.0, 2.5]
     assert all(type(value) is float for value in vectors[0])
     assert embedder.embed("one") == [1.0, 2.5]
+    assert embedder.model.tqdm is embedder_module.quiet_tqdm

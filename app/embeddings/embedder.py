@@ -6,10 +6,17 @@ ONNX model, so it works anywhere Python runs: no API key, and no
 Ollama or other separate install.
 """
 
-from functools import lru_cache
+from functools import lru_cache, partial
 from typing import Protocol
 
-from chromadb.utils.embedding_functions import DefaultEmbeddingFunction
+from chromadb.utils.embedding_functions import ONNXMiniLM_L6_V2
+from tqdm import tqdm
+
+# Model downloads normally draw a progress bar on stderr. Some hosts,
+# Streamlit Community Cloud among them, close stderr, and every write
+# to it then fails with "[Errno 32] Broken pipe", aborting the
+# download. Downloads therefore run with the progress bar off.
+quiet_tqdm = partial(tqdm, disable=True)
 
 
 class Embedder(Protocol):
@@ -37,7 +44,10 @@ class LocalEmbedder:
 
     def __init__(self):
 
-        self.model = DefaultEmbeddingFunction()
+        # One instance for the whole process, so the model is
+        # loaded once rather than for every batch.
+        self.model = ONNXMiniLM_L6_V2()
+        self.model.tqdm = quiet_tqdm
 
     def embed(
         self,

@@ -28,7 +28,16 @@ def _load_ranker():
 
     try:
 
+        import sys
+
         from flashrank import Ranker
+
+        from app.embeddings.embedder import quiet_tqdm
+
+        # Same stderr problem as the embedding model's download.
+        # (flashrank's package attribute "Ranker" is the class, so the
+        # module has to be taken from sys.modules.)
+        sys.modules["flashrank.Ranker"].tqdm = quiet_tqdm
 
         MODEL_DIR.mkdir(parents=True, exist_ok=True)
 
